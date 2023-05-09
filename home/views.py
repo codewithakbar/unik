@@ -3,12 +3,14 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from .models import Banner
+from news.models import Yangiliklar
 
 
 def index(request):
     
     context = {
         "banner": Banner.objects.all().order_by("-id")[:5],
+        "news": Yangiliklar.objects.all().order_by("-id")[:3],
     }
     return render(request, "home/index.html", context)
 

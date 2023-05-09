@@ -67,6 +67,24 @@
         <div class="blog-slider">
             <div class="blog-slider__wrp swiper-wrapper">
                 <!-- Карточка -->
+                {% if news %}
+                {% for new in news %}
+                <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                        <img src="{{ new.image.url }}" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                        <span class="blog-slider__date">{{new.created_at}}</span>
+                        <div class="blog-slider__title">{{new.title}}</div>
+                        <p>{{new.desc}}</p>
+                        <div class="blog-slider__button-wrapper">
+                            <a href="#" class="blog-slider__button">Читать далее</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+
                 <div class="blog-slider__item swiper-slide">
                     <div class="blog-slider__img">
                         <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
@@ -80,32 +98,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                        <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                        <span class="blog-slider__date">Дата</span>
-                        <div class="blog-slider__title">Заголовок новости</div>
-                        <p>Текст новости</p>
-                        <div class="blog-slider__button-wrapper">
-                            <a href="#" class="blog-slider__button">Читать далее</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                        <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                        <span class="blog-slider__date">Дата</span>
-                        <div class="blog-slider__title">Заголовок новости</div>
-                        <p>Текст новости</p>
-                        <div class="blog-slider__button-wrapper">
-                            <a href="#" class="blog-slider__button">Читать далее</a>
-                        </div>
-                    </div>
-                </div>
+
+                {% endif %}
+
                 <!-- Еще карточки -->
             </div>
             <div class="blog-slider__pagination"></div>
@@ -144,5 +139,65 @@
     </div>
 
 </section>
+
+
+<div class="location__title">
+    <span id="loc"></span>
+    <h1>Manzil</h1>
+    <span id="loc"></span>
+</div>
+  <section id="location">
+    <div class="maps__text">
+        <h1>
+            Manzil:
+        </h1>
+        <p>
+            Urganch shahar Xonqa ko'chasi 26 uy.
+        </p>
+    </div>
+    <div class="maps">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac1853db4b78d4e06c7e8dcf61524e6c9d2ac02d52bcef2fd51f26e1155da4ef8&amp;width=675&amp;height=510&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+  </section>
+<section id="contact">
+    <div class="contact__container">
+        <div class="contact__box">
+            <h1>RANCH</h1>
+            <p class="cont__tetx">
+                Urganch RANCH Texnologiya Universiteti
+            </p>
+            <p class="nomer">
+                <a href="tel:+998 99 218 00 60">+998 99 218 00 60</a>
+            </p>
+            <p class="cont__tetx malumot">
+                Malumot uchut telefon
+            </p>
+            <p class="pochta">
+                <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+            </p>
+            <p class="cont__tetx">
+              Malumot uchun email qutisi  
+            </p>
+        </div>
+        <div class="contact__box">
+            <h1>Menu</h1>
+            <a class="menu__a" href="#">Universitet</a>
+            <a class="menu__a" href="#">Faoliyat</a>
+            <a class="menu__a" href="#">Abiturient</a>
+            <a class="menu__a" href="#">Talabalar</a>
+            <a class="menu__a" href="#">Talim Resurslari</a>
+        </div>
+        <div class="contact__box__logo">
+            <h1>Tarmoklar</h1>
+            <div class="logog">
+            <a href="http://www.instagram.com/utu_ranch"><img src="/Image/logo/Instagram_icon-icons.com_66804.png" alt=""></a>
+            <a href="https://t.me/utu_ranch"><img src="/Image/logo/telegram_social_network_communication_chat_interaction_icon_192276.png" alt=""></a>
+            <a href="https://youtube.com/@uturanch"><img src="/Image/logo/youtube_logo_icon_168737.png" alt=""></a>
+            <a href="https://fb.com/uturanch"><img src="/Image/logo/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock content %}

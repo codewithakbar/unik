@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "translation_manager",
 
     "home",
+    "news",
 ]
 
 MIDDLEWARE = [
