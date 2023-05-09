@@ -2,16 +2,18 @@ from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from .models import Banner
+from .models import Banner, Category
 from news.models import Yangiliklar
 
 
 def index(request):
-    
+
     context = {
+        "categories": Category.objects.all().order_by("-id")[:6],
         "banner": Banner.objects.all().order_by("-id")[:5],
         "news": Yangiliklar.objects.all().order_by("-id")[:3],
     }
+    
     return render(request, "home/index.html", context)
 
 

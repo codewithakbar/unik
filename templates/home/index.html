@@ -22,8 +22,8 @@
     <div class="title">
         <span id="title"></span>
         <h1>
-            {% trans 'Ma’lumotlar' %}
-        </h1>
+            Ma’lumotlar
+        </h1>   
         <span id="title"></span>
     </div>
     <div class="cont">
@@ -33,58 +33,35 @@
                     <div class="img__box__shadow1"></div>
                 </div>
                 <div class="box__img__logo"><img src="./Image/part.png" alt=""></div>
-                <div class="box__image__text">
-                    <h1>KIRISH IMTIHONLARI</h1> <a href="#">Batavsil...</a>
-                </div>
+                <div class="box__image__text"><h1>KIRISH IMTIHONLARI</h1> <a href="#">Batavsil...</a></div>
             </div>
             <div class="box__cont">
                 <div class="box__image">
                     <div class="img__box__shadow2"> </div>
                 </div>
                 <div class="box__img__logo"><img src="/Image/universyti.png" alt=""></div>
-                <div class="box__image__text">
-                    <h1>DARS MASHG‘ULOTLARI</h1><a href="#">Batavsil...</a>
-                </div>
+                <div class="box__image__text"><h1>DARS MASHG‘ULOTLARI</h1><a href="#">Batavsil...</a></div>
             </div>
-            <div class="box__cont">
-                <div class="box__image">
-                    <div class="img__box__shadow3"></div>
-                </div>
-                <div class="box__img__logo"><img src="./Image/qogoz.png" alt=""></div>
-                <div class="box__image__text">
-                    <h1>MASOFAVIY TA‘LIM TIZIMI</h1><a href="#">Batavsil...</a>
-                </div>
+            <div class="box__cont">               <div class="box__image">
+                <div class="img__box__shadow3"></div>
             </div>
+            <div class="box__img__logo"><img src="./Image/qogoz.png" alt=""></div>
+            <div class="box__image__text"><h1>MASOFAVIY TA‘LIM TIZIMI</h1><a href="#">Batavsil...</a>
+        </div>
+    </div>
+</div>
+</div>
 </section>
-
 <section id="news">
     <div class="news__title">
         <span id="span__news"></span>
         <h1>SO'NGI YANGILIKLAR</h1>
         <span id="span__news"></span>
     </div>
-    <div class="blog-slider_wrapper">
+    <div class="blog-slider_wrapper">    
         <div class="blog-slider">
             <div class="blog-slider__wrp swiper-wrapper">
                 <!-- Карточка -->
-                {% if news %}
-                {% for new in news %}
-                <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                        <img src="{{ new.image.url }}" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                        <span class="blog-slider__date">{{new.created_at}}</span>
-                        <div class="blog-slider__title">{{new.title}}</div>
-                        <p>{{new.desc}}</p>
-                        <div class="blog-slider__button-wrapper">
-                            <a href="#" class="blog-slider__button">Читать далее</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                {% else %}
-
                 <div class="blog-slider__item swiper-slide">
                     <div class="blog-slider__img">
                         <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
@@ -97,68 +74,87 @@
                             <a href="#" class="blog-slider__button">Читать далее</a>
                         </div>
                     </div>
-                </div>
-
-                {% endif %}
-
+                </div>    
+                <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                        <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                        <span class="blog-slider__date">Дата</span>
+                        <div class="blog-slider__title">Заголовок новости</div>
+                        <p>Текст новости</p>
+                        <div class="blog-slider__button-wrapper">
+                            <a href="#" class="blog-slider__button">Читать далее</a>
+                        </div>
+                    </div>
+                </div>    
+                <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                        <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                        <span class="blog-slider__date">Дата</span>
+                        <div class="blog-slider__title">Заголовок новости</div>
+                        <p>Текст новости</p>
+                        <div class="blog-slider__button-wrapper">
+                            <a href="#" class="blog-slider__button">Читать далее</a>
+                        </div>
+                    </div>
+                </div>    
                 <!-- Еще карточки -->
             </div>
             <div class="blog-slider__pagination"></div>
         </div>
     </div>
 </section>
-
 <section id="counter-stats" class="wow fadeInRight" data-wow-duration="1.4s">
     <div class="container__schet">
-        <div class="row">
-
-            <div class="col-lg-3 stats">
-                <i class="fa fa-code" aria-hidden="true"></i>
-                <div class="counting" data-count="1200">0</div>
-                <h5>Talabalar</h5>
-            </div>
-
-            <div class="col-lg-3 stats">
-                <i class="fa fa-check" aria-hidden="true"></i>
-                <div class="counting" data-count="15">0</div>
-                <h5>Faqultetlar</h5>
-            </div>
-
-            <div class="col-lg-3 stats">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <div class="counting" data-count="75">0</div>
-                <h5>O'qituvchilar</h5>
-            </div>
-
-            <div class="col-lg-3 stats">
-                <i class="fa fa-coffee" aria-hidden="true"></i>
-                <div class="counting" data-count="1">0</div>
-                <h5>Hamqor</h5>
-            </div>
-        </div>
+    <div class="row">
+  
+    <div class="col-lg-3 stats">
+    <i class="fa fa-user" aria-hidden="true"></i>
+    <div class="counting" data-count="75">0</div>
+    <h5>O'qituvchilar</h5>
     </div>
-
-</section>
-
-
-<div class="location__title">
+  
+    <div class="col-lg-3 stats">
+    <i class="fa fa-list" aria-hidden="true"></i>
+    <div class="counting" data-count="15">0</div>
+    <h5>Faqultetlar</h5>
+    </div>
+  
+    <div class="col-lg-3 stats">
+    <i class="fa fa-user" aria-hidden="true"></i>
+    <div class="counting" data-count="1200">0</div>
+    <h5> Talabalar</h5>
+    </div>
+  
+    <div class="col-lg-3 stats">
+    <i class="fa fa-coffee" aria-hidden="true"></i>
+    <div class="counting" data-count="1">0</div>
+    <h5>Hamqor</h5>
+    </div>
+  </div>
+    </div>
+  </section>
+  <div class="location__title">
     <span id="loc"></span>
     <h1>Manzil</h1>
     <span id="loc"></span>
 </div>
-  <section id="location">
-    <div class="maps__text">
-        <h1>
-            Manzil:
-        </h1>
-        <p>
-            Urganch shahar Xonqa ko'chasi 26 uy.
-        </p>
-    </div>
-    <div class="maps">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac1853db4b78d4e06c7e8dcf61524e6c9d2ac02d52bcef2fd51f26e1155da4ef8&amp;width=675&amp;height=510&amp;lang=ru_RU&amp;scroll=true"></script>
-    </div>
-  </section>
+<section id="location">
+<div class="maps__text">
+    <h1>
+        Manzil:
+    </h1>
+    <p>
+        Urganch shahar Xonqa ko'chasi 26 uy.
+    </p>
+</div>
+<div class="maps">
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac1853db4b78d4e06c7e8dcf61524e6c9d2ac02d52bcef2fd51f26e1155da4ef8&amp;width=675&amp;height=510&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+</section>
 <section id="contact">
     <div class="contact__container">
         <div class="contact__box">
@@ -181,11 +177,11 @@
         </div>
         <div class="contact__box">
             <h1>Menu</h1>
-            <a class="menu__a" href="#">Universitet</a>
-            <a class="menu__a" href="#">Faoliyat</a>
-            <a class="menu__a" href="#">Abiturient</a>
-            <a class="menu__a" href="#">Talabalar</a>
-            <a class="menu__a" href="#">Talim Resurslari</a>
+            <a class="menu__a" href="/html/menu.html">Universitet</a>
+            <a class="menu__a" href="/html/menu2.html">Faoliyat</a>
+            <a class="menu__a" href="/html/menu3.html">Abiturient</a>
+            <a class="menu__a" href="/html/menu4.html">Talabalar</a>
+            <a class="menu__a" href="/html/menu5.html">Talim Resurslari</a>
         </div>
         <div class="contact__box__logo">
             <h1>Tarmoklar</h1>

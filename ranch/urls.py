@@ -26,7 +26,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("home.urls", namespace="home")),
     path('translation/', include('translation_manager.urls')),
-
 ]
 
 

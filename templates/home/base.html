@@ -1,100 +1,87 @@
 <!DOCTYPE html>
-{% load static i18n %}
-{% get_available_languages as LANGUAGES %}
-
+{% load static %}
 <html lang="en">
-
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-   <link rel="stylesheet" href="{% static 'style.css' %}">
-   <link rel="stylesheet" href="{% static 'abiturent.css' %}">
-   <link rel="stylesheet" href="{% static 'faoliyat.css' %}">
-   <link rel="stylesheet" href="{% static 'resurslar.css' %}">
-   <link rel="stylesheet" href="{% static 'talabalar.css' %}">
-   <link rel="stylesheet" href="{% static 'univer.css' %}">
-
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-   <title>Document</title>
-
-   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <title>Document</title>
+    
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <body>
 
    <div class="wrapper">
       <div class="container">
-         <div class="box__contact">
-            <div class="contact__logo">
-               <img src="{% static 'Image/Vector.png' %}" alt="contact">
-            </div>
-            <div class="contact__number">
-               <p class="contact__p">
-                  +998 99 218 00 60 <br>
-                  +998 99 218 00 60
-               </p>
-            </div>
-         </div>
-         <span id="span1"></span>
-         <div class="box__mail">
-            <div class="mail__icon">
-               <img src="{% static 'Image/icon.png' %}" alt="mail">
-            </div>
-            <div class="mail__info">
-               <p class="mail__p">
-                  ranchurgench@gmail.com
-               </p>
-            </div>
-         </div>
+          <div class="box__contact">
+              <div class="contact__logo">
+                  <img src="{% static 'Image/Vector.png' %}" alt="contact">
+              </div>
+              <div class="contact__number">
+                  <p class="contact__p">
+                      <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
+                  </p>
+              </div>
+          </div>
+          <span id="span1"></span>
+          <div class="box__mail">
+              <div class="mail__icon">
+                  <img src="{% static 'Image/icon.png' %}" alt="mail">
+              </div>
+              <div class="mail__info">
+                  <p class="mail__p">
+                      <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+                  </p>
+              </div>
+          </div>
       </div>
-      
       <div class="language">
-         <div class="uzb__image">
-            
-            <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
-         </div>
-         <span id="span2"></span>
-         <div class="eng__image">
-            <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
-         </div>
+          <div class="uzb__image">
+              <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
+          </div>
+          <span id="span2"></span>
+          <div class="eng__image">
+              <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
+          </div>
       </div>
-   </div>
-   <header class="header" id="header">
+  </div>
+  <header class="header" id="header">
       <div class="box__container">
-         <div class="hedaer__image">
-            <a class="img__white" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
-            <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a>
-         </div>
-         <nav class="navbar">
-            <ul>
-               <li class="li__box"><a href="#">Universitet</a></li>
-               <li class="li__box"><a href="#">Faoliyat</a></li>
-               <li class="li__box"><a href="#">Abiturient</a></li>
-               <li class="li__box"><a href="#">Talabalar</a></li>
-               <li><a href="#">Talim Resurslari</a></li>
-            </ul>
-         </nav>
+      <div class="hedaer__image">
+          <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
+         <a class="img__orange" href="#"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
       </div>
-   </header>
-
-   <header id="humburger">
+      <nav class="navbar">
+          <ul>
+              <li class="li__box"><a href="/html/menu.html">Universitet</a></li>
+              <li class="li__box"><a href="/html/menu2.html">Faoliyat</a></li>
+              <li class="li__box"><a href="/html/menu3.html">Abiturient</a></li>
+              <li class="li__box"><a href="/html/menu4.html">Talabalar</a></li>
+              <li><a href="/html/menu5.html">Talim Resurslari</a></li>
+          </ul>
+      </nav>
+  </div>
+  </header>
+  <header id="humburger">
       <div class="hamburger-menu">
           <input id="menu__toggle" type="checkbox" />
           <label class="menu__btn" for="menu__toggle">
             <span></span>
           </label>
-          <div class="btn__leb"><img src="/Image/img__malumot/Ranch 4.png" alt=""></div>
+          <div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div>
           <ul class="menu__box">
-            <li><a class="menu__item" href="#">Universitet</a></li>
+            <li><a class="menu__item" href="/html/menu.html">Universitet</a></li>
             <li><a class="menu__item" href="/html/menu2.html">Faoliyat</a></li>
             <li><a class="menu__item" href="/html/menu3.html">Abiturient</a></li>
             <li><a class="menu__item" href="/html/menu4.html">Talabalar</a></li>
@@ -110,67 +97,64 @@
 
 
    <script>
-      window.addEventListener('scroll', function () {
-         //console.log(window.scrollY);
-         let headerNav = document.getElementById('header');
-         headerNav.classList.toggle('header-scroll', window.scrollY > 70);
+      window.addEventListener('scroll', function(){
+          //console.log(window.scrollY);
+          let headerNav = document.getElementById('header');
+          headerNav.classList.toggle('header-scroll', window.scrollY > 70);
       })
-
-      var swiper = new Swiper(".mySwiper", {
-         slidesPerView: 1,
-         spaceBetween: 30,
-         effect: "fade",
-         loop: true,
-         autoplay: {
+  
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          effect: "fade",
+          loop: true,
+          autoplay: {
             delay: 2500,
             disableOnInteraction: false,
-         },
-         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-         },
-         pagination: {
+          },
+         
+          pagination: {
             el: ".swiper-pagination",
             clickable: true,
-         },
-      });
+          },
+        });
       var swiper = new Swiper('.blog-slider', {
-         effect: 'fade',
-         loop: true,
-         mousewheel: {
-            invert: true,
-         },
-         autoHeight: false,
-         pagination: {
-            el: '.blog-slider__pagination',
-            clickable: true,
-         }
-      });
-      $('.counting').each(function () {
-         var $this = $(this),
-            countTo = $this.attr('data-count');
-
-         $({ countNum: $this.text() }).animate({
-            countNum: countTo
-         },
-
-            {
-
-               duration: 3000,
-               easing: 'linear',
-               step: function () {
-                  $this.text(Math.floor(this.countNum));
-               },
-               complete: function () {
-                  $this.text(this.countNum);
-                  //alert('finished');
-               }
-
-            });
-
-      });
-
-   </script>
+          effect: 'fade',
+          loop: true,
+          mousewheel: {
+          invert: true,
+      },
+          autoHeight: false,
+          pagination: {
+          el: '.blog-slider__pagination',
+          clickable: true,
+      }
+  });
+  $('.counting').each(function() {
+    var $this = $(this),
+    countTo = $this.attr('data-count');
+     
+    $({ countNum: $this.text()}).animate({
+    countNum: countTo
+    },
+  
+    {
+  
+    duration: 3000,
+    easing:'linear',
+    step: function() {
+    $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+    $this.text(this.countNum);
+    //alert('finished');
+    }
+  
+    });  
+  
+  });
+  
+  </script>
 
 </body>
 
