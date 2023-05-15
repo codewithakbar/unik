@@ -4,7 +4,7 @@ from . import views
 app_name = 'news'
 
 urlpatterns = [
-    path("", views.index, name="yangiliklar"),
-    path(r'set-language/', views.set_language, name='set_language'),
+    path("", views.news_view, name="yangiliklar"),
+    # path(r'set-language/', views.set_language, name='set_language'),
 
 ]

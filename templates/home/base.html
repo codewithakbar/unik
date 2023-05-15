@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'news.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,70 +92,15 @@
   </header>
 
 
-   {% block content %}
+    {% block content %}
+
+    {% endblock content %}
+
    
-   {% endblock content %}
+    {% block script %}
 
+    {% endblock script %}
 
-   <script>
-      window.addEventListener('scroll', function(){
-          //console.log(window.scrollY);
-          let headerNav = document.getElementById('header');
-          headerNav.classList.toggle('header-scroll', window.scrollY > 70);
-      })
-  
-        var swiper = new Swiper(".mySwiper", {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          effect: "fade",
-          loop: true,
-          autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-          },
-         
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        });
-      var swiper = new Swiper('.blog-slider', {
-          effect: 'fade',
-          loop: true,
-          mousewheel: {
-          invert: true,
-      },
-          autoHeight: false,
-          pagination: {
-          el: '.blog-slider__pagination',
-          clickable: true,
-      }
-  });
-  $('.counting').each(function() {
-    var $this = $(this),
-    countTo = $this.attr('data-count');
-     
-    $({ countNum: $this.text()}).animate({
-    countNum: countTo
-    },
-  
-    {
-  
-    duration: 3000,
-    easing:'linear',
-    step: function() {
-    $this.text(Math.floor(this.countNum));
-    },
-    complete: function() {
-    $this.text(this.countNum);
-    //alert('finished');
-    }
-  
-    });  
-  
-  });
-  
-  </script>
 
 </body>
 

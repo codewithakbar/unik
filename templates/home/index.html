@@ -33,20 +33,20 @@
                     <div class="img__box__shadow1"></div>
                 </div>
                 <div class="box__img__logo"><img src="./Image/part.png" alt=""></div>
-                <div class="box__image__text"><h1>KIRISH IMTIHONLARI</h1> <a href="#">Batavsil...</a></div>
+                <div class="box__image__text"><h1>KIRISH IMTIHONLARI</h1> <a href="/html/batavsil/batavsil.html">Batavsil...</a></div>
             </div>
             <div class="box__cont">
                 <div class="box__image">
                     <div class="img__box__shadow2"> </div>
                 </div>
                 <div class="box__img__logo"><img src="/Image/universyti.png" alt=""></div>
-                <div class="box__image__text"><h1>DARS MASHG‘ULOTLARI</h1><a href="#">Batavsil...</a></div>
+                <div class="box__image__text"><h1>DARS MASHG‘ULOTLARI</h1><a href="/html/batavsil/batavsil.html">Batavsil...</a></div>
             </div>
             <div class="box__cont">               <div class="box__image">
                 <div class="img__box__shadow3"></div>
             </div>
             <div class="box__img__logo"><img src="./Image/qogoz.png" alt=""></div>
-            <div class="box__image__text"><h1>MASOFAVIY TA‘LIM TIZIMI</h1><a href="#">Batavsil...</a>
+            <div class="box__image__text"><h1>MASOFAVIY TA‘LIM TIZIMI</h1><a href="/html/batavsil/batavsil.html">Batavsil...</a>
         </div>
     </div>
 </div>
@@ -71,36 +71,11 @@
                         <div class="blog-slider__title">Заголовок новости</div>
                         <p>Текст новости</p>
                         <div class="blog-slider__button-wrapper">
-                            <a href="#" class="blog-slider__button">Читать далее</a>
+                            <a href="{% url 'news:yangiliklar' %}" class="blog-slider__button">Читать далее</a>
                         </div>
                     </div>
                 </div>    
-                <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                        <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                        <span class="blog-slider__date">Дата</span>
-                        <div class="blog-slider__title">Заголовок новости</div>
-                        <p>Текст новости</p>
-                        <div class="blog-slider__button-wrapper">
-                            <a href="#" class="blog-slider__button">Читать далее</a>
-                        </div>
-                    </div>
-                </div>    
-                <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                        <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                        <span class="blog-slider__date">Дата</span>
-                        <div class="blog-slider__title">Заголовок новости</div>
-                        <p>Текст новости</p>
-                        <div class="blog-slider__button-wrapper">
-                            <a href="#" class="blog-slider__button">Читать далее</a>
-                        </div>
-                    </div>
-                </div>    
+                
                 <!-- Еще карточки -->
             </div>
             <div class="blog-slider__pagination"></div>
@@ -142,19 +117,19 @@
     <h1>Manzil</h1>
     <span id="loc"></span>
 </div>
-<section id="location">
-<div class="maps__text">
-    <h1>
-        Manzil:
-    </h1>
-    <p>
-        Urganch shahar Xonqa ko'chasi 26 uy.
-    </p>
-</div>
-<div class="maps">
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac1853db4b78d4e06c7e8dcf61524e6c9d2ac02d52bcef2fd51f26e1155da4ef8&amp;width=675&amp;height=510&amp;lang=ru_RU&amp;scroll=true"></script>
-</div>
-</section>
+  <section id="location">
+    <div class="maps__text">
+        <h1>
+            Manzil:
+        </h1>
+        <p>
+            Urganch shahar Xonqa ko'chasi 26 uy.
+        </p>
+    </div>
+    <div class="maps">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac1853db4b78d4e06c7e8dcf61524e6c9d2ac02d52bcef2fd51f26e1155da4ef8&amp;width=675&amp;height=510&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+  </section>
 <section id="contact">
     <div class="contact__container">
         <div class="contact__box">
@@ -195,5 +170,67 @@
     </div>
 </section>
 
+{% block script %}
+
+<script>
+    window.addEventListener('scroll', function(){
+        //console.log(window.scrollY);
+        let headerNav = document.getElementById('header');
+        headerNav.classList.toggle('header-scroll', window.scrollY > 70);
+    })
+
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+       
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    var swiper = new Swiper('.blog-slider', {
+        effect: 'fade',
+        loop: true,
+        mousewheel: {
+        invert: true,
+    },
+        autoHeight: false,
+        pagination: {
+        el: '.blog-slider__pagination',
+        clickable: true,
+    }
+});
+$('.counting').each(function() {
+  var $this = $(this),
+  countTo = $this.attr('data-count');
+   
+  $({ countNum: $this.text()}).animate({
+  countNum: countTo
+  },
+
+  {
+
+  duration: 3000,
+  easing:'linear',
+  step: function() {
+  $this.text(Math.floor(this.countNum));
+  },
+  complete: function() {
+  $this.text(this.countNum);
+  //alert('finished');
+  }
+
+  });  
+
+});
+</script>
+
+{% endblock script %}
 
 {% endblock content %}

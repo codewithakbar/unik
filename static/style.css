@@ -1252,3 +1252,14 @@
         margin-bottom: 100vh;
     }
   }
+
+  @media (height:653px) {
+    #news {
+        margin-top: 170vh;
+        margin-bottom: 20vh;
+    }
+    .news__title h1 {
+        font-size: 13px;
+    }
+  }
+
