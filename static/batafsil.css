@@ -354,6 +354,7 @@
         top: 8px;
       }
       .menu__box {
+        z-index: 1;
         overflow: hidden;
         display: block;
         position: fixed;
@@ -613,6 +614,7 @@
     background-color: #FF8B36;
 }
 .cancel{
+ 
     width: 1em;
     height: 1em;
     display: flex;
@@ -626,6 +628,7 @@
 }
 
 .cancel a {
+    
     text-decoration: none;
     color: #fff;
     text-align: center;

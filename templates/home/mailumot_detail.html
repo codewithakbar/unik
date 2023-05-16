@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'batafsil.css' %}">
     {% comment %} <link rel="stylesheet" href="{% static 'batafsil.css' %}"> {% endcomment %}
     {% block static %}{% endblock static %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
@@ -67,17 +67,11 @@
     </div>
     <nav class="navbar">
         <ul>
-            {% if categories %}
-            {% for cat in categories %}
-                <li class="li__box"><a href="{% url 'home:category' cat.id %}">{{cat.name}}</a></li>
-            {% endfor %}
-            {% else %}
+            <li class="li__box"><a href="/html/menu.html">Universitet</a></li>
             <li class="li__box"><a href="/html/menu2.html">Faoliyat</a></li>
             <li class="li__box"><a href="/html/menu3.html">Abiturient</a></li>
             <li class="li__box"><a href="/html/menu4.html">Talabalar</a></li>
             <li><a href="/html/menu5.html">Talim Resurslari</a></li>
-
-            {% endif %}
         </ul>
     </nav>
 </div>
@@ -100,70 +94,86 @@
 </header>
 
 
-    {% block content %}
+<div class="wrapper">
+   <div class="container">
+       <div class="box__contact">
+           <div class="contact__logo">
+               <a href="{% url 'home:homepage' %}"><img src="{% static 'Image/Vector.png' %}" alt="contact"></a>
+           </div>
+           <div class="contact__number">
+               <p class="contact__p">
+                   <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
+               </p>
+           </div>
+       </div>
+       <span id="span1"></span>
+       <div class="box__mail">
+           <div class="mail__icon">
+               <img src="{% static 'Image/icon.png' %}" alt="mail">
+           </div>
+           <div class="mail__info">
+               <p class="mail__p">
+                   <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+               </p>
+           </div>
+       </div>
+   </div>
+   <div class="language">
+       <div class="uzb__image">
+           <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
+       </div>
+       <span id="span2"></span>
+       <div class="eng__image">
+           <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
+       </div>
+   </div>
+</div>
+<section id="home">
 
-    {% endblock content %}
 
-   
-    <script>
-        window.addEventListener('scroll', function(){
-            //console.log(window.scrollY);
-            let headerNav = document.getElementById('header');
-            headerNav.classList.toggle('header-scroll', window.scrollY > 70);
-        })
-    
-          var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            effect: "fade",
-            loop: true,
-            autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-            },
-           
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-          });
-        var swiper = new Swiper('.blog-slider', {
-            effect: 'fade',
-            loop: true,
-            mousewheel: {
-            invert: true,
-        },
-            autoHeight: false,
-            pagination: {
-            el: '.blog-slider__pagination',
-            clickable: true,
-        }
-    });
-    $('.counting').each(function() {
-      var $this = $(this),
-      countTo = $this.attr('data-count');
-       
-      $({ countNum: $this.text()}).animate({
-      countNum: countTo
-      },
-    
-      {
-    
-      duration: 3000,
-      easing:'linear',
-      step: function() {
-      $this.text(Math.floor(this.countNum));
-      },
-      complete: function() {
-      $this.text(this.countNum);
-      //alert('finished');
-      }
-    
-      });  
-    
-    });
-    </script>
+   <div class="container__news">
+       <aside id="side" class="sidebar">
 
+           <div class="wrapper__menu">
+               <div class="hedaer__title">
+                   <h1>
+                       Yangiliklar
+                   </h1>
+               </div>
+                   <nav class="nacbar__nav">
+                       <ul>
+                           <li><a class="unik__haq" href="#">KIRISH IMTIHONLARI</a></li>
+                           <li><a class="menu__a" href="#">DARS MASHG‘ULOTLARI</a></li>
+                           <li><a class="menu__a" href="#">MASOFAVIY TA‘LIM TIZIMI</a></li>
+                       </ul>
+                   </nav>
+           </div>
+
+       </aside>
+
+   <div id="content">
+       <div class="content__header">
+           <div class="cont__img">
+               <img src="{{ malumotlar.image.url }}" alt="">
+           </div>
+           <div class="cont__text">
+               <h1>
+                   {{malumotlar.title}}
+               </h1>
+               <p>
+                   2022-2023-o'quv yilida RANCH texnologiya universitetiga kirish imtihonlari suhbat asosida bo'lib o'tadi
+               </p>
+ 
+           </div>
+           <div class="btn__blck">
+               <div class="cancel">
+                   <a href="/index.html"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                </div>
+               </div>
+       </div>
+   </div>
+</div>
+</section>
 
 </body>
 

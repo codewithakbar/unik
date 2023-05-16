@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'malumot.css' %}">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <title>Universitet hakida</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="box__contact">
+                <div class="contact__logo">
+                    <img src="{% static 'Image/Vector.png' %}" alt="contact">
+                </div>
+                <div class="contact__number">
+                    <p class="contact__p">
+                        <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
+                    </p>
+                </div>
+            </div>
+            <span id="span1"></span>
+            <div class="box__mail">
+                <div class="mail__icon">
+                    <img src="{% static 'Image/icon.png' %}" alt="mail">
+                </div>
+                <div class="mail__info">
+                    <p class="mail__p">
+                        <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="language">
+            <div class="uzb__image">
+                <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
+            </div>
+            <span id="span2"></span>
+            <div class="eng__image">
+                <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
+            </div>
+        </div>
+    </div>
+    <header class="header" id="header">
+      <div class="box__container">
+      <div class="hedaer__image">
+          <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
+         <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
+      </div>
+      <nav class="navbar">
+          <ul>
+              {% if categories %}
+              {% for cat in categories %}
+                  <li class="li__box"><a href="{% url 'home:category' cat.id %}">{{cat.name}}</a></li>
+              {% endfor %}
+              {% else %}
+              <li class="li__box"><a href="/html/menu2.html">Faoliyat</a></li>
+              <li class="li__box"><a href="/html/menu3.html">Abiturient</a></li>
+              <li class="li__box"><a href="/html/menu4.html">Talabalar</a></li>
+              <li><a href="/html/menu5.html">Talim Resurslari</a></li>
+  
+              {% endif %}
+          </ul>
+      </nav>
+  </div>
+  </header>
+    <header id="humburger">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+            <div class="btn__leb"><img src="/Image/img__malumot/Ranch 4.png" alt=""></div>
+            <ul class="menu__box">
+              <li><a class="menu__item" href="#">Universitet</a></li>
+              <li><a class="menu__item" href="/html/menu2.html">Faoliyat</a></li>
+              <li><a class="menu__item" href="/html/menu3.html">Abiturient</a></li>
+              <li><a class="menu__item" href="/html/menu4.html">Talabalar</a></li>
+              <li><a class="menu__item" href="/html/menu5.html">Talim Resurslari</a></li>
+            </ul>
+          </div>
+    </header>
+
+    <section id="home">
+            <aside id="side" class="sidebar">
+                <div class="wrapper__menu">
+                    <div class="hedaer__title">
+                     {% if cat %}
+                        <h1>
+                           {{cat.name}} 
+                        </h1>
+                     
+                     {% else %}
+                     <h1>
+                        Universitet 
+                     </h1>
+                     {% endif %}
+                    </div>
+                        <nav class="nacbar__nav">
+                            <ul>
+                               {% for cat in category %}
+                               {% for chill in cat.children.all %}
+                                    <li><a class="menu__a" href="">{{chill.name}}</a></li>
+                                    {% endfor %}
+                                      {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
+                                      <li><a class="menu__a" href="">defoilt</a></li>
+                                      <li><a class="menu__a" href="">defoilt</a></li>
+                                      <li><a class="menu__a" href="">defoilt</a></li>
+                                      <li><a class="menu__a" href="">defoilt</a></li>
+                                      <li><a class="menu__a" href="">defoilt</a></li> {% endcomment %}
+                              {% endfor %}
+                            </ul>
+                        </nav>
+                </div>
+            </aside>
+        <div class="header__contant">
+                <div class="header__cont__title"> 
+        <span id="spn"></span>
+            <h1>
+            {{cat.name}} haqida
+        </h1>
+        <span id="spn"></span>
+        <p>
+
+        </p>
+            </div>
+        </div>
+
+    </section>
+    <div class="btn__cncl">
+    <div class="cancel">
+        <a href="/html/menu.html"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+     </div>
+    </div>
+    <section id="contact" class="contact">
+        <div class="contact__container">
+            <div class="contact__box">
+                <h1>RANCH</h1>
+                <p class="cont__tetx">
+                    Urganch RANCH Texnologiya Universiteti
+                </p>
+                <p class="nomer">
+                    <a href="tel:+998 99 218 00 60">+998 99 218 00 60</a>
+                </p>
+                <p class="cont__tetx malumot">
+                    Malumot uchut telefon
+                </p>
+                <p class="pochta">
+                    <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+                </p>
+                <p class="cont__tetx">
+                  Malumot uchun email qutisi  
+                </p>
+            </div>
+            <div class="contact__box">
+                <h1>Menu</h1>
+                <a class="menu__a" href="#">Universitet</a>
+                <a class="menu__a" href="/html/menu2.html">Faoliyat</a>
+                <a class="menu__a" href="/html/menu3.html">Abiturient</a>
+                <a class="menu__a" href="/html/menu4.html">Talabalar</a>
+                <a class="menu__a" href="/html/menu5.html">Talim Resurslari</a>
+            </div>
+            <div class="contact__box__logo">
+                <h1>Tarmoklar</h1>
+                <div class="logog">
+                <a href="http://www.instagram.com/utu_ranch"><img src="/Image/logo/Instagram_icon-icons.com_66804.png" alt=""></a>
+                <a href="https://t.me/utu_ranch"><img src="/Image/logo/telegram_social_network_communication_chat_interaction_icon_192276.png" alt=""></a>
+                <a href="https://youtube.com/@uturanch"><img src="/Image/logo/youtube_logo_icon_168737.png" alt=""></a>
+                <a href="https://fb.com/uturanch"><img src="/Image/logo/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+</body>
+</html>

@@ -1,21 +1,22 @@
 {% extends 'home/base.html' %}
-{% load static i18n %}
+{% load static %}
 
 {% block content %}
+
 <!---->
 <section id="home">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            {% for img in banner %}
-                <div class="swiper-slide">
-                    <img src="{{img.image.url}}" />
-                </div>
-            {% endfor %}
-        </div>
-        <div class="swiper-pagination"></div>
+        {% if banner %}
+        {% for ban in banner %}
+          <div class="swiper-slide"><img src="{{ban.image.url}}" /></div>
+        {% endfor %}
+        {% else %}
+            <div class="swiper-slide"><img src="{% static 'Image/1_5 - Photo 1.jpg' %}" /></div>
+        {% endif %}
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
 </section>
 
 <section id="about">
@@ -28,25 +29,38 @@
     </div>
     <div class="cont">
         <div class="box">
+            {% if malumotlar %}
+            {% for mal in malumotlar %}
+                <div class="box__cont">
+                    <div class="box__image">
+                        <div class="img__box__shadow1"></div>
+                    </div>
+                    <div class="box__img__logo"><img src="{% static 'Image/part.png' %}" alt=""></div>
+                    <div class="box__image__text"><h1>{{mal.title}}</h1> <a href="{% url 'home:malumot' mal.id %}">Batavsil...</a></div>
+                </div>
+            {% endfor %}
+            {% else %}  
             <div class="box__cont">
                 <div class="box__image">
                     <div class="img__box__shadow1"></div>
                 </div>
-                <div class="box__img__logo"><img src="./Image/part.png" alt=""></div>
-                <div class="box__image__text"><h1>KIRISH IMTIHONLARI</h1> <a href="/html/batavsil/batavsil.html">Batavsil...</a></div>
+                <div class="box__img__logo"><img src="{% static 'Image/part.png' %}" alt=""></div>
+                <div class="box__image__text"><h1>Default</h1> <a href="/html/batavsil/batavsil.html">Batavsil...</a></div>
             </div>
             <div class="box__cont">
                 <div class="box__image">
                     <div class="img__box__shadow2"> </div>
                 </div>
-                <div class="box__img__logo"><img src="/Image/universyti.png" alt=""></div>
-                <div class="box__image__text"><h1>DARS MASHG‘ULOTLARI</h1><a href="/html/batavsil/batavsil.html">Batavsil...</a></div>
+                <div class="box__img__logo"><img src="{% static 'Image/universyti.png' %}" alt=""></div>
+                <div class="box__image__text"><h1>Default</h1><a href="/html/batavsil/batavsil.html">Batavsil...</a></div>
             </div>
-            <div class="box__cont">               <div class="box__image">
+            <div class="box__cont">
+                <div class="box__image">
                 <div class="img__box__shadow3"></div>
             </div>
-            <div class="box__img__logo"><img src="./Image/qogoz.png" alt=""></div>
-            <div class="box__image__text"><h1>MASOFAVIY TA‘LIM TIZIMI</h1><a href="/html/batavsil/batavsil.html">Batavsil...</a>
+            <div class="box__img__logo"><img src="{% static 'Image/qogoz.png' %}" alt=""></div>
+            <div class="box__image__text"><h1>Default</h1><a href="/html/batavsil/batavsil.html">Batavsil...</a>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -62,6 +76,34 @@
         <div class="blog-slider">
             <div class="blog-slider__wrp swiper-wrapper">
                 <!-- Карточка -->
+                {% for new in news %}
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="{{new.image.url}}" alt="">
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__date">{{new.created_at}}</span>
+                            <div class="blog-slider__title">{{new.title|truncatewords:8}}</div>
+                            <p>{{new.desc | safe | truncatewords:9 }}</p>
+                            <div class="blog-slider__button-wraper">
+                                <a href="{% url 'news:news' %}" class="blog-slider__button">Читать далее</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% comment %} <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                        <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                        <span class="blog-slider__date">Дата</span>
+                        <div class="blog-slider__title">Заголовок новости</div>
+                        <p>Текст новости</p>
+                        <div class="blog-slider__button-wrapper">
+                            <a href="/html/news/news.html" class="blog-slider__button">Читать далее</a>
+                        </div>
+                    </div>
+                </div>    
                 <div class="blog-slider__item swiper-slide">
                     <div class="blog-slider__img">
                         <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
@@ -71,11 +113,10 @@
                         <div class="blog-slider__title">Заголовок новости</div>
                         <p>Текст новости</p>
                         <div class="blog-slider__button-wrapper">
-                            <a href="{% url 'news:yangiliklar' %}" class="blog-slider__button">Читать далее</a>
+                            <a href="/html/news/news.html" class="blog-slider__button">Читать далее</a>
                         </div>
                     </div>
-                </div>    
-                
+                </div>     {% endcomment %}
                 <!-- Еще карточки -->
             </div>
             <div class="blog-slider__pagination"></div>
@@ -170,67 +211,6 @@
     </div>
 </section>
 
-{% block script %}
-
-<script>
-    window.addEventListener('scroll', function(){
-        //console.log(window.scrollY);
-        let headerNav = document.getElementById('header');
-        headerNav.classList.toggle('header-scroll', window.scrollY > 70);
-    })
-
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        effect: "fade",
-        loop: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-       
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    var swiper = new Swiper('.blog-slider', {
-        effect: 'fade',
-        loop: true,
-        mousewheel: {
-        invert: true,
-    },
-        autoHeight: false,
-        pagination: {
-        el: '.blog-slider__pagination',
-        clickable: true,
-    }
-});
-$('.counting').each(function() {
-  var $this = $(this),
-  countTo = $this.attr('data-count');
-   
-  $({ countNum: $this.text()}).animate({
-  countNum: countTo
-  },
-
-  {
-
-  duration: 3000,
-  easing:'linear',
-  step: function() {
-  $this.text(Math.floor(this.countNum));
-  },
-  complete: function() {
-  $this.text(this.countNum);
-  //alert('finished');
-  }
-
-  });  
-
-});
-</script>
-
-{% endblock script %}
 
 {% endblock content %}
+

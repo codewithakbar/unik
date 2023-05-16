@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+from ckeditor.fields import RichTextField
 
 
 class Banner(models.Model):
@@ -13,6 +13,8 @@ class Banner(models.Model):
     
 class Category(models.Model):
     name = models.CharField(max_length=211, blank=True)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='children')
+    slug = models.SlugField(null=False, unique=True)
 
     # class Meta:
     #     related_name = "Kategoriya"
@@ -20,4 +22,16 @@ class Category(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Malumotlar(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=224, blank=True)
+    desc = RichTextField()
+
+    image = models.ImageField(upload_to="mailumotlar/%Y/%m/%d", height_field=None, width_field=None, max_length=None)
+
+    def __str__(self) -> str:
+        return self.title
+    
 
