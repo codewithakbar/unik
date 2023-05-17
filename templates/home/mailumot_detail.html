@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'batafsil.css' %}">
     {% comment %} <link rel="stylesheet" href="{% static 'batafsil.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'batafsil.css' %}"> {% endcomment %}
     {% block static %}{% endblock static %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,109 +26,80 @@
 </head>
 <body>
 
-<div class="wrapper">
-    <div class="container">
-        <div class="box__contact">
-            <div class="contact__logo">
-                <a href="{% url 'home:homepage' %}"><img src="{% static 'Image/Vector.png' %}" alt="contact"></a>
-            </div>
-            <div class="contact__number">
-                <p class="contact__p">
-                    <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
-                </p>
-            </div>
-        </div>
-        <span id="span1"></span>
-        <div class="box__mail">
-            <div class="mail__icon">
-                <img src="{% static 'Image/icon.png' %}" alt="mail">
-            </div>
-            <div class="mail__info">
-                <p class="mail__p">
-                    <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="language">
-        <div class="uzb__image">
-            <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
-        </div>
-        <span id="span2"></span>
-        <div class="eng__image">
-            <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
-        </div>
-    </div>
-</div>
-<header class="header" id="header">
-    <div class="box__container">
-    <div class="hedaer__image">
-        <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
-       <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
-    </div>
-    <nav class="navbar">
-        <ul>
-            <li class="li__box"><a href="/html/menu.html">Universitet</a></li>
-            <li class="li__box"><a href="/html/menu2.html">Faoliyat</a></li>
-            <li class="li__box"><a href="/html/menu3.html">Abiturient</a></li>
-            <li class="li__box"><a href="/html/menu4.html">Talabalar</a></li>
-            <li><a href="/html/menu5.html">Talim Resurslari</a></li>
-        </ul>
-    </nav>
-</div>
-</header>
-<header id="humburger">
-    <div class="hamburger-menu">
-        <input id="menu__toggle" type="checkbox" />
-        <label class="menu__btn" for="menu__toggle">
-          <span></span>
-        </label>
-        <div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div>
-        <ul class="menu__box">
-          <li><a class="menu__item" href="/html/menu.html">Universitet</a></li>
-          <li><a class="menu__item" href="/html/menu2.html">Faoliyat</a></li>
-          <li><a class="menu__item" href="/html/menu3.html">Abiturient</a></li>
-          <li><a class="menu__item" href="/html/menu4.html">Talabalar</a></li>
-          <li><a class="menu__item" href="/html/menu5.html">Talim Resurslari</a></li>
-        </ul>
-      </div>
-</header>
 
-
-<div class="wrapper">
-   <div class="container">
-       <div class="box__contact">
-           <div class="contact__logo">
-               <a href="{% url 'home:homepage' %}"><img src="{% static 'Image/Vector.png' %}" alt="contact"></a>
-           </div>
-           <div class="contact__number">
-               <p class="contact__p">
-                   <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
-               </p>
-           </div>
-       </div>
-       <span id="span1"></span>
-       <div class="box__mail">
-           <div class="mail__icon">
-               <img src="{% static 'Image/icon.png' %}" alt="mail">
-           </div>
-           <div class="mail__info">
-               <p class="mail__p">
-                   <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
-               </p>
-           </div>
-       </div>
-   </div>
-   <div class="language">
-       <div class="uzb__image">
-           <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
-       </div>
-       <span id="span2"></span>
-       <div class="eng__image">
-           <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
-       </div>
-   </div>
-</div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="box__contact">
+                <div class="contact__logo">
+                    <a href="{% url 'home:homepage' %}"><img src="{% static 'Image/Vector.png' %}" alt="contact"></a>
+                </div>
+                <div class="contact__number">
+                    <p class="contact__p">
+                        <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
+                    </p>
+                </div>
+            </div>
+            <span id="span1"></span>
+            <div class="box__mail">
+                <div class="mail__icon">
+                    <img src="{% static 'Image/icon.png' %}" alt="mail">
+                </div>
+                <div class="mail__info">
+                    <p class="mail__p">
+                        <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="language">
+            <div class="uzb__image">
+                <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
+            </div>
+            <span id="span2"></span>
+            <div class="eng__image">
+                <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
+            </div>
+        </div>
+    </div>
+    <header class="header" id="header">
+        <div class="box__container">
+        <div class="hedaer__image">
+            <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
+           <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
+        </div>
+        <nav class="navbar">
+            <ul>
+                {% if categories %}
+                {% for cat in categories %}
+                    <li class="li__box"><a href="{% url 'home:category' cat.id %}">{{cat.name}}</a></li>
+                {% endfor %}
+                {% else %}
+                <li class="li__box"><a href="/html/menu2.html">Faoliyat</a></li>
+                <li class="li__box"><a href="/html/menu3.html">Abiturient</a></li>
+                <li class="li__box"><a href="/html/menu4.html">Talabalar</a></li>
+                <li><a href="/html/menu5.html">Talim Resurslari</a></li>
+    
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <header id="humburger">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+            <div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div>
+            <ul class="menu__box">
+              <li><a class="menu__item" href="/html/menu.html">Universitet</a></li>
+              <li><a class="menu__item" href="/html/menu2.html">Faoliyat</a></li>
+              <li><a class="menu__item" href="/html/menu3.html">Abiturient</a></li>
+              <li><a class="menu__item" href="/html/menu4.html">Talabalar</a></li>
+              <li><a class="menu__item" href="/html/menu5.html">Talim Resurslari</a></li>
+            </ul>
+          </div>
+    </header>
 <section id="home">
 
 
