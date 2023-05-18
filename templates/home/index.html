@@ -9,7 +9,7 @@
         <div class="swiper-wrapper">
         {% if banner %}
         {% for band in banner %}
-          <div class="swiper-slide"><img src="{{ band.image.url }}" /></div>
+          <div class="swiper-slide"><img src="{% static 'Image/unik.jpg' %}" /></div>
         {% endfor %}
         {% else %}
             <div class="swiper-slide"><img src="{% static 'Image/1_5 - Photo 1.jpg' %}" /></div>
