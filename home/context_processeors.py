@@ -1,9 +1,10 @@
-from .models import Category
+from .models import Category, Banner
 
 
 def product_category_render(request):
     
     return {
-        'categories': Category.objects.filter(parent=None)[:6]
+        "banner": Banner.objects.all().order_by("-id")[:5],
+        'categories': Category.objects.filter(parent=None)[:6],
     }
     

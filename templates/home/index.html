@@ -8,8 +8,8 @@
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
         {% if banner %}
-        {% for ban in banner %}
-          <div class="swiper-slide"><img src="{{ban.image.url}}" /></div>
+        {% for band in banner %}
+          <div class="swiper-slide"><img src="{{ band.image.url }}" /></div>
         {% endfor %}
         {% else %}
             <div class="swiper-slide"><img src="{% static 'Image/1_5 - Photo 1.jpg' %}" /></div>

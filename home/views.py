@@ -12,7 +12,6 @@ def index(request):
 
 
     context = {
-        "banner": Banner.objects.all().order_by("-id")[:5],
         "news": Yangiliklar.objects.all().order_by("?")[:3],
         "malumotlar": Malumotlar.objects.all().order_by("-id")[:3],
     }
