@@ -22,6 +22,18 @@ class Category(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
+
+class Content(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=224, blank=True)
+    desc = RichTextField()
+    category = models.ForeignKey(to=Category, null=True, blank=True, on_delete=models.CASCADE)
+
+    image = models.ImageField(upload_to="content/%Y/%m/%d", height_field=None, width_field=None, max_length=None)
+
+    def __str__(self) -> str:
+        return self.title
 
 
 class Malumotlar(models.Model):

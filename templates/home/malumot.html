@@ -103,7 +103,7 @@
                             <ul>
                                {% for cat in category %}
                                {% for chill in cat.children.all %}
-                                    <li><a class="menu__a" href="">{{chill.name}}</a></li>
+                                    <li><a class="menu__a" href="{% url 'home:category' chill.id %}">{{chill.name}}</a></li>
                                     {% endfor %}
                                       {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
                                       <li><a class="menu__a" href="">defoilt</a></li>
