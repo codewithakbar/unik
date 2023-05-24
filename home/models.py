@@ -20,8 +20,13 @@ class Category(models.Model):
     #     related_name = "Kategoriya"
     #     related_plural_name = "Kategoriyalar"
 
-    def __str__(self) -> str:
-        return self.name
+    def __str__(self):                           # __str__ method elaborated later in
+        full_path = [self.name]                  # post.  use __unicode__ in place of
+        k = self.parent
+        while k is not None:
+            full_path.append(k.name)
+            k = k.parent
+        return ' / '.join(full_path[::-1])
     
 
 class Content(models.Model):
