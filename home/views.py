@@ -12,7 +12,7 @@ def index(request):
 
 
     context = {
-        'categories': Category.objects.filter(parent=None)[:6],
+        'categories': Category.objects.filter(parent=None)[:5],
         "news": Yangiliklar.objects.all().order_by("?")[:3],
         "malumotlar": Malumotlar.objects.all().order_by("-id")[:3],
     }

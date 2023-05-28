@@ -1266,7 +1266,7 @@
     .chka:before,
     .vertmenu .subCat.minus,
     .subCat:checked + .chka:before {
-    content: '+';
+    content: '>';
     font-size: 26px;
     color: #fff;
     font-weight: bold;   
