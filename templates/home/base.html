@@ -26,6 +26,7 @@
 <body>
 
 <div class="wrapper">
+    <div class="contain__wrap">
     <div class="container">
         <div class="box__contact">
             <div class="contact__logo">
@@ -58,6 +59,7 @@
             <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
         </div>
     </div>
+    </div>
 </div>
 <header class="header" id="header">
     <div class="box__container">
@@ -79,7 +81,7 @@
                 {% if cat.children.all %}
                 
                 {% for chill in cat.children.all %}
-                    <a href="{% url 'home:category' chill.id %}">{{chill.name}}</a>
+                    <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
                     {% endfor %}
                 {% else %}
                     
@@ -261,7 +263,6 @@
                                 <a href="#">Masofaviy talim Tizimi</a>
                             </li>
                         </ul>
-                        <a href="#">Bosh sahifa</a>
                     </li>
                 </ul>
             </div>

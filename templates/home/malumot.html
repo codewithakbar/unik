@@ -6,83 +6,252 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'malumot.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'stay.css' %}"> {% endcomment %}
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <title>Universitet hakida</title>
 </head>
-<body>
-    <div class="wrapper">
-        <div class="container">
-            <div class="box__contact">
-                <div class="contact__logo">
-                    <img src="{% static 'Image/Vector.png' %}" alt="contact">
-                </div>
-                <div class="contact__number">
-                    <p class="contact__p">
-                        <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
-                    </p>
-                </div>
+<div class="wrapper">
+    <div class="container">
+        <div class="box__contact">
+            <div class="contact__logo">
+                <img src="{% static 'Image/Vector.png' %}" alt="contact">
             </div>
-            <span id="span1"></span>
-            <div class="box__mail">
-                <div class="mail__icon">
-                    <img src="{% static 'Image/icon.png' %}" alt="mail">
-                </div>
-                <div class="mail__info">
-                    <p class="mail__p">
-                        <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
-                    </p>
-                </div>
+            <div class="contact__number">
+                <p class="contact__p">
+                    <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
+                </p>
             </div>
         </div>
-        <div class="language">
-            <div class="uzb__image">
-                <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
+        <span id="span1"></span>
+        <div class="box__mail">
+            <div class="mail__icon">
+                <img src="{% static 'Image/icon.png' %}" alt="mail">
             </div>
-            <span id="span2"></span>
-            <div class="eng__image">
-                <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
+            <div class="mail__info">
+                <p class="mail__p">
+                    <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+                </p>
             </div>
         </div>
     </div>
-    <header class="header" id="header">
-      <div class="box__container">
-      <div class="hedaer__image">
-          <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
-         <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
+    <div class="language">
+        <div class="uzb__image">
+            <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
+        </div>
+        <span id="span2"></span>
+        <div class="eng__image">
+            <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
+        </div>
+    </div>
+</div>
+<header class="header" id="header">
+    <div class="box__container">
+    <div class="hedaer__image">
+        <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
+       <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
+    </div>
+    <nav class="navbar">
+
+        {% if categories %}
+        
+        {% for cat in categories %}
+
+        <div class="dropdown">
+            <button class="dropbtn"> {{cat.name}} 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                {% if cat.children.all %}
+                
+                {% for chill in cat.children.all %}
+                    <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
+                    {% endfor %}
+                {% else %}
+                    
+                    <a href="#">Adminda qoshing</a>
+
+                {% endif %}
+                </div>
+        </div>
+        
+        {% endfor %}
+        {% else %}
+        <div class="dropdown">
+            <button class="dropbtn"> Adminda Categoriya qosh 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Universitet haqida</a>
+                <a href="#">Universitet nizomi</a>
+                <a href="#">Universitet ichgi tartib qoidalari</a>
+                <a href="#">Universitet adob-axlpq qodeksi</a>
+                <a href="#">Rektorat</a>
+                <a href="#">Kafedralar</a>
+                <a href="#">Fakultetlar</a>
+              </div>
+        </div>
+        {% endif %}
+        {% comment %} <div class="dropdown">
+            <button class="dropbtn"> Faoliyat 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Xalqoro hamqor tashkilotlar</a>
+                <a href="#">Moliyaviy Faoliyat</a>
+                <a href="#">Yoshlar bilan ishlash va ma'naviy-ma'rifiy Faoliyat</a>
+              </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"> Abiturient 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Kunduzgi talim yonalishlari</a>
+                <a href="#">Sirtqi talim yonalishlari</a>
+                <a href="#">Oqishni qochirish</a>
+                <a href="#">Magistratura yonalishlari va qabul kvotasi</a>
+              </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"> Talabalar 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Oliy talim davlat talim standarti</a>
+                <a href="#">Meyoriy huquqiy hujjat</a>
+                <a href="#">Oquv jarayoni grafigi</a>
+              </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"> Talim Resurslari 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Eleqtron adabiyot</a>
+                <a href="#">ZOOM</a>
+                <a href="#">Talim Resurslari</a>
+                <a href="#">Dars jadvali</a>
+                <a href="#">Masofaviy talim Tizimi</a>
+              </div>
+        </div> {% endcomment %}
+    </nav>
+</div>
+</header>
+<header id="humburger">
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div>
+        <ul class="menu__box">
+            <div class="vertmenu">
+                <ul>
+                    <li>
+                        <a class="active" href="#">Universitet </a>
+                        <label class="chka" for="1"><input type="checkbox" class="subCat" id="1" for="1"/></label>
+                        <ul style="display:none">
+                            <li>
+                                <a class="active" href="#">Universitet haqida</a>
+                            </li>
+                            <li>
+                                <a href="#">Universitet nizomi</a>
+                            </li>
+                            <li>
+                                <a href="#">Universitet ichgi tartib qoidalari</a>
+                            </li>
+                            <li>
+                                <a href="#">Universitet adob-axlpq qodeksi</a>
+                            </li>
+                            <li>
+                                <a href="#">Rektorat</a>
+                            </li>
+                            <li>
+                                <a href="#">Kafedralar</a>
+                            </li>
+                            <li>
+                                <a href="#">Fakultetlar</a>
+                            </li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#">Faoliyat </a>
+                        <input type="checkbox" class="subCat" id="2" />
+                        <label class="chka" for="2"></label>
+                        <ul style="display:none">
+                            <li>
+                                <a href="#">Xalqoro hamqor tashkilotlar</a>
+                            </li>
+                            <li>
+                                <a href="#">Moliyaviy Faoliyat</a>
+                            </li>
+                            <li>
+                                <a href="#">Yoshlar bilan ishlash va ma'naviy-ma'rifiy Faoliyat</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Abiturient</a>
+                        <input type="checkbox" class="subCat" id="3" />
+                        <label class="chka" for="3"></label>
+                        <ul style="display:none">
+                            <li>
+                                <a href="#">Kunduzgi talim yonalishlari</a>
+                            </li>
+                            <li>
+                                <a href="#">Sirtqi talim yonalishlari</a>
+                            </li>
+                            <li>
+                                <a href="#">Oqishni qochirish</a>
+                            </li>
+                            <li>
+                                <a href="#">Magistratura yonalishlari va qabul kvotasi</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Talabalar</a>
+                        <input type="checkbox" class="subCat" id="4" />
+                        <label class="chka" for="4"></label>
+                        <ul style="display:none">
+                            <li>
+                                <a href="#">Oliy talim davlat talim standarti</a>
+                            </li>
+                            <li>
+                                <a href="#">Meyoriy huquqiy hujjat</a>
+                            </li>
+                            <li>
+                                <a href="#">Oquv jarayoni grafigi</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Talim Resurslari </a>
+                        <input type="checkbox" class="subCat" id="5" />
+                        <label class="chka" for="5"></label>
+                        <ul style="display:none">
+                            <li>
+                                <a href="#">Eleqtron adabiyot</a>
+                            </li>
+                            <li>
+                                <a href="#">ZOOM</a>
+                            </li>
+                            <li>
+                                <a href="#">Talim Resurslari</a>
+                            </li>
+                            <li>
+                                <a href="#">Dars jadvali</a>
+                            </li>
+                            <li>
+                                <a href="#">Masofaviy talim Tizimi</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </ul>
       </div>
-      <nav class="navbar">
-          <ul>
-              {% if categories %}
-              {% for cat in categories %}
-                  <li class="li__box"><a href="{% url 'home:category' cat.id %}">{{cat.name}}</a></li>
-              {% endfor %}
-              {% else %}
-              <li class="li__box"><a href="/html/menu2.html">Faoliyat</a></li>
-              <li class="li__box"><a href="/html/menu3.html">Abiturient</a></li>
-              <li class="li__box"><a href="/html/menu4.html">Talabalar</a></li>
-              <li><a href="/html/menu5.html">Talim Resurslari</a></li>
-  
-              {% endif %}
-          </ul>
-      </nav>
-  </div>
-  </header>
-    <header id="humburger">
-        <div class="hamburger-menu">
-            <input id="menu__toggle" type="checkbox" />
-            <label class="menu__btn" for="menu__toggle">
-              <span></span>
-            </label>
-            <div class="btn__leb"><img src="/Image/img__malumot/Ranch 4.png" alt=""></div>
-            <ul class="menu__box">
-              <li><a class="menu__item" href="#">Universitet</a></li>
-              <li><a class="menu__item" href="/html/menu2.html">Faoliyat</a></li>
-              <li><a class="menu__item" href="/html/menu3.html">Abiturient</a></li>
-              <li><a class="menu__item" href="/html/menu4.html">Talabalar</a></li>
-              <li><a class="menu__item" href="/html/menu5.html">Talim Resurslari</a></li>
-            </ul>
-          </div>
-    </header>
+</header>
 
     <section id="home">
             <aside id="side" class="sidebar">
@@ -103,7 +272,7 @@
                             <ul>
                                {% for cat in category %}
                                {% for chill in cat.children.all %}
-                                    <li><a class="menu__a" href="{% url 'home:category' chill.id %}">{{chill.name}}</a></li>
+                                    <li><a class="menu__a" href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a></li>
                                     {% endfor %}
                                       {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
                                       <li><a class="menu__a" href="">defoilt</a></li>
@@ -116,17 +285,26 @@
                         </nav>
                 </div>
             </aside>
-        <div class="header__contant">
+            <div class="header__contant">
                 <div class="header__cont__title"> 
         <span id="spn"></span>
             <h1>
-            {{cat.name}} haqida
+            Universitet haqida
         </h1>
         <span id="spn"></span>
-        <p>
-
-        </p>
             </div>
+            {% for kontent in kontentla %}
+            {% comment %} <div> {% endcomment %}
+                <div class="contant__text">
+                    <h4>
+                        {{kontent.title}}
+                    </h4>
+                </div>
+                {% comment %} <div class="text__cont"> {% endcomment %}
+                    {{kontent.desc | safe }}
+                {% comment %} </div> {% endcomment %}
+            {% comment %} </div> {% endcomment %}
+            {% endfor %}
         </div>
 
     </section>
@@ -174,6 +352,8 @@
             </div>
         </div>
     </section>
- 
+
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 </body>
 </html>

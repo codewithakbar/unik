@@ -35,7 +35,7 @@ class Content(models.Model):
     desc = RichTextField()
     category = models.ForeignKey(to=Category, null=True, blank=True, on_delete=models.CASCADE)
 
-    image = models.ImageField(upload_to="content/%Y/%m/%d", height_field=None, width_field=None, max_length=None)
+    image = models.ImageField(upload_to="content/%Y/%m/%d", height_field=None, width_field=None, max_length=None, blank=True, null=True)
 
     def __str__(self) -> str:
         return self.title

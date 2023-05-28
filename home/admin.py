@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Banner, Category, Malumotlar
+from .models import Banner, Category, Malumotlar, Content
 
 # @admin.register(Banner)
 # class BannerAdmin(admin.ModelAdmin):
@@ -13,4 +13,5 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Banner)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Malumotlar)
+admin.site.register(Content)
 

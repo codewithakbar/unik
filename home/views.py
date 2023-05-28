@@ -40,13 +40,20 @@ def malumotlar(request):
     return render(request, "home/malumot.html", context)
 
 
-def category(request, cat_id):
+def category(request, cat_id=None):
+    catID = request.GET.get("cat")
+
+    if catID:
+        kontentla = Content.objects.filter(category__id=catID)
     
+    else:
+        kontentla = Content.objects.all()
     context = {
         "get_content": Content.objects.filter(category__id=cat_id) if cat_id else Content.objects.all(),
         'categories': Category.objects.filter(parent=None)[:6],
         "category": Category.objects.filter(id=cat_id),
-        "cat": Category.objects.get(pk=cat_id)
+        "cat": Category.objects.get(pk=cat_id),
+        "kontentla": kontentla,
     }
     
     return render(request, "home/malumot.html", context)
