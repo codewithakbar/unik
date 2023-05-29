@@ -3,9 +3,16 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 .wrapper {
-    
+    padding-top: 20px;
+    display: flex;
+    justify-content:space-around;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.contain__wrap {
+    width: 100%;
     padding-top: 20px;
     display: flex;
     justify-content:space-around;
@@ -15,7 +22,7 @@
 
 .container {
     z-index: 100;
-    width: 430px;
+    width: 470px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -30,6 +37,8 @@
 }
 
 .contact__p a {
+    font-size: 17px;
+    margin-left: 10px;
     text-decoration: none;
     color: #fff;
     transition: all .3s ease;
@@ -68,7 +77,7 @@
 
 .box__mail {
     z-index: 100;
-    max-width: 250px;
+    max-width: 290px;
     min-width: 220px;
     display: flex;
     align-items: center;
@@ -86,6 +95,8 @@
 }
 
 .mail__p a{
+    font-size: 17px;
+    margin-left: 10px;
     text-decoration: none;
     color: #fff;
     transition: all .3s ease;
@@ -1196,19 +1207,22 @@
   }
   
   .dropdown .dropbtn {
-    font-size: 18px;  
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;  
     text-transform: uppercase;
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 10px 15px;
     background-color: inherit;
     font-family: inherit;
-    margin: 0;
+    margin-left: 10px;
+    transition: 0.3s;
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #FF8B36;
+    background-color: #fd7b1e;
   }
   
   .dropdown-content {
