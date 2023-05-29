@@ -77,10 +77,12 @@
 
 .language {
     z-index: 100;
-    min-width: 70px;
+    min-width: 240px;
     display: flex;
     align-items: center;
-    justify-content:space-around ;
+}
+.language div, span{
+    margin-right: 5px;
 }
 
 .mail__p a{
@@ -741,7 +743,7 @@
         width: 80%;
         height: 100%;
     }
-    .contant__text .text__cont {
+    .contant__text p {
         position: relative;
         font-family: sans-serif;
         border-radius: 15px;    

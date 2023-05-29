@@ -77,10 +77,12 @@
 
 .language {
    z-index: 100;
-   min-width: 70px;
+   min-width: 240px;
    display: flex;
    align-items: center;
-   justify-content:space-around ;
+}
+.language div, span{
+   margin-right: 5px;
 }
 
 .mail__p a{
@@ -770,41 +772,40 @@
        box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
    }
    .user {
-      z-index: 100;
-      color: #FF8B36;
-  }
-  .user button {
-      outline: none;
-      border: none;
-      text-decoration: none;
-      color: #FF8B36;
-      font-size: 10px;
-      background-color: white;
-      padding: 5px 10px;
-      border-radius: 15px;
-      transition: 0.5s;
-      -webkit-box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
-      -moz-box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
-      box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
-  }
-  .user button a{
-      text-decoration: none;
-      color: #FF8B36;
-      font-size: 20px;
-  }
-  .user button:hover {
-      text-decoration: none;
-      color: #fff;
-      background-color: #FF8B36;
-      padding: 5px 10px;
-      border-radius: 15px;
-      -webkit-box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
-      -moz-box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
-      box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
-  }
-  .user button a:hover{
-      text-decoration: none;
-      color: #fff;
-      font-size: 20px;
-  }
-   
+       z-index: 100;
+       color: #FF8B36;
+   }
+   .user button {
+       outline: none;
+       border: none;
+       text-decoration: none;
+       color: #FF8B36;
+       font-size: 10px;
+       background-color: white;
+       padding: 5px 10px;
+       border-radius: 15px;
+       transition: 0.5s;
+       -webkit-box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
+       -moz-box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
+       box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
+   }
+   .user button a{
+       text-decoration: none;
+       color: #FF8B36;
+       font-size: 20px;
+   }
+   .user button:hover {
+       text-decoration: none;
+       color: #fff;
+       background-color: #FF8B36;
+       padding: 5px 10px;
+       border-radius: 15px;
+       -webkit-box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
+       -moz-box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
+       box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
+   }
+   .user button a:hover{
+       text-decoration: none;
+       color: #fff;
+       font-size: 20px;
+   }
