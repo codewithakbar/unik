@@ -285,7 +285,7 @@
                 <img src="{{yan.image.url}}" alt="">
             </div>
             <div class="news__cont__text">
-               <a href="/html/newsdeteil/newsdeteil.html"><h1>
+               <a href="{% url 'news:new_detail' yan.id %}"><h1>
                     {{yan.title}}
                 </h1></a> 
                 <p class="time">

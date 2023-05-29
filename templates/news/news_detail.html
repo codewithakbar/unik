@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'newsdeteil.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'batafsil.css' %}"> {% endcomment %}
+    {% block static %}{% endblock static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <title>Document</title>
+    
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+
+   <div class="wrapper">
+      <div class="container">
+          <div class="box__contact">
+              <div class="contact__logo">
+                  <img src="/Image/Vector.png" alt="contact">
+              </div>
+              <div class="contact__number">
+                  <p class="contact__p">
+                      <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
+                  </p>
+              </div>
+          </div>
+          <span id="span1"></span>
+          <div class="box__mail">
+              <div class="mail__icon">
+                  <img src="/Image/icon.png" alt="mail">
+              </div>
+              <div class="mail__info">
+                  <p class="mail__p">
+                      <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="language">
+          <div class="user">
+              <button><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
+            </div>
+          <div class="uzb__image">
+              <button><img src="/Image/Flags.png" alt="icon"></button>
+          </div>
+          <span id="span2"></span>
+          <div class="eng__image">
+              <button><img src="/Image/Flags (1).png" alt="icon"></button>
+          </div>
+      </div>
+  </div>
+  <header class="header" id="header">
+      <div class="box__container">
+      <div class="hedaer__image">
+          <a class="img__white" href="/index.html"><img src="/Image/img__malumot/Ranch 4.png" alt=""></a>
+         <a class="img__orange" href="/index.html"><img src="/Image/img__malumot/Ranch 3.png" alt="logo"></a> 
+      </div>
+      <nav class="navbar">
+          <ul>
+              <li class="li__box"><a href="/html/menu.html">Universitet</a></li>
+              <li class="li__box"><a href="/html/menu2.html">Faoliyat</a></li>
+              <li class="li__box"><a href="/html/menu3.html">Abiturient</a></li>
+              <li class="li__box"><a href="/html/menu4.html">Talabalar</a></li>
+              <li><a href="/html/menu5.html">Talim Resurslari</a></li>
+          </ul>
+      </nav>
+  </div>
+  </header>
+  <header id="humburger">
+      <div class="hamburger-menu">
+          <input id="menu__toggle" type="checkbox" />
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <div class="btn__leb"><img src="/Image/img__malumot/Ranch 4.png" alt=""></div>
+          <ul class="menu__box">
+            <li><a class="menu__item" href="/html/menu.html">Universitet</a></li>
+            <li><a class="menu__item" href="/html/menu2.html">Faoliyat</a></li>
+            <li><a class="menu__item" href="/html/menu3.html">Abiturient</a></li>
+            <li><a class="menu__item" href="/html/menu4.html">Talabalar</a></li>
+            <li><a class="menu__item" href="/html/menu5.html">Talim Resurslari</a></li>
+          </ul>
+        </div>
+  </header>
+<section id="home">
+
+
+    <div class="container__news">
+        <aside id="side" class="sidebar">
+
+            <div class="wrapper__menu">
+                <div class="hedaer__title">
+                    <h1>
+                        Yangiliklar
+                    </h1>
+                </div>
+                    <nav class="nacbar__nav">
+                        <ul>
+                            <li><a class="unik__haq" href="/html/news/news.html">Songi yangiliklar</a></li>
+                            <li><a class="menu__a" href="">Omaviy tadbir</a></li>
+                            <li><a class="menu__a" href="">Xalkaro aloqa</a></li>
+                        </ul>
+                    </nav>
+            </div>
+
+        </aside>
+
+    <div id="content">
+        <div class="content__header">
+            <div class="cont__img">
+                <img src="/Image/news/photo2023-04-1909-16-33.jpg" alt="">
+            </div>
+            <div class="cont__text">
+                <h1>
+                    Urganch Ranch texnologiya universitetida Angliyaning Northampton universiteti bilan hamkorlikda o‘tkazilgan haftalik o'z yakuniga yetdi.
+                </h1>
+                <p>
+                    Hamkorlikda amalga oshirilgan ishlar sarhisob qilinib kelgusida amalga oshiriladigan vazifalar ikki tomonlama muhokama qilindi. Xususan Professor DADA Adeboyaning xalqaro miqyosdagi ish tajribasi, hamkorlikda bir qator dasturlarni amalga oshirish belgilanganligini inobatga olgan xolda Urganch Ranch texnologiya universiteti rektorining xalqaro masalalar bo'yicha maslahatchisi lavozimiga tayinlandi va ikki tomonlama shartnoma imzolandi.
+                </p>
+                <p>
+                    Hurmatli Professorimiz DADA Adeboye boshchiligida xalqaro masalalar jumladan dunyoning eng nufuzli oliygohlari bilan hamkorlik yolga qo'yilishiga ishonamiz va faoliyatlarida ulkan zafarlar tilab qolamiz.
+                </p>
+            </div>
+            <div class="btn__blck">
+                <div class="cancel">
+                    <a href="/html/news/news.html"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                 </div>
+                </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+
+    <section id="contact">
+        <div class="contact__container">
+            <div class="contact__box">
+                <h1>RANCH</h1>
+                <p class="cont__tetx">
+                    Urganch RANCH Texnologiya Universiteti
+                </p>
+                <p class="nomer">
+                    <a href="tel:+998 99 218 00 60">+998 99 218 00 60</a>
+                </p>
+                <p class="cont__tetx malumot">
+                    Malumot uchut telefon
+                </p>
+                <p class="pochta">
+                    <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+                </p>
+                <p class="cont__tetx">
+                  Malumot uchun email qutisi  
+                </p>
+            </div>
+            <div class="contact__box">
+                <h1>Menu</h1>
+                <a class="menu__a" href="/html/menu.html">Universitet</a>
+                <a class="menu__a" href="/html/menu2.html">Faoliyat</a>
+                <a class="menu__a" href="/html/menu3.html">Abiturient</a>
+                <a class="menu__a" href="/html/menu4.html">Talabalar</a>
+                <a class="menu__a" href="/html/menu5.html">Talim Resurslari</a>
+            </div>
+            <div class="contact__box__logo">
+                <h1>Tarmoklar</h1>
+                <div class="logog">
+                <a href="http://www.instagram.com/utu_ranch"><img src="/Image/logo/Instagram_icon-icons.com_66804.png" alt=""></a>
+                <a href="https://t.me/utu_ranch"><img src="/Image/logo/telegram_social_network_communication_chat_interaction_icon_192276.png" alt=""></a>
+                <a href="https://youtube.com/@uturanch"><img src="/Image/logo/youtube_logo_icon_168737.png" alt=""></a>
+                <a href="https://fb.com/uturanch"><img src="/Image/logo/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+</body>
+</html>

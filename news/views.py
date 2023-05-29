@@ -12,3 +12,15 @@ def news_view(request, cat_id=None):
     }
 
     return render(request, 'news/news.html', context)
+
+
+def new_detail(request, pk):
+
+    yangilik = Yangiliklar.objects.filter(pk=pk) if pk else Yangiliklar.objects.all()
+
+    context = {
+        "yangilik": yangilik
+    }
+
+    return render(request, 'news/news_detail.html', context)
+
