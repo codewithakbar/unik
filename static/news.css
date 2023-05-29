@@ -613,7 +613,6 @@
     -moz-box-shadow: 0px 0px 45px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 0px 0px 45px 0px rgba(34, 60, 80, 0.2);
 }
-
 .news__cont__text a{
     text-decoration: none;
 }
@@ -845,7 +844,7 @@
     font-size: 20px;
     font-family: sans-serif;
     float: none;
-    color: #FF8B36;
+    color: #fff;
     padding: 12px 16px;
     text-decoration: none;
     font-family: sans-serif;
