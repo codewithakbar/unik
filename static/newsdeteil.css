@@ -77,13 +77,12 @@
 
 .language {
    z-index: 100;
-   min-width: 240px;
+   min-width: 70px;
    display: flex;
    align-items: center;
+   justify-content:space-around ;
 }
-.language div, span{
-   margin-right: 5px;
-}
+
 .mail__p a{
    text-decoration: none;
    color: #000;
@@ -764,146 +763,6 @@
        box-shadow: 0px 0px 34px 1px rgba(255, 34, 0, 0.2);
    }
 }
-.header-scroll   .dropdown-content {
-   display: none;
-   position: absolute;
-   background-color: #FF8B36;
-   backdrop-filter: blur(10px);
-   min-width: 160px;
-   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-   z-index: 1;
- }
-
-
- .dropdown {
-   float: left;
-   overflow: hidden;
- }
- 
- .dropdown .dropbtn {
-   font-size: 18px;  
-   text-transform: uppercase;
-   border: none;
-   outline: none;
-   color: #FF8B36;
-   padding: 14px 16px;
-   background-color: inherit;
-   font-family: inherit;
-   margin: 0;
- }
- 
- .navbar a:hover, .dropdown:hover .dropbtn {
-   background-color: #FF8B36;
-   color: #fff;
- }
- 
- .dropdown-content {
-   display: none;
-   position: absolute;
-   background-color: transparent;
-   backdrop-filter: blur(10px);
-   min-width: 160px;
-   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-   z-index: 1;
- }
- 
- .dropdown-content a {
-   font-size: 20px;
-   font-family: sans-serif;
-   float: none;
-   color: #fff;
-   padding: 12px 16px;
-   text-decoration: none;
-   font-family: sans-serif;
-   display: block;
-   text-align: left;
- }
- 
- .dropdown-content a:hover {
-   background-color: #ff8a3674;
- }
- 
- .dropdown:hover .dropdown-content {
-   display: block;
- }
- .vertmenu {
-   margin: 0 20px;
-   font-family: 'Open Sans', sans-serif;   
-   }
-   .vertmenu ul {
-   list-style: none;
-   margin: 0;
-   padding: 0;
-   }
-   .vertmenu ul li {
-   position: relative;
-   margin: 0;
-   line-height: 30px;
-   text-transform: uppercase;   
-   }
-   .vertmenu ul li li {
-   padding-left:20px;
-   }
-   .vertmenu .subCat, .chka {
-   top: 0;
-   right: 0px;
-   position: absolute;
-   cursor: pointer;
-   }
-   .vertmenu .subCat.plus,
-   .chka:before,
-   .vertmenu .subCat.minus,
-   .subCat:checked + .chka:before {
-   content: '>';
-   font-size: 26px;
-   color: #fff;
-   font-weight: bold;   
-   font-family: Courier;   
-   }
-   .vertmenu .subCat.minus, .subCat:checked + .chka:before {
-   content: '-';
-   }
-   .vertmenu a {
-   color: #fff;
-   font-size: 16px;
-   font-weight:bold;
-   text-decoration:none;
-   }
-   .vertmenu ul li li a {
-   color: #fff;
-   font-size: 15px;
-   font-weight:normal;
-   text-decoration:none;
-   }
-   .vertmenu a.active {
-   color: #fff;
-   }
-   .vertmenu a:hover {
-   text-decoration: none;
-   color: #000 !important;
-   }
-   .vertmenu > ul > li ul {
-   display: none;
-   }
-   .vertmenu > ul > li a.active + span + ul {
-   display: block !important;
-   }
-   .vertmenu > ul > li .subCat:checked ~ ul {
-   display: block !important;
-   }
-   .vertmenu input[type=checkbox].subCat {
-   display:none;
-   }
-   .vertmenu ul li li a:before {
-   content: '\203A';
-   font-size: 20px;
-   padding-right: 6px;
-   color: #fff;
-   font-weight: bold;
-   }
-   .vertmenu > ul li li a:hover:before {
-   color: #fff;
-   }
 .user {
    z-index: 100;
    color: #FF8B36;
