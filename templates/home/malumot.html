@@ -313,6 +313,11 @@
                 <div class="text__cont"> 
                     {{kontent.desc | safe }}
                  </div> 
+                 {% if image %}
+                 <div class="cont__img__c">
+                    <img src="{{kontent.image.url}}" alt="">
+                </div>
+                {% endif %}
                 </div>
             {% comment %} </div> {% endcomment %}
             {% endfor %}
