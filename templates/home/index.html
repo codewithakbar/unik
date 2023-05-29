@@ -7,13 +7,13 @@
 <section id="home">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-        {% if banner %}
-        {% for band in banner %}
+        {% comment %} {% if banner %}
+        {% for band in banner %} {% endcomment %}
           <div class="swiper-slide"><img src="{% static 'Image/unik.jpg' %}" /></div>
-        {% endfor %}
-        {% else %}
+        {% comment %} {% endfor %}
+        {% else %} {% endcomment %}
             <div class="swiper-slide"><img src="{% static 'Image/1_5 - Photo 1.jpg' %}" /></div>
-        {% endif %}
+        {% comment %} {% endif %} {% endcomment %}
     </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -193,11 +193,11 @@
         </div>
         <div class="contact__box">
             <h1>Menu</h1>
-            <a class="menu__a" href="/html/menu.html">Universitet</a>
-            <a class="menu__a" href="/html/menu2.html">Faoliyat</a>
-            <a class="menu__a" href="/html/menu3.html">Abiturient</a>
-            <a class="menu__a" href="/html/menu4.html">Talabalar</a>
-            <a class="menu__a" href="/html/menu5.html">Talim Resurslari</a>
+            <a class="menu__a" href="/category/1/?cat=11">Universitet</a>
+            <a class="menu__a" href="/category/13/?cat=23">Faoliyat</a>
+            <a class="menu__a" href="/category/14/?cat=26">Abiturient</a>
+            <a class="menu__a" href="/category/14/?cat=26">Talabalar</a>
+            <a class="menu__a" href="/category/16/?cat=33">Talim Resurslari</a>
         </div>
         <div class="contact__box__logo">
             <h1>Tarmoklar</h1>

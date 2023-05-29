@@ -3,15 +3,8 @@
     margin: 0;
     box-sizing: border-box;
 }
-.wrapper {
-    padding-top: 20px;
-    display: flex;
-    justify-content:space-around;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-}
 
-.contain__wrap {
+.wrapper {
     width: 100%;
     padding-top: 20px;
     display: flex;
@@ -19,10 +12,17 @@
     font-family: 'Inter', sans-serif;
     font-size: 14px;
 }
-
+.contain__wrap {
+    z-index: 100;
+    width: 80%;
+    padding-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
 .container {
     z-index: 100;
-    width: 470px;
+    width: 430px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -37,8 +37,6 @@
 }
 
 .contact__p a {
-    font-size: 17px;
-    margin-left: 10px;
     text-decoration: none;
     color: #fff;
     transition: all .3s ease;
@@ -77,7 +75,7 @@
 
 .box__mail {
     z-index: 100;
-    max-width: 290px;
+    max-width: 250px;
     min-width: 220px;
     display: flex;
     align-items: center;
@@ -95,8 +93,6 @@
 }
 
 .mail__p a{
-    font-size: 17px;
-    margin-left: 10px;
     text-decoration: none;
     color: #fff;
     transition: all .3s ease;
@@ -1207,22 +1203,19 @@
   }
   
   .dropdown .dropbtn {
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 14px;  
+    font-size: 16px;  
     text-transform: uppercase;
     border: none;
     outline: none;
     color: white;
-    padding: 10px 15px;
+    padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
-    margin-left: 10px;
-    transition: 0.3s;
+    margin: 0;
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #fd7b1e;
+    background-color: #FF8B36;
   }
   
   .dropdown-content {
