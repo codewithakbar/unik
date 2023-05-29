@@ -241,7 +241,7 @@
     flex-direction: row;
     justify-content: center;
 }
-
+.blog-slider__content
 .swiper {
     width: 100%;
     height: 100%;
