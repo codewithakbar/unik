@@ -27,7 +27,7 @@
       <div class="container">
           <div class="box__contact">
               <div class="contact__logo">
-                  <img src="/Image/Vector.png" alt="contact">
+                  <img src="{% static 'Image/Vector.png' %}" alt="contact">
               </div>
               <div class="contact__number">
                   <p class="contact__p">
@@ -38,7 +38,7 @@
           <span id="span1"></span>
           <div class="box__mail">
               <div class="mail__icon">
-                  <img src="/Image/icon.png" alt="mail">
+                  <img src="{% static 'Image/icon.png' %}" alt="mail">
               </div>
               <div class="mail__info">
                   <p class="mail__p">
@@ -52,11 +52,11 @@
               <button><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
             </div>
           <div class="uzb__image">
-              <button><img src="/Image/Flags.png" alt="icon"></button>
+              <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
           </div>
           <span id="span2"></span>
           <div class="eng__image">
-              <button><img src="/Image/Flags (1).png" alt="icon"></button>
+              <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
           </div>
       </div>
   </div>
@@ -282,9 +282,12 @@
                 </div>
                     <nav class="nacbar__nav">
                         <ul>
-                            <li><a class="unik__haq" href="/html/news/news.html">Songi yangiliklar</a></li>
-                            <li><a class="menu__a" href="">Omaviy tadbir</a></li>
-                            <li><a class="menu__a" href="">Xalkaro aloqa</a></li>
+                           {% for ca in cat_news %}
+                            {% comment %} <li><a class="unik__haq" href="/html/news/news.html">{{ca.title}}</a></li> {% endcomment %}
+                            <li><a class="menu__a" href="{% url 'news:news_cat' ca.id%}">{{ca.name}}</a></li>
+                           {% endfor %}
+                            {% comment %} <li><a class="menu__a" href="">Omaviy tadbir</a></li>
+                            <li><a class="menu__a" href="">Xalkaro aloqa</a></li> {% endcomment %}
                         </ul>
                     </nav>
             </div>
@@ -294,22 +297,18 @@
     <div id="content">
         <div class="content__header">
             <div class="cont__img">
-                <img src="/Image/news/photo2023-04-1909-16-33.jpg" alt="">
+                <img src="{{yangilik.image.url}}" alt="">
             </div>
             <div class="cont__text">
                 <h1>
-                    Urganch Ranch texnologiya universitetida Angliyaning Northampton universiteti bilan hamkorlikda o‘tkazilgan haftalik o'z yakuniga yetdi.
+                    {{yangilik.title}}
                 </h1>
-                <p>
-                    Hamkorlikda amalga oshirilgan ishlar sarhisob qilinib kelgusida amalga oshiriladigan vazifalar ikki tomonlama muhokama qilindi. Xususan Professor DADA Adeboyaning xalqaro miqyosdagi ish tajribasi, hamkorlikda bir qator dasturlarni amalga oshirish belgilanganligini inobatga olgan xolda Urganch Ranch texnologiya universiteti rektorining xalqaro masalalar bo'yicha maslahatchisi lavozimiga tayinlandi va ikki tomonlama shartnoma imzolandi.
-                </p>
-                <p>
-                    Hurmatli Professorimiz DADA Adeboye boshchiligida xalqaro masalalar jumladan dunyoning eng nufuzli oliygohlari bilan hamkorlik yolga qo'yilishiga ishonamiz va faoliyatlarida ulkan zafarlar tilab qolamiz.
-                </p>
+
+                  {{yangilik.desc | safe}}
             </div>
             <div class="btn__blck">
                 <div class="cancel">
-                    <a href="/html/news/news.html"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    <a href="{% url 'home:homepage' %}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
                  </div>
                 </div>
         </div>

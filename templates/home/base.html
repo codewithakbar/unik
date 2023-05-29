@@ -86,6 +86,9 @@
                 {% for chill in cat.children.all %}
                     <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
                     {% endfor %}
+                    {% if cat.name == 'UNIVERSITET' %}
+                        <a href="{% url 'home:rektorlar' %}">Rekrorat</a>
+                    {% endif %}
                 {% else %}
                     
                     <a href="#">Adminda qoshing</a>

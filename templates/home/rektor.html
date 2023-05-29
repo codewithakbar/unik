@@ -68,9 +68,12 @@
                   {% if cat.children.all %}
                   
                   {% for chill in cat.children.all %}
-                      <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
-                      {% endfor %}
-                  {% else %}
+                    <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
+                    {% endfor %}
+                    {% if cat.name == 'UNIVERSITET' %}
+                        <a href="{% url 'home:rektorlar' %}">Rekrorat</a>
+                    {% endif %}
+                {% else %}
                       
                       <a href="#">Adminda qoshing</a>
   
@@ -268,13 +271,18 @@
                     </div>
                         <nav class="nacbar__nav">
                             <ul>
-                                <li><a class="unik__haq" href="">Universitet haqida</a></li>
-                                <li><a class="menu__a" href="">Universitet nozimi</a></li>
-                                <li><a class="menu__a" href="">Universitet ichqi tartib qoidalari</a></li>
+                                {% for aaa in category %}
+                                    <li><a class="menu__a" href="{% url 'home:category' aaa.id%}">{{aaa.name}}</a></li>
+                                {% endfor %}
+                                {% if cat.name == 'UNIVERSITET' %}
+                                        <li><a class="menu__a" href="{% url 'home:rektorlar' %}">Rekrorat</a></li>
+                                    {% endif %}
+                                {% comment %} <li><a class="unik__haq" href="">Universitet haqida</a></li> {% endcomment %}
+                                {% comment %} <li><a class="menu__a" href="">Universitet ichqi tartib qoidalari</a></li>
                                 <li><a class="menu__a" href="">Universitet odob-axloq qodeksi</a></li>
                                 <li><a class="menu__a" href="">Rekrorat</a></li>
                                 <li><a class="menu__a" href="">Kafedralar</a></li>
-                                <li><a class="menu__a" href="">Fakultetlar</a></li>
+                                <li><a class="menu__a" href="">Fakultetlar</a></li> {% endcomment %}
                             </ul>
                         </nav>
                 </div>

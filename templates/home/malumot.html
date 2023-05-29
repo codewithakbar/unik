@@ -67,9 +67,12 @@
                 {% if cat.children.all %}
                 
                 {% for chill in cat.children.all %}
-                    <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
-                    {% endfor %}
-                {% else %}
+                <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
+                {% endfor %}
+                {% if cat.name == 'UNIVERSITET' %}
+                    <a href="{% url 'home:rektorlar' %}">Rekrorat</a>
+                {% endif %}
+            {% else %}
                     
                     <a href="#">Adminda qoshing</a>
 
@@ -155,7 +158,7 @@
                         <label class="chka" for="1"><input type="checkbox" class="subCat" id="1" for="1"/></label>
                         <ul style="display:none">
                             <li>
-                                <a class="active" href="#">Universitet haqida</a>
+                                <a class="active" href="#">{{cat_parent.name}} haqida</a>
                             </li>
                             <li>
                                 <a href="#">Universitet nizomi</a>
@@ -277,9 +280,10 @@
                                {% for chill in cat.children.all %}
                                     <li><a class="menu__a" href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a></li>
                                     {% endfor %}
-                                    {% if cat.name == "Iniver" %}
+                                    {% if cat.name == 'UNIVERSITET' %}
                                         <li><a class="menu__a" href="{% url 'home:rektorlar' %}">Rekrorat</a></li>
                                     {% endif %}
+                                    
                                       {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
                                       <li><a class="menu__a" href="">defoilt</a></li>
                                       <li><a class="menu__a" href="">defoilt</a></li>
@@ -295,7 +299,7 @@
                 <div class="header__cont__title"> 
         <span id="spn"></span>
             <h1>
-            Universitet haqida
+            {{cat.name}}
         </h1>
         <span id="spn"></span>
             </div>

@@ -1,11 +1,11 @@
 from django.conf import settings
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views.generic import DetailView
 from django.shortcuts import get_list_or_404
 
 from .models import Banner, Category, Malumotlar, Content
-from news.models import Yangiliklar
+from news.models import NewsCartegory, Yangiliklar
 
 
 def index(request):
@@ -40,6 +40,21 @@ def malumotlar(request):
     return render(request, "home/malumot.html", context)
 
 
+def malumot_detail(request, cat_id):
+
+    malumotlar = get_object_or_404(Yangiliklar, id=cat_id)
+
+    context = {
+        'categories': Category.objects.filter(parent=None)[:6],
+        "cat_news": NewsCartegory.objects.filter(parent=None),
+        "malumotlar": malumotlar,
+    }
+
+    return render(request, 'home/mailumot_detail.html', context)
+
+
+
+
 def category(request, cat_id=None):
     catID = request.GET.get("cat")
 
@@ -53,6 +68,7 @@ def category(request, cat_id=None):
         'categories': Category.objects.filter(parent=None)[:6],
         "category": Category.objects.filter(id=cat_id),
         "cat": Category.objects.get(pk=cat_id),
+        "cat_parent": Category.objects.get(pk=cat_id),
         "kontentla": kontentla,
     }
     
@@ -60,9 +76,11 @@ def category(request, cat_id=None):
 
 
 def rektorjon(request):
-
+    
     context = {
         "kontentla": "kontentla",
+        'categories': Category.objects.filter(parent=None)[:6],
+        "category": Category.objects.filter(parent_id=1),
     }
 
     return render(request, "home/rektor.html", context)
