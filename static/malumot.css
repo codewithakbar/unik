@@ -743,7 +743,7 @@
         width: 80%;
         height: 100%;
     }
-    .contant__text p {
+    .contant__text .text__cont{
         position: relative;
         font-family: sans-serif;
         border-radius: 15px;    
