@@ -274,6 +274,9 @@
                                {% for chill in cat.children.all %}
                                     <li><a class="menu__a" href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a></li>
                                     {% endfor %}
+                                    {% if cat.name == "Iniver" %}
+                                        <li><a class="menu__a" href="{% url 'home:rektorlar' %}">Rekrorat</a></li>
+                                    {% endif %}
                                       {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
                                       <li><a class="menu__a" href="">defoilt</a></li>
                                       <li><a class="menu__a" href="">defoilt</a></li>

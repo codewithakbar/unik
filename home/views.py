@@ -59,6 +59,15 @@ def category(request, cat_id=None):
     return render(request, "home/malumot.html", context)
 
 
+def rektorjon(request):
+
+    context = {
+        "kontentla": "kontentla",
+    }
+
+    return render(request, "home/rektor.html", context)
+
+
 class MalumotDetailView(DetailView):
     model = Malumotlar
     template_name = 'home/mailumot_detail.html'
@@ -72,3 +81,5 @@ def set_language(request):
     response = HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang)
     return response
+
+
