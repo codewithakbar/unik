@@ -1,11 +1,11 @@
 import django
 from django.conf import settings
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import DetailView
 from django.shortcuts import get_list_or_404
 
-from .models import Banner, Category, Images, MalImages, Malumotlar, Content, Fakultetlar, OqishniKochirish
+from .models import Banner, Book, Category, Images, MalImages, Malumotlar, Content, Fakultetlar, OqishniKochirish
 from news.models import NewsCartegory, Yangiliklar
 
 
@@ -67,8 +67,6 @@ def malumot_detail(request, cat_id):
     return render(request, 'home/mailumot_detail.html', context)
 
 
-
-
 def category(request, cat_id=None):
     catID = request.GET.get("cat")
 
@@ -80,6 +78,7 @@ def category(request, cat_id=None):
 
     kontentcha = get_object_or_404(Content, category__id=catID)
     photos = Images.objects.filter(product=kontentcha)
+
 
     context = {
         "get_content": Content.objects.filter(category__id=cat_id) if cat_id else Content.objects.all(),
@@ -109,6 +108,20 @@ def set_language(request):
     response = HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang)
     return response
+
+
+# def book_detail(request, pk):
+#     book = get_object_or_404(Book, pk=pk)
+#     pdf_url = book.pdf.url
+#     return render(request, 'book_detail.html', {'book': book, 'pdf_url': pdf_url})
+
+
+def download_pdf(request, book_id):
+    book = get_object_or_404(Content, id=book_id)
+    with open(book.pdf.path, 'rb') as f:
+        response = HttpResponse(f.read(), content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="{}"'.format(book.pdf.name)
+        return response
 
 
 def rektorjon(request):

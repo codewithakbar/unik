@@ -25,6 +25,12 @@ urlpatterns = [
     path("mailumot/", views.mailumot, name="mailumot"),
     path("sirtqi/", views.sirtqi, name="sirtqi"),
     path("oqishkochir/", views.oqishkochir, name="oqishkochir"),
+
+    #book pdf
+
+    path('books/<int:book_id>/download/', views.download_pdf, name='download_pdf'),
 ]
 
 handler404 = "home.views.page_not_found"
+
+

@@ -325,17 +325,24 @@
                 <div class="text__cont"> 
                     {{kontent.desc | safe }}
                  </div> 
-                 {% if kontent.image %}
-                 <div class="cont__img__c">
-                    <img src="{{kontent.image.url}}" alt="">
-                </div>
-                {% if photos %}
-                {% for p in photos %}
+                {% if kontent.image %}
                     <div class="cont__img__c">
-                        <img src="{{p.image.url}}" alt="">
+                        <img src="{{kontent.image.url}}" alt="">
                     </div>
-                {% endfor %}
+                    {% if photos %}
+                        {% for p in photos %}
+                            <div class="cont__img__c">
+                                <img src="{{p.image.url}}" alt="">
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 {% endif %}
+                {% if kontent.pdf %}
+                    
+                    
+                    
+                    <h1>{{kontent.title}}</h1>
+                        <a href="{% url 'home:download_pdf' kontent.id %}"><button>Yuklash</button></a>
                 {% endif %}
                 </div>
             {% comment %} </div> {% endcomment %}

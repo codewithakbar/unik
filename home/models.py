@@ -37,6 +37,8 @@ class Content(models.Model):
 
     image = models.ImageField(upload_to="content/%Y/%m/%d", height_field=None, width_field=None, max_length=None, blank=True, null=True)
 
+    pdf = models.FileField(upload_to='pdfsd/', blank=True, null=True)
+
     def __str__(self) -> str:
         return self.title
 
@@ -116,8 +118,28 @@ class Magistr(models.Model):
         verbose_name = "Magistr"
         verbose_name_plural = "Magistrlar"
 
+    
+class Talabalar(models.Model):
+    name = models.CharField(max_length=224, blank=True)
+    summa = models.DecimalField(max_digits=11, decimal_places=0, default=0)
 
 
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Talaba"
+        verbose_name_plural = "Talabalar"
+
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    pdf = models.FileField(upload_to='pdfs/')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+    
 
 # Images 4 
 class Images(models.Model):

@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from .models import Banner, Category, Kunduz, Magistr, MalImages, Malumotlar, Content, Fakultetlar, Images, OqishniKochirish, Sirtqi
+from .models import (
+    Banner, Category, Kunduz, Magistr, MalImages, Malumotlar, Content, 
+                     Fakultetlar, Images, OqishniKochirish, Sirtqi, Book)
+
 
 # @admin.register(Banner)
 # class BannerAdmin(admin.ModelAdmin):
@@ -35,3 +38,4 @@ admin.site.register(Kunduz)
 admin.site.register(Sirtqi)
 admin.site.register(OqishniKochirish)
 admin.site.register(Magistr)
+admin.site.register(Book)

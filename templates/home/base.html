@@ -95,15 +95,48 @@
                     {% if cat.name == 'Abituriyent' %}
                     <a href="{% url 'home:oqishkochir' %}">Oqishkochir</a>
                     {% endif %}
+
+                    {% if cat.name == 'Abituriyent' %}
+                    <a href="{% url 'home:magistr' %}">Magistratura yonalishlari va qabul kvotasi</a>
+                    {% endif %}
+
+                    {% if cat.name == 'Abituriyent' %}
+                    <a href="{% url 'home:sirtqi' %}">Sirtqi talim yonalishlari</a>
+                    {% endif %}
+
+                    {% if cat.name == 'Abituriyent' %}
+                    <a href="{% url 'home:oqishkochir' %}">Kunduzgi talim yonalishlari</a>
+                    {% endif %}
+
+                    {% if cat.name == 'Abituriyent' %}
+                    <a href="{% url 'home:oqishkochir' %}">Sirtqi talim yonalishlari</a>
+                    {% endif %}
                     
-                    {% else %}
-                    <a href="#">Adminda qoshing</a>
+                    {% comment %} {% else %}
+                    <a href="#">Adminda qoshing</a> {% endcomment %}
 
                 {% endif %}
                 </div>
+                
         </div>
         
+        
         {% endfor %}
+        <div class="dropdown">
+            <button class="dropbtn"> Talabalar 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content"> 
+
+                    <a href="{% static 'parsing-senary.pdf' %}">Kitobcha</a>
+                    <a href="{% static 'parsing-senary.pdf' %}">Kitobcha</a>
+                    <a href="{% static 'parsing-senary.pdf' %}">Kitobcha</a>
+                    
+                    {% comment %} {% else %}
+                    <a href="#">Adminda qoshing</a> {% endcomment %}
+                </div>
+                
+        </div>
         {% else %}
         <div class="dropdown">
             <button class="dropbtn"> Adminda Categoriya qosh 
