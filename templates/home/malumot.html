@@ -286,6 +286,15 @@
                                     {% if cat.name == 'UNIVERSITET' %}
                                         <li><a class="menu__a" href="{% url 'home:fakultet' %}">Fakultetlar</a></li>
                                     {% endif %}
+                                    {% if cat.name == 'Abiturient' %}
+                                        <li><a class="menu__a" href="{% url 'home:magistr' %}">Magistr</a></li>
+                                    {% endif %}
+                                    {% if cat.name == 'Abiturient' %}
+                                        <li><a class="menu__a" href="{% url 'home:mailumot' %}">Mailumot</a></li>
+                                    {% endif %}
+                                    {% if cat.name == 'Abiturient' %}
+                                        <li><a class="menu__a" href="{% url 'home:sirtqi' %}">Sirtqi</a></li>
+                                    {% endif %}
                                     
                                       {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
                                       <li><a class="menu__a" href="">defoilt</a></li>
@@ -320,6 +329,13 @@
                  <div class="cont__img__c">
                     <img src="{{kontent.image.url}}" alt="">
                 </div>
+                {% if photos %}
+                {% for p in photos %}
+                    <div class="cont__img__c">
+                        <img src="{{p.image.url}}" alt="">
+                    </div>
+                {% endfor %}
+                {% endif %}
                 {% endif %}
                 </div>
             {% comment %} </div> {% endcomment %}

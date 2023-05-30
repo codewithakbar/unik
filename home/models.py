@@ -115,3 +115,11 @@ class Magistr(models.Model):
     class Meta:
         verbose_name = "Magistr"
         verbose_name_plural = "Magistrlar"
+
+
+
+
+# Images 4 
+class Images(models.Model):
+    product = models.ForeignKey(Content, default=None, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='contents/%Y/%m/%d', blank=True, null=True)

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/Fakultetlar/Fakultetlar.css">
+    <link rel="stylesheet" href="{% static 'fakultetlar.css' %}">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <title>Universitet hakida</title>
 </head>
@@ -13,7 +14,7 @@
         <div class="container">
             <div class="box__contact">
                 <div class="contact__logo">
-                    <img src="/Image/Vector.png" alt="contact">
+                    <img src="{% static 'Image/Vector.png' %}" alt="contact">
                 </div>
                 <div class="contact__number">
                     <p class="contact__p">
@@ -24,7 +25,7 @@
             <span id="span1"></span>
             <div class="box__mail">
                 <div class="mail__icon">
-                    <img src="/Image/icon.png" alt="mail">
+                    <img src="{% static 'Image/icon.png' %}" alt="mail">
                 </div>
                 <div class="mail__info">
                     <p class="mail__p">
@@ -38,23 +39,54 @@
                 <button><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
               </div>
             <div class="uzb__image">
-                <button><img src="/Image/Flags.png" alt="icon"></button>
+                <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
             </div>
             <span id="span2"></span>
             <div class="eng__image">
-                <button><img src="/Image/Flags (1).png" alt="icon"></button>
+                <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
             </div>
         </div>
     </div>
     <header class="header" id="header">
         <div class="box__container">
         <div class="hedaer__image">
-            <a class="img__white" href="#"><img src="/Image/img__malumot/Ranch 4.png" alt=""></a>
-           <a class="img__orange" href="#"><img src="/Image/img__malumot/Ranch 3.png" alt="logo"></a> 
+            <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
+           <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
         </div>
         <nav class="navbar">
+    
+            {% if categories %}
+            
+            {% for cat in categories %}
+    
             <div class="dropdown">
-                <button class="dropbtn"> Universitet 
+                <button class="dropbtn"> {{cat.name}} 
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    {% if cat.children.all %}
+                    
+                    {% for chill in cat.children.all %}
+                    <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
+                    {% endfor %}
+                    {% if cat.name == 'UNIVERSITET' %}
+                        <a href="{% url 'home:rektorlar' %}">Rekrorat</a>
+                    {% endif %}
+                    {% if cat.name == 'UNIVERSITET' %}
+                          <a href="{% url 'home:fakultet' %}">Fakultetlar</a>
+                      {% endif %}
+                {% else %}
+                        
+                        <a href="#">Adminda qoshing</a>
+    
+                    {% endif %}
+                    </div>
+            </div>
+            
+            {% endfor %}
+            {% else %}
+            <div class="dropdown">
+                <button class="dropbtn"> Adminda Categoriya qosh 
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
@@ -67,7 +99,8 @@
                     <a href="#">Fakultetlar</a>
                   </div>
             </div>
-            <div class="dropdown">
+            {% endif %}
+            {% comment %} <div class="dropdown">
                 <button class="dropbtn"> Faoliyat 
                     <i class="fa fa-caret-down"></i>
                   </button>
@@ -109,27 +142,26 @@
                     <a href="#">Dars jadvali</a>
                     <a href="#">Masofaviy talim Tizimi</a>
                   </div>
-            </div>
+            </div> {% endcomment %}
         </nav>
     </div>
-    </header> 
+    </header>
     <header id="humburger">
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
             <label class="menu__btn" for="menu__toggle">
               <span></span>
             </label>
-            <div class="btn__leb"><img src="/Image/img__malumot/Ranch 4.png" alt=""></div>
+            <div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div>
             <ul class="menu__box">
                 <div class="vertmenu">
                     <ul>
                         <li>
                             <a class="active" href="#">Universitet </a>
-                            <input type="checkbox" class="subCat" id="1"/>
-                            <label class="chka" for="1"></label>
+                            <label class="chka" for="1"><input type="checkbox" class="subCat" id="1" for="1"/></label>
                             <ul style="display:none">
                                 <li>
-                                    <a class="active" href="#">Universitet haqida</a>
+                                    <a class="active" href="#">{{cat_parent.name}} haqida</a>
                                 </li>
                                 <li>
                                     <a href="#">Universitet nizomi</a>
@@ -256,19 +288,11 @@
                 </h1>
                 <span id="spn"></span>
                     </div>
-                <div class="box__text">
-                    <p>
-                        2022-2023-o'quv yilida o'qishni ko'chirish 2-bosqichdanTalim shakli: Kunduzgi shakilda hujjatlar qabul qilinmoqda.
-<br><br>
-1. 60310100 – Iqtisodiyot va ishlab chiqarishni tashkil qilish (mashinasozlikda)
-<br><br>
-2. 60720800 – Mashinasozlik texnologiyasi, mashinasozlik ishlab chiqarishini jihozlash va avtomatlashtirish.
-<br><br>
-2022-2023-o'quv yilida o'qishni ko'chirish 2-bosqichdan Talim shakli: Sirtqi shakilda hujjatlar qabul qilinmoqda.
-<br><br>
-1.60720800 – Mashinasozlik texnologiyasi, mashinasozlik ishlab chiqarishini jihozlash va avtomatlashtirish.
-                    </p>
-                </div>
+                {% for oqish in oqish %}
+                    <div class="box__text">
+                        {{oqish.desc | safe}}
+                    </div>
+                {% endfor %}
         </div>
     </section>
     <section id="contact" class="contact">
