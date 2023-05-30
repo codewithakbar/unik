@@ -320,24 +320,21 @@
 }
 
 
-.img__box__shadow1 {
-    background-image: url(./Image/img__malumot/4bf8b7928ca22ba7d0e94b6678bc70df0801\ 1.png);
+.img__box__shadow1 img {
     border-radius: 10px;
     height: 270px;
     width: 100%;
     box-shadow: inset 0px 0px 10px 8px rgba(255, 255, 255, 0.77);
 }
 
-.img__box__shadow2 {
-    background-image: url(./Image/img__malumot/photo_2023-04-10_11-38-00\ 1.png);
+.img__box__shadow2 img{
     border-radius: 10px;
     height: 270px;
     width: 100%;
     box-shadow: inset 0px 0px 10px 8px rgba(255, 255, 255, 0.77);
 }
 
-.img__box__shadow3 {
-    background-image: url(./Image/img__malumot/4bf8b7928ca22ba7d0e94b6678bc70df0801\ 1.png);
+.img__box__shadow3 img{
     border-radius: 10px;
     height: 270px;
     width: 100%;
