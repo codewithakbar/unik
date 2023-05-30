@@ -52,3 +52,66 @@ class Malumotlar(models.Model):
         return self.title
     
 
+class Fakultetlar(models.Model):
+    name = models.CharField(max_length=224, blank=True)
+    summa = models.DecimalField(max_digits=11,decimal_places=0,default=0)
+
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Fakultet"
+        verbose_name_plural = "Fakultetlar"
+        
+
+class Kunduz(models.Model):
+    name = models.CharField(max_length=224, blank=True)
+    summa = models.DecimalField(max_digits=11,decimal_places=0,default=0)
+
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Kunduz"
+        verbose_name_plural = "Kunduzgilar"
+
+
+class Sirtqi(models.Model):
+    name = models.CharField(max_length=224, blank=True)
+    summa = models.DecimalField(max_digits=11,decimal_places=0,default=0)
+
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Sirtqi"
+        verbose_name_plural = "Sirtqilar"
+
+
+class OqishniKochirish(models.Model):
+    
+    desc = RichTextField()
+
+
+    def __str__(self):
+        return self.desc[1:7]
+    
+    class Meta:
+        verbose_name = "OqishniKochirish"
+        verbose_name_plural = "OqishniKochirishlar"
+
+
+class Magistr(models.Model):
+    name = models.CharField(max_length=224, blank=True)
+    summa = models.DecimalField(max_digits=11,decimal_places=0,default=0)
+
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Magistr"
+        verbose_name_plural = "Magistrlar"

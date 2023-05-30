@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views.generic import DetailView
 from django.shortcuts import get_list_or_404
 
-from .models import Banner, Category, Malumotlar, Content
+from .models import Banner, Category, Malumotlar, Content, Fakultetlar
 from news.models import NewsCartegory, Yangiliklar
 
 
@@ -23,7 +23,7 @@ def index(request):
 def fakultet(request):
     
     context = {
-        "kontentla": "kontentla",
+        "fak": Fakultetlar.objects.all(),
         'categories': Category.objects.filter(parent=None)[:6],
         "category": Category.objects.filter(parent_id=1),
     }

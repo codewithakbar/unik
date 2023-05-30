@@ -291,10 +291,9 @@
         <span id="spn"></span>
             </div>
             <div class="contant__text">
-                <p>Iqtisodiyot - 18.000.000</p>
-                <p>Maktabgacha talim - 18.000.000</p>
-                <p>Astrologiya - 18.000.000</p>
-                <p>Astrologiya - 18.000.000</p>
+               {% for fak in fak %}
+                <p>{{fak.name}} - {{fak.summa}}</p>
+                {% endfor %}
             </div>
         </div>
     </section>
