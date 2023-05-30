@@ -77,13 +77,12 @@
 
 .language {
     z-index: 100;
-    min-width: 240px;
+    min-width: 70px;
     display: flex;
     align-items: center;
+    justify-content:space-around ;
 }
-.language div, span{
-    margin-right: 5px;
-}
+
 .mail__p a{
     text-decoration: none;
     color: black;
