@@ -20,15 +20,6 @@ def index(request):
     return render(request, "home/index.html", context)
 
 
-def fakultet(request):
-    
-    context = {
-        "fak": Fakultetlar.objects.all(),
-        'categories': Category.objects.filter(parent=None)[:6],
-        "category": Category.objects.filter(parent_id=1),
-    }
-
-    return render(request, "home/fakultetlar.html", context)
 
 
 def malumotlar(request):
@@ -59,6 +50,7 @@ def malumot_detail(request, cat_id):
         'categories': Category.objects.filter(parent=None)[:6],
         "cat_news": NewsCartegory.objects.filter(parent=None),
         "malumotlar": malumotlar,
+        "cat": Category.objects.get(name="UNIVERSITET"),
     }
 
     return render(request, 'home/mailumot_detail.html', context)
@@ -89,13 +81,23 @@ def category(request, cat_id=None):
 def rektorjon(request):
     
     context = {
-        "kontentla": "kontentla",
         'categories': Category.objects.filter(parent=None)[:6],
-        "category": Category.objects.filter(parent_id=1),
+        "category": Category.objects.filter(id=1),
     }
 
     return render(request, "home/rektor.html", context)
 
+
+def fakultet(request):
+    
+    context = {
+        "fak": Fakultetlar.objects.all(),
+        "category": Category.objects.filter(id=1),
+        "CAT": Category.objects.filter(name="UNIVERSITET"),
+        'categories': Category.objects.filter(parent=None)[:6],
+    }
+
+    return render(request, "home/fakultetlar.html", context)
 
 class MalumotDetailView(DetailView):
     model = Malumotlar

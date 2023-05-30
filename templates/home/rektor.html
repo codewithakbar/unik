@@ -269,22 +269,28 @@
                             Universitet 
                         </h1>
                     </div>
-                        <nav class="nacbar__nav">
-                            <ul>
-                                {% for aaa in category %}
-                                    <li><a class="menu__a" href="{% url 'home:category' aaa.id%}">{{aaa.name}}</a></li>
+                    <nav class="nacbar__nav">
+                        <ul>
+                           {% for cat in category %}
+                           {% for chill in cat.children.all %}
+                                <li><a class="menu__a" href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a></li>
                                 {% endfor %}
                                 {% if cat.name == 'UNIVERSITET' %}
-                                        <li><a class="menu__a" href="{% url 'home:rektorlar' %}">Rekrorat</a></li>
-                                    {% endif %}
-                                {% comment %} <li><a class="unik__haq" href="">Universitet haqida</a></li> {% endcomment %}
-                                {% comment %} <li><a class="menu__a" href="">Universitet ichqi tartib qoidalari</a></li>
-                                <li><a class="menu__a" href="">Universitet odob-axloq qodeksi</a></li>
-                                <li><a class="menu__a" href="">Rekrorat</a></li>
-                                <li><a class="menu__a" href="">Kafedralar</a></li>
-                                <li><a class="menu__a" href="">Fakultetlar</a></li> {% endcomment %}
-                            </ul>
-                        </nav>
+                                    <li><a class="menu__a" href="{% url 'home:rektorlar' %}">Rekrorat</a></li>
+                                {% endif %}
+                                {% if cat.name == 'UNIVERSITET' %}
+                                    <li><a class="menu__a" href="{% url 'home:fakultet' %}">Fakultetlar</a></li>
+                                {% endif %}
+                                
+                                  {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
+                                  <li><a class="menu__a" href="">defoilt</a></li>
+                                  <li><a class="menu__a" href="">defoilt</a></li>
+                                  <li><a class="menu__a" href="">defoilt</a></li>
+                                  <li><a class="menu__a" href="">defoilt</a></li>
+                                  <li><a class="menu__a" href="">defoilt</a></li> {% endcomment %}
+                          {% endfor %}
+                        </ul>
+                    </nav>
                 </div>
             </aside>
         <div class="header__contant">

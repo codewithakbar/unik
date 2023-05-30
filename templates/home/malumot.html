@@ -283,6 +283,9 @@
                                     {% if cat.name == 'UNIVERSITET' %}
                                         <li><a class="menu__a" href="{% url 'home:rektorlar' %}">Rekrorat</a></li>
                                     {% endif %}
+                                    {% if cat.name == 'UNIVERSITET' %}
+                                        <li><a class="menu__a" href="{% url 'home:fakultet' %}">Fakultetlar</a></li>
+                                    {% endif %}
                                     
                                       {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
                                       <li><a class="menu__a" href="">defoilt</a></li>
