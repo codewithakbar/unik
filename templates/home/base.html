@@ -89,6 +89,9 @@
                     {% if cat.name == 'UNIVERSITET' %}
                         <a href="{% url 'home:rektorlar' %}">Rekrorat</a>
                     {% endif %}
+                    {% if cat.name == 'UNIVERSITET' %}
+                        <a href="{% url 'home:fakultet' %}">Fakultetlar</a>
+                    {% endif %}
                 {% else %}
                     
                     <a href="#">Adminda qoshing</a>

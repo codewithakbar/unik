@@ -20,6 +20,17 @@ def index(request):
     return render(request, "home/index.html", context)
 
 
+def fakultet(request):
+    
+    context = {
+        "kontentla": "kontentla",
+        'categories': Category.objects.filter(parent=None)[:6],
+        "category": Category.objects.filter(parent_id=1),
+    }
+
+    return render(request, "home/fakultetlar.html", context)
+
+
 def malumotlar(request):
 
     catID = request.GET.get("cat")
@@ -42,7 +53,7 @@ def malumotlar(request):
 
 def malumot_detail(request, cat_id):
 
-    malumotlar = get_object_or_404(Yangiliklar, id=cat_id)
+    malumotlar = get_object_or_404(Malumotlar, id=cat_id)
 
     context = {
         'categories': Category.objects.filter(parent=None)[:6],

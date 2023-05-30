@@ -33,7 +33,7 @@
             {% for mal in malumotlar %}
                 <div class="box__cont">
                     <div class="box__image">
-                        <div class="img__box__shadow1"><img src="/Image/img__malumot/4bf8b7928ca22ba7d0e94b6678bc70df0801 1.png" alt=""></div>
+                        <div class="img__box__shadow1"><img src="{{mal.image.url}}" alt=""></div>
                     </div>
                     <div class="box__img__logo"><img src="{% static 'Image/part.png' %}" alt=""></div>
                     <div class="box__image__text"><h1>{{mal.title}}</h1> <a href="{% url 'home:malumot_detail' mal.id %}">Batavsil...</a></div>
