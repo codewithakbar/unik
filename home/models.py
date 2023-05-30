@@ -123,3 +123,8 @@ class Magistr(models.Model):
 class Images(models.Model):
     product = models.ForeignKey(Content, default=None, related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='contents/%Y/%m/%d', blank=True, null=True)
+
+
+class MalImages(models.Model):
+    mal = models.ForeignKey(Malumotlar, default=None, related_name='images', on_delete=models.CASCADE, blank=True, null=True)
+    image = models.ImageField(upload_to='malconte/%Y/%m/%d', blank=True, null=True)

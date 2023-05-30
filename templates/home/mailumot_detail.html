@@ -312,6 +312,13 @@
                 <!-- Jora "p"ga stil barma bomasa adminda Pga stil barilgan-->
                    {{malumotlar.desc|safe}}
            </div>
+
+           {% for ppp in photos %}
+
+           <div class="cont__img">
+                <img src="{{ ppp.image.url }}" alt="">
+            </div>
+           {% endfor %}
            <div class="btn__blck">
                <div class="cancel">
                    <a href="{% url 'home:homepage' %}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>

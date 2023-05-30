@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views.generic import DetailView
 from django.shortcuts import get_list_or_404
 
-from .models import Banner, Category, Images, Malumotlar, Content, Fakultetlar, OqishniKochirish
+from .models import Banner, Category, Images, MalImages, Malumotlar, Content, Fakultetlar, OqishniKochirish
 from news.models import NewsCartegory, Yangiliklar
 
 
@@ -53,11 +53,15 @@ def malumot_detail(request, cat_id):
 
     malumotlar = get_object_or_404(Malumotlar, id=cat_id)
 
+    kontentcha = get_object_or_404(Malumotlar, id=cat_id)
+    photos = MalImages.objects.filter(mal=kontentcha)
+
     context = {
         'categories': Category.objects.filter(parent=None)[:6],
         "cat_news": NewsCartegory.objects.filter(parent=None),
         "malumotlar": malumotlar,
         "cat": Category.objects.get(name="UNIVERSITET"),
+        "photos": photos,
     }
 
     return render(request, 'home/mailumot_detail.html', context)
@@ -92,10 +96,10 @@ def category(request, cat_id=None):
 
 
 
-class MalumotDetailView(DetailView):
-    model = Malumotlar
-    template_name = 'home/mailumot_detail.html'
-    context_object_name = 'malumotlar'
+# class MalumotDetailView(DetailView):
+#     model = Malumotlar
+#     template_name = 'home/mailumot_detail.html'
+#     context_object_name = 'malumotlar'
 
 
 # @login_required
