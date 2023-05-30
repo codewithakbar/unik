@@ -303,36 +303,25 @@
         </h1>
         <span id="spn"></span>
             </div>
-            {% if cat == 19 %}
-            {% for kontent in kontentla %}
-                <div class="contant__text">
-                    <p>{{kontent.title}} - 18.000.000</p>
-                    <p>Maktabgacha talim - 18.000.000</p>
-                    <p>Astrologiya - 18.000.000</p>
-                    <p>Astrologiya - 18.000.000</p>
-                </div>
-            {% endfor %}
-            {% else %}
             {% for kontent in kontentla %}
             {% comment %} <div> {% endcomment %}
                 <div class="contant__text">
                     <h4>
                         {{kontent.title}}
                     </h4>
-                    
-                    <div class="text__cont"> 
-                        {{kontent.desc | safe }}
-                    </div> 
-                    {% if image %}
-                    <div class="cont__img__c">
-                        <img src="{{kontent.image.url}}" alt="">
-                    </div>
-                    {% endif %}
+                
+                <div class="text__cont"> 
+                    {{kontent.desc | safe }}
+                 </div> 
+                 {% if image %}
+                 <div class="cont__img__c">
+                    <img src="{{kontent.image.url}}" alt="">
                 </div>
-                {% comment %} </div> {% endcomment %}
-                {% endfor %}
                 {% endif %}
-            </div>
+                </div>
+            {% comment %} </div> {% endcomment %}
+            {% endfor %}
+        </div>
 
     </section>
     <div class="btn__cncl">

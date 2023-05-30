@@ -86,17 +86,6 @@ def rektorjon(request):
     return render(request, "home/rektor.html", context)
 
 
-def fakultet(request):
-    
-    context = {
-        "kontentla": "kontentla",
-        'categories': Category.objects.filter(parent=None)[:6],
-        "category": Category.objects.filter(parent_id=1),
-    }
-
-    return render(request, "home/fakultetlar.html", context)
-
-
 class MalumotDetailView(DetailView):
     model = Malumotlar
     template_name = 'home/mailumot_detail.html'
