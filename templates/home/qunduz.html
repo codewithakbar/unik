@@ -147,123 +147,111 @@
   </div>
   </header>
   <header id="humburger">
-      <div class="hamburger-menu">
-          <input id="menu__toggle" type="checkbox" />
-          <label class="menu__btn" for="menu__toggle">
-            <span></span>
-          </label>
-          <div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div>
-          <ul class="menu__box">
-              <div class="vertmenu">
-                  <ul>
-                      <li>
-                          <a class="active" href="#">Universitet </a>
-                          <label class="chka" for="1"><input type="checkbox" class="subCat" id="1" for="1"/></label>
-                          <ul style="display:none">
-                              <li>
-                                  <a class="active" href="#">{{cat_parent.name}} haqida</a>
-                              </li>
-                              <li>
-                                  <a href="#">Universitet nizomi</a>
-                              </li>
-                              <li>
-                                  <a href="#">Universitet ichgi tartib qoidalari</a>
-                              </li>
-                              <li>
-                                  <a href="#">Universitet adob-axlpq qodeksi</a>
-                              </li>
-                              <li>
-                                  <a href="#">Rektorat</a>
-                              </li>
-                              <li>
-                                  <a href="#">Kafedralar</a>
-                              </li>
-                              <li>
-                                  <a href="#">Fakultetlar</a>
-                              </li>
-                          </ul>
-                      </li>   
-                      <li>
-                          <a href="#">Faoliyat </a>
-                          <input type="checkbox" class="subCat" id="2" />
-                          <label class="chka" for="2"></label>
-                          <ul style="display:none">
-                              <li>
-                                  <a href="#">Xalqoro hamqor tashkilotlar</a>
-                              </li>
-                              <li>
-                                  <a href="#">Moliyaviy Faoliyat</a>
-                              </li>
-                              <li>
-                                  <a href="#">Yoshlar bilan ishlash va ma'naviy-ma'rifiy Faoliyat</a>
-                              </li>
-                          </ul>
-                      </li>
-                      <li>
-                          <a href="#">Abiturient</a>
-                          <input type="checkbox" class="subCat" id="3" />
-                          <label class="chka" for="3"></label>
-                          <ul style="display:none">
-                              <li>
-                                  <a href="#">Kunduzgi talim yonalishlari</a>
-                              </li>
-                              <li>
-                                  <a href="#">Sirtqi talim yonalishlari</a>
-                              </li>
-                              <li>
-                                  <a href="#">Oqishni qochirish</a>
-                              </li>
-                              <li>
-                                  <a href="#">Magistratura yonalishlari va qabul kvotasi</a>
-                              </li>
-                          </ul>
-                      </li>
-                      <li>
-                          <a href="#">Talabalar</a>
-                          <input type="checkbox" class="subCat" id="4" />
-                          <label class="chka" for="4"></label>
-                          <ul style="display:none">
-                              <li>
-                                  <a href="#">Oliy talim davlat talim standarti</a>
-                              </li>
-                              <li>
-                                  <a href="#">Meyoriy huquqiy hujjat</a>
-                              </li>
-                              <li>
-                                  <a href="#">Oquv jarayoni grafigi</a>
-                              </li>
-                          </ul>
-                      </li>
-                      <li>
-                          <a href="#">Talim Resurslari </a>
-                          <input type="checkbox" class="subCat" id="5" />
-                          <label class="chka" for="5"></label>
-                          <ul style="display:none">
-                              <li>
-                                  <a href="#">Eleqtron adabiyot</a>
-                              </li>
-                              <li>
-                                  <a href="#">ZOOM</a>
-                              </li>
-                              <li>
-                                  <a href="#">Talim Resurslari</a>
-                              </li>
-                              <li>
-                                  <a href="#">Dars jadvali</a>
-                              </li>
-                              <li>
-                                  <a href="#">Masofaviy talim Tizimi</a>
-                              </li>
-                          </ul>
-                      </li>
-                  </ul>
-                  <div class="user">
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div>
+        <ul class="menu__box">
+            <div class="vertmenu">
+                <ul>
+                    {% for ccc in categories %}
+                    <li>
+                        <a class="active" href="#">{{ccc.name}} </a>
+                        <input type="checkbox" class="subCat" id="{{ccc.id}}"/>
+                        <label class="chka" for="{{ccc.id}}"></label>
+                        <ul style="display:none">
+                            {% for chill in ccc.children.all %}
+                            <li>
+                                <a class="active" href="#">{{chill.name}}</a>
+                            </li>
+                            {% endfor %}
+                            
+                        </ul>
+                    </li>
+                    {% endfor %}
+                    {% comment %} <li>
+                        <a href="#">Faoliyat </a>
+                        <input type="checkbox" class="subCat" id="2" />
+                        <label class="chka" for="2"></label>
+                        <ul style="display:none">
+                            <li>
+                                <a href="#">Xalqoro hamqor tashkilotlar</a>
+                            </li>
+                            <li>
+                                <a href="#">Moliyaviy Faoliyat</a>
+                            </li>
+                            <li>
+                                <a href="#">Yoshlar bilan ishlash va ma'naviy-ma'rifiy Faoliyat</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Abiturient</a>
+                        <input type="checkbox" class="subCat" id="3" />
+                        <label class="chka" for="3"></label>
+                        <ul style="display:none">
+                            <li>
+                                <a href="#">Kunduzgi talim yonalishlari</a>
+                            </li>
+                            <li>
+                                <a href="#">Sirtqi talim yonalishlari</a>
+                            </li>
+                            <li>
+                                <a href="#">Oqishni qochirish</a>
+                            </li>
+                            <li>
+                                <a href="#">Magistratura yonalishlari va qabul kvotasi</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Talabalar</a>
+                        <input type="checkbox" class="subCat" id="4" />
+                        <label class="chka" for="4"></label>
+                        <ul style="display:none">
+                            <li>
+                                <a href="#">Oliy talim davlat talim standarti</a>
+                            </li>
+                            <li>
+                                <a href="#">Meyoriy huquqiy hujjat</a>
+                            </li>
+                            <li>
+                                <a href="#">Oquv jarayoni grafigi</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Talim Resurslari </a>
+                        <input type="checkbox" class="subCat" id="5" />
+                        <label class="chka" for="5"></label>
+                        <ul style="display:none">
+                            <li>
+                                <a href="#">Eleqtron adabiyot</a>
+                            </li>
+                            <li>
+                                <a href="#">ZOOM</a>
+                            </li>
+                            <li>
+                                <a href="#">Talim Resurslari</a>
+                            </li>
+                            <li>
+                                <a href="#">Dars jadvali</a>
+                            </li>
+                            <li>
+                                <a href="#">Masofaviy talim Tizimi</a>
+                            </li>
+                        </ul>
+                    </li> {% endcomment %}
+                </ul>
+                <div class="user">
                     <button><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
                   </div>
-              </div>
-          </ul>
-        </div>
-  </header>
+            </div>
+        </ul>
+      </div>
+</header>
 
 
     

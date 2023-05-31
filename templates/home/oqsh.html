@@ -156,34 +156,22 @@
             <ul class="menu__box">
                 <div class="vertmenu">
                     <ul>
+                        {% for ccc in categories %}
                         <li>
-                            <a class="active" href="#">Universitet </a>
-                            <label class="chka" for="1"><input type="checkbox" class="subCat" id="1" for="1"/></label>
+                            <a class="active" href="#">{{ccc.name}} </a>
+                            <input type="checkbox" class="subCat" id="{{ccc.id}}"/>
+                            <label class="chka" for="{{ccc.id}}"></label>
                             <ul style="display:none">
+                                {% for chill in ccc.children.all %}
                                 <li>
-                                    <a class="active" href="#">{{cat_parent.name}} haqida</a>
+                                    <a class="active" href="#">{{chill.name}}</a>
                                 </li>
-                                <li>
-                                    <a href="#">Universitet nizomi</a>
-                                </li>
-                                <li>
-                                    <a href="#">Universitet ichgi tartib qoidalari</a>
-                                </li>
-                                <li>
-                                    <a href="#">Universitet adob-axlpq qodeksi</a>
-                                </li>
-                                <li>
-                                    <a href="#">Rektorat</a>
-                                </li>
-                                <li>
-                                    <a href="#">Kafedralar</a>
-                                </li>
-                                <li>
-                                    <a href="#">Fakultetlar</a>
-                                </li>
+                                {% endfor %}
+                                
                             </ul>
-                        </li>   
-                        <li>
+                        </li>
+                        {% endfor %}
+                        {% comment %} <li>
                             <a href="#">Faoliyat </a>
                             <input type="checkbox" class="subCat" id="2" />
                             <label class="chka" for="2"></label>
@@ -255,7 +243,7 @@
                                     <a href="#">Masofaviy talim Tizimi</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> {% endcomment %}
                     </ul>
                     <div class="user">
                         <button><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
