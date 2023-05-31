@@ -152,7 +152,7 @@
         <label class="menu__btn" for="menu__toggle">
           <span></span>
         </label>
-        <div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div>
+        <a href="{% url 'home:homepage' %}"><div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div></a>
         <ul class="menu__box">
             <div class="vertmenu">
                 <ul>
@@ -164,7 +164,7 @@
                         <ul style="display:none">
                             {% for chill in ccc.children.all %}
                             <li>
-                                <a class="active" href="#">{{chill.name}}</a>
+                                <a class="active" href="{% url 'home:category' ccc.id %}?cat={{chill.id}}">{{chill.name}}</a>
                             </li>
                             {% endfor %}
                             
