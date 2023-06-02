@@ -11,7 +11,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    {% comment %} <link rel="stylesheet" href="{% static 'batafsil.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'abiturent.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'batafsil.css' %}">
+    <link rel="stylesheet" href="{% static 'fakultetlar.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'faoliyat.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'malumot.css' %}">
+    <link rel="stylesheet" href="{% static 'news.css' %}">
+    <link rel="stylesheet" href="{% static 'newsdetail.css' %}">
+    <link rel="stylesheet" href="{% static 'rektor.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'resurslar.css' %}">
+    <link rel="stylesheet" href="{% static 'talabalar.css' %}">
+    <link rel="stylesheet" href="{% static 'univer.css' %}"> {% endcomment %}
+     
     {% block styles %}{% endblock styles %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +41,7 @@
     <div class="container">
         <div class="box__contact">
             <div class="contact__logo">
-                <a href="{% url 'home:homepage' %}"><img src="{% static 'Image/Vector.png' %}" alt="contact"></a>
+                <a href="{% url 'homepage' %}"><img src="{% static 'Image/Vector.png' %}" alt="contact"></a>
             </div>
             <div class="contact__number">
                 <p class="contact__p">
@@ -55,11 +66,15 @@
             <button><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
           </div>
         <div class="uzb__image">
-            <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
+            <a href="{% url 'set-language' 'uz' %}"><button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button></a>
         </div>
         <span id="span2"></span>
         <div class="eng__image">
-            <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
+            <a href="{% url 'set-language' 'en' %}"><button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button></a>
+        </div>
+        <span id="span2"></span>
+        <div class="eng__image">
+            <a href="{% url 'set-language' 'ru' %}"><button><img src="" alt="Ru-flag"></button></a>
         </div>
     </div>
     </div>
@@ -68,9 +83,9 @@
     <div class="box__container">
     <div class="hedaer__image">
         <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
-       <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
+       <a class="img__orange" href="{% url 'homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
     </div>
-    <nav class="navbar">
+        <nav class="navbar">
 
         {% if categories %}
         
@@ -122,21 +137,7 @@
         
         
         {% endfor %}
-        <div class="dropdown">
-            <button class="dropbtn"> Talabalar 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content"> 
 
-                    <a href="{% static 'parsing-senary.pdf' %}">Kitobcha</a>
-                    <a href="{% static 'parsing-senary.pdf' %}">Kitobcha</a>
-                    <a href="{% static 'parsing-senary.pdf' %}">Kitobcha</a>
-                    
-                    {% comment %} {% else %}
-                    <a href="#">Adminda qoshing</a> {% endcomment %}
-                </div>
-                
-        </div>
         {% else %}
         <div class="dropdown">
             <button class="dropbtn"> Adminda Categoriya qosh 
@@ -205,7 +206,7 @@
         <label class="menu__btn" for="menu__toggle">
           <span></span>
         </label>
-        <a href="{% url 'home:homepage' %}"><div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div></a>
+        <a href="{% url 'homepage' %}"><div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div></a>
         <ul class="menu__box">
             <div class="vertmenu">
                 <ul>
@@ -311,6 +312,48 @@
 
     {% endblock content %}
 
+    <section id="contact">
+        <div class="contact__container">
+            <div class="contact__box">
+                <h1>RANCH</h1>
+                <p class="cont__tetx">
+                    Urganch RANCH Texnologiya Universiteti
+                </p>
+                <p class="nomer">
+                    <a href="tel:+998 99 218 00 60">+998 99 218 00 60</a>
+                </p>
+                <p class="cont__tetx malumot">
+                    Malumot uchut telefon
+                </p>
+                <p class="pochta">
+                    <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+                </p>
+                <p class="cont__tetx">
+                  Malumot uchun email qutisi  
+                </p>
+            </div>
+            <div class="contact__box">
+                <h1>Menu</h1>
+                <a class="menu__a" href="/category/1/?cat=11">Universitet</a>
+                <a class="menu__a" href="/category/13/?cat=23">Faoliyat</a>
+                <a class="menu__a" href="/category/14/?cat=26">Abiturient</a>
+                <a class="menu__a" href="/category/14/?cat=26">Talabalar</a>
+                <a class="menu__a" href="/category/16/?cat=33">Talim Resurslari</a>
+            </div>
+            <div class="contact__box__logo">
+                <h1>Tarmoklar</h1>
+                <div class="logog">
+                <a href="http://www.instagram.com/utu_ranch"><img src="{% static 'Image/logo/Instagram_icon-icons.com_66804.png' %}" alt=""></a>
+                <a href="https://t.me/utu_ranch"><img src="{% static 'Image/logo/telegram_social_network_communication_chat_interaction_icon_192276.png' %}" alt=""></a>
+                <a href="https://youtube.com/@uturanch"><img src="{% static 'Image/logo/youtube_logo_icon_168737.png' %}" alt=""></a>
+                <a href="https://fb.com/uturanch"><img src="{% static 'Image/logo/4202107facebookfblogosocialsocialmedia-115710_115591.png' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
    
     <script>
         window.addEventListener('scroll', function(){

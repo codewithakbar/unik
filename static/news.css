@@ -162,7 +162,7 @@
     display: none;
 }
 @media (max-width:950px) {
-    #home {
+    #home__new {
         margin: 10% 0 0 2%;
         padding: 0;
         display: flex;
@@ -318,28 +318,6 @@
     #header {
         width: 100%;
     }
- 
-    .row {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row;
-    }
-    .stats {
-        background-color: #FF8B36;
-        color: #fff;
-        border-radius: 15px;
-        margin: 0 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 150px;
-        text-align: center;
-        font-size: 35px;
-        font-weight: 500;
-        font-family: 'Montserrat', sans-serif;
-    }
 
     .box__container {
         padding: 20px 80px;
@@ -462,12 +440,12 @@
     flex-direction: row;
 }
 
-#home {
+#home__new {
     margin:10% 8% 0 8%;
     display: flex;
  
 }
- 
+
 .sidebar {
     flex-basis: 24.33%;
     border-radius: 10px;
@@ -535,7 +513,7 @@
 }
 
 @media (max-width:950px) {
-    #home {
+    #home__new {
         display: flex;
         flex-direction: column;
         align-items: center;

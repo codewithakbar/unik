@@ -19,12 +19,16 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from django.views.static import serve
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
+
+from home import views
 
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("home.urls", namespace="home")),
+    path("", views.index, name="homepage"),
+    path("r/", include("home.urls", namespace="home")),
     path('translation/', include('translation_manager.urls')),
     path('news/', include('news.urls', namespace="news")),
 
@@ -37,3 +41,8 @@ urlpatterns = [
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += [re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, }), ]
+urlpatterns = [
+    *i18n_patterns(*urlpatterns, prefix_default_language=False),
+
+    path("set_language/<str:language>", views.set_language, name="set-language"),
+    ]

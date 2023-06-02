@@ -13,7 +13,7 @@ import os
 
 from pathlib import Path
 
-from django.utils.translation import gettext_lazy as _
+# from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ["utu-ranch.uz", ".utu-ranch.uz", "localhost", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -46,7 +47,6 @@ INSTALLED_APPS = [
 
 
     "translation_manager",
-
     "home",
     "news",
 ]
@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "uz"
 
 TIME_ZONE = "UTC"
 
@@ -151,14 +151,20 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Languages
 
-LANGUAGES = [
-    ('en', _('English')),     
-    ('ja', _('Japanese')),
-]
+LANGUAGES = (
+    ('en', 'English'),
+    ('uz', 'O\'zbek'),
+    ('ru', 'Русский'),
+)
 
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'home/locale')
+    BASE_DIR / 'locale/',
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
+MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
+
+
 
 LANGUAGE_SESSION_KEY = 'session_language_appname'
 LANGUAGE_COOKIE_NAME = 'cookie_language_appname' 

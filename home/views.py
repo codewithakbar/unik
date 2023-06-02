@@ -1,11 +1,16 @@
 import django
+from urllib.parse import urlparse
 from django.conf import settings
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
+from django.urls.exceptions import Resolver404
+from django.urls.base import resolve, reverse
 from django.views.generic import DetailView
 from django.shortcuts import get_list_or_404
+from django.utils import translation
 
-from .models import Banner, Book, Category, Images, MalImages, Malumotlar, Content, Fakultetlar, OqishniKochirish
+
+from .models import Banner, Book, Category, Images, MalImages, Malumotlar, Content, Fakultetlar, OqishniKochirish, Rektorat
 from news.models import NewsCartegory, Yangiliklar
 
 
@@ -60,7 +65,7 @@ def malumot_detail(request, cat_id):
         'categories': Category.objects.filter(parent=None)[:6],
         "cat_news": NewsCartegory.objects.filter(parent=None),
         "malumotlar": malumotlar,
-        "cat": Category.objects.get(name="UNIVERSITET"),
+        # "cat": Category.objects.get(name="UNIVERSITET"    ),
         "photos": photos,
     }
 
@@ -101,13 +106,24 @@ def category(request, cat_id=None):
 #     context_object_name = 'malumotlar'
 
 
-# @login_required
-def set_language(request):
-    lang = request.GET.get('l', 'en')
-    request.session[settings.LANGUAGE_SESSION_KEY] = lang
-    response = HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
-    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang)
+def set_language(request, language):
+    for lang, _ in settings.LANGUAGES:
+        translation.activate(lang)
+        try:
+            view = resolve(urlparse(request.META.get("HTTP_REFERER")).path)
+        except Resolver404:
+            view = None
+        if view:
+            break
+    if view:
+        translation.activate(language)
+        next_url = reverse(view.url_name, args=view.args, kwargs=view.kwargs)
+        response = HttpResponseRedirect(next_url)
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+    else:
+        response = HttpResponseRedirect("/")
     return response
+
 
 
 # def book_detail(request, pk):
@@ -129,6 +145,7 @@ def rektorjon(request):
     context = {
         'categories': Category.objects.filter(parent=None)[:6],
         "category": Category.objects.filter(id=1),
+        'rektorla': Rektorat.objects.all()
     }
 
     return render(request, "home/rektor.html", context)

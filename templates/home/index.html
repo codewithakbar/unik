@@ -1,5 +1,5 @@
 {% extends 'home/base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block content %}
 
@@ -23,7 +23,7 @@
     <div class="title">
         <span id="title"></span>
         <h1>
-            Ma’lumotlar
+            {% translate "Ma’lumotlar" %}
         </h1>   
         <span id="title"></span>
     </div>
@@ -69,7 +69,7 @@
 <section id="news">
     <div class="news__title">
         <span id="span__news"></span>
-        <h1>SO'NGI YANGILIKLAR</h1>
+        <h1>{% translate "SO'NGI YANGILIKLAR" %}</h1>
         <span id="span__news"></span>
     </div>
     <div class="blog-slider_wrapper">    
@@ -171,45 +171,7 @@
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac1853db4b78d4e06c7e8dcf61524e6c9d2ac02d52bcef2fd51f26e1155da4ef8&amp;width=675&amp;height=510&amp;lang=ru_RU&amp;scroll=true"></script>
     </div>
   </section>
-<section id="contact">
-    <div class="contact__container">
-        <div class="contact__box">
-            <h1>RANCH</h1>
-            <p class="cont__tetx">
-                Urganch RANCH Texnologiya Universiteti
-            </p>
-            <p class="nomer">
-                <a href="tel:+998 99 218 00 60">+998 99 218 00 60</a>
-            </p>
-            <p class="cont__tetx malumot">
-                Malumot uchut telefon
-            </p>
-            <p class="pochta">
-                <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
-            </p>
-            <p class="cont__tetx">
-              Malumot uchun email qutisi  
-            </p>
-        </div>
-        <div class="contact__box">
-            <h1>Menu</h1>
-            <a class="menu__a" href="/category/1/?cat=11">Universitet</a>
-            <a class="menu__a" href="/category/13/?cat=23">Faoliyat</a>
-            <a class="menu__a" href="/category/14/?cat=26">Abiturient</a>
-            <a class="menu__a" href="/category/14/?cat=26">Talabalar</a>
-            <a class="menu__a" href="/category/16/?cat=33">Talim Resurslari</a>
-        </div>
-        <div class="contact__box__logo">
-            <h1>Tarmoklar</h1>
-            <div class="logog">
-            <a href="http://www.instagram.com/utu_ranch"><img src="{% static 'Image/logo/Instagram_icon-icons.com_66804.png' %}" alt=""></a>
-            <a href="https://t.me/utu_ranch"><img src="{% static 'Image/logo/telegram_social_network_communication_chat_interaction_icon_192276.png' %}" alt=""></a>
-            <a href="https://youtube.com/@uturanch"><img src="{% static 'Image/logo/youtube_logo_icon_168737.png' %}" alt=""></a>
-            <a href="https://fb.com/uturanch"><img src="{% static 'Image/logo/4202107facebookfblogosocialsocialmedia-115710_115591.png' %}" alt=""></a>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 
 {% endblock content %}

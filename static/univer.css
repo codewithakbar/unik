@@ -5,7 +5,6 @@
 }
 
 .wrapper {
-   
    padding-top: 20px;
    display: flex;
    justify-content:space-around;
@@ -15,7 +14,7 @@
 
 .container {
    z-index: 100;
-   width: 100%;
+   width: 430px;
    display: flex;
    justify-content: space-between;
    flex-direction: row;

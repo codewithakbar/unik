@@ -1,353 +1,178 @@
-<!DOCTYPE html>
-{% load static humanize%}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'fakultetlar.css' %}">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <title>Universitet hakida</title>
-</head>
-<body>
-   <div class="wrapper">
-      <div class="container">
-          <div class="box__contact">
-              <div class="contact__logo">
-                  <img src="{% static 'Image/Vector.png' %}" alt="contact">
-              </div>
-              <div class="contact__number">
-                  <p class="contact__p">
-                      <a href="tel:+998 99 218 00 60">+998 99 218 00 60  </a>
-                  </p>
-              </div>
-          </div>
-          <span id="span1"></span>
-          <div class="box__mail">
-              <div class="mail__icon">
-                  <img src="{% static 'Image/icon.png' %}" alt="mail">
-              </div>
-              <div class="mail__info">
-                  <p class="mail__p">
-                      <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
-                  </p>
-              </div>
-          </div>
-      </div>
-      <div class="language">
-          <div class="user">
-              <button><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
-            </div>
-          <div class="uzb__image">
-              <button><img src="{% static 'Image/Flags.png' %}" alt="icon"></button>
-          </div>
-          <span id="span2"></span>
-          <div class="eng__image">
-              <button><img src="{% static 'Image/Flags (1).png' %}" alt="icon"></button>
-          </div>
-      </div>
-  </div>
-  <header class="header" id="header">
-      <div class="box__container">
-      <div class="hedaer__image">
-          <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
-         <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
-      </div>
-      <nav class="navbar">
-  
-          {% if categories %}
-          
-          {% for cat in categories %}
-  
-          <div class="dropdown">
-              <button class="dropbtn"> {{cat.name}} 
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  {% if cat.children.all %}
-                  
-                  {% for chill in cat.children.all %}
-                  <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
-                  {% endfor %}
-                  {% if cat.name == 'UNIVERSITET' %}
-                      <a href="{% url 'home:rektorlar' %}">Rekrorat</a>
-                  {% endif %}
-                  {% if cat.name == 'UNIVERSITET' %}
-                        <a href="{% url 'home:fakultet' %}">Fakultetlar</a>
-                    {% endif %}
-              {% else %}
-                      
-                      <a href="#">Adminda qoshing</a>
-  
-                  {% endif %}
-                  </div>
-          </div>
-          
-          {% endfor %}
-          {% else %}
-          <div class="dropdown">
-              <button class="dropbtn"> Adminda Categoriya qosh 
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="#">Universitet haqida</a>
-                  <a href="#">Universitet nizomi</a>
-                  <a href="#">Universitet ichgi tartib qoidalari</a>
-                  <a href="#">Universitet adob-axlpq qodeksi</a>
-                  <a href="#">Rektorat</a>
-                  <a href="#">Kafedralar</a>
-                  <a href="#">Fakultetlar</a>
-                </div>
-          </div>
-          {% endif %}
-          {% comment %} <div class="dropdown">
-              <button class="dropbtn"> Faoliyat 
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="#">Xalqoro hamqor tashkilotlar</a>
-                  <a href="#">Moliyaviy Faoliyat</a>
-                  <a href="#">Yoshlar bilan ishlash va ma'naviy-ma'rifiy Faoliyat</a>
-                </div>
-          </div>
-          <div class="dropdown">
-              <button class="dropbtn"> Abiturient 
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="#">Kunduzgi talim yonalishlari</a>
-                  <a href="#">Sirtqi talim yonalishlari</a>
-                  <a href="#">Oqishni qochirish</a>
-                  <a href="#">Magistratura yonalishlari va qabul kvotasi</a>
-                </div>
-          </div>
-          <div class="dropdown">
-              <button class="dropbtn"> Talabalar 
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="#">Oliy talim davlat talim standarti</a>
-                  <a href="#">Meyoriy huquqiy hujjat</a>
-                  <a href="#">Oquv jarayoni grafigi</a>
-                </div>
-          </div>
-          <div class="dropdown">
-              <button class="dropbtn"> Talim Resurslari 
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="#">Eleqtron adabiyot</a>
-                  <a href="#">ZOOM</a>
-                  <a href="#">Talim Resurslari</a>
-                  <a href="#">Dars jadvali</a>
-                  <a href="#">Masofaviy talim Tizimi</a>
-                </div>
-          </div> {% endcomment %}
-      </nav>
-  </div>
-  </header>
-  <header id="humburger">
-    <div class="hamburger-menu">
-        <input id="menu__toggle" type="checkbox" />
-        <label class="menu__btn" for="menu__toggle">
-          <span></span>
-        </label>
-        <a href="{% url 'home:homepage' %}"><div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div></a>
-        <ul class="menu__box">
-            <div class="vertmenu">
-                <ul>
-                    {% for ccc in categories %}
-                    <li>
-                        <a class="active" href="#">{{ccc.name}} </a>
-                        <input type="checkbox" class="subCat" id="{{ccc.id}}"/>
-                        <label class="chka" for="{{ccc.id}}"></label>
-                        <ul style="display:none">
-                            {% for chill in ccc.children.all %}
-                            <li>
-                                <a class="active" href="{% url 'home:category' ccc.id %}?cat={{chill.id}}">{{chill.name}}</a>
-                            </li>
-                            {% endfor %}
-                            
-                        </ul>
-                    </li>
-                    {% endfor %}
-                    {% comment %} <li>
-                        <a href="#">Faoliyat </a>
-                        <input type="checkbox" class="subCat" id="2" />
-                        <label class="chka" for="2"></label>
-                        <ul style="display:none">
-                            <li>
-                                <a href="#">Xalqoro hamqor tashkilotlar</a>
-                            </li>
-                            <li>
-                                <a href="#">Moliyaviy Faoliyat</a>
-                            </li>
-                            <li>
-                                <a href="#">Yoshlar bilan ishlash va ma'naviy-ma'rifiy Faoliyat</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Abiturient</a>
-                        <input type="checkbox" class="subCat" id="3" />
-                        <label class="chka" for="3"></label>
-                        <ul style="display:none">
-                            <li>
-                                <a href="#">Kunduzgi talim yonalishlari</a>
-                            </li>
-                            <li>
-                                <a href="#">Sirtqi talim yonalishlari</a>
-                            </li>
-                            <li>
-                                <a href="#">Oqishni qochirish</a>
-                            </li>
-                            <li>
-                                <a href="#">Magistratura yonalishlari va qabul kvotasi</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Talabalar</a>
-                        <input type="checkbox" class="subCat" id="4" />
-                        <label class="chka" for="4"></label>
-                        <ul style="display:none">
-                            <li>
-                                <a href="#">Oliy talim davlat talim standarti</a>
-                            </li>
-                            <li>
-                                <a href="#">Meyoriy huquqiy hujjat</a>
-                            </li>
-                            <li>
-                                <a href="#">Oquv jarayoni grafigi</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Talim Resurslari </a>
-                        <input type="checkbox" class="subCat" id="5" />
-                        <label class="chka" for="5"></label>
-                        <ul style="display:none">
-                            <li>
-                                <a href="#">Eleqtron adabiyot</a>
-                            </li>
-                            <li>
-                                <a href="#">ZOOM</a>
-                            </li>
-                            <li>
-                                <a href="#">Talim Resurslari</a>
-                            </li>
-                            <li>
-                                <a href="#">Dars jadvali</a>
-                            </li>
-                            <li>
-                                <a href="#">Masofaviy talim Tizimi</a>
-                            </li>
-                        </ul>
-                    </li> {% endcomment %}
-                </ul>
-                <div class="user">
-                    <button><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
-                  </div>
-            </div>
-        </ul>
-      </div>
-</header>
+{% extends 'home/base.html' %}
+{% load static %}
 
+{% block content %}
 
-    
-    <section id="home">
-            <aside id="side" class="sidebar">
-                <div class="wrapper__menu">
-                    <div class="hedaer__title">
-                     {% if cat %}
-                     <h1>
-                        {{cat.name}} 
-                     </h1>
-                  
-                  {% else %}
-                  <h1>
-                     Universitet 
-                  </h1>
-                  {% endif %}
+<!---->
+<section id="home">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+        {% comment %} {% if banner %}
+        {% for band in banner %} {% endcomment %}
+          <div class="swiper-slide"><img src="{% static 'Image/unik.jpg' %}" /></div>
+        {% comment %} {% endfor %}
+        {% else %} {% endcomment %}
+            <div class="swiper-slide"><img src="{% static 'Image/1_5 - Photo 1.jpg' %}" /></div>
+        {% comment %} {% endif %} {% endcomment %}
+    </div>
+        <div class="swiper-pagination"></div>
+      </div>
+</section>
+
+<section id="about">
+    <div class="title">
+        <span id="title"></span>
+        <h1>
+            Ma’lumotlar
+        </h1>   
+        <span id="title"></span>
+    </div>
+    <div class="cont">
+        <div class="box">
+            {% if malumotlar %}
+            {% for mal in malumotlar %}
+                <div class="box__cont">
+                    <div class="box__image">
+                        <div class="img__box__shadow1"><img src="{{mal.image.url}}" alt="bav"></div>
                     </div>
-                    <nav class="nacbar__nav">
-                     <ul>
-                        {% for cat in category %}
-                        {% for chill in cat.children.all %}
-                             <li><a class="menu__a" href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a></li>
-                             {% endfor %}
-                             {% if cat.name == 'UNIVERSITET' %}
-                                 <li><a class="menu__a" href="{% url 'home:rektorlar' %}">Rekrorat</a></li>
-                             {% endif %}
-                             {% if cat.name == 'UNIVERSITET' %}
-                                 <li><a class="menu__a" href="{% url 'home:fakultet' %}">Fakultetlar</a></li>
-                             {% endif %}
-                             
-                               {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
-                               <li><a class="menu__a" href="">defoilt</a></li>
-                               <li><a class="menu__a" href="">defoilt</a></li>
-                               <li><a class="menu__a" href="">defoilt</a></li>
-                               <li><a class="menu__a" href="">defoilt</a></li>
-                               <li><a class="menu__a" href="">defoilt</a></li> {% endcomment %}
-                       {% endfor %}
-                     </ul>
-                 </nav>
+                    <div class="box__img__logo"><img src="{% static 'Image/part.png' %}" alt=""></div>
+                    <div class="box__image__text"><h1>{{mal.title}}</h1> <a href="{% url 'home:malumot_detail' mal.id %}">Batavsil...</a></div>
                 </div>
-            </aside>
-        <div class="header__contant">
-                <div class="header__cont__title"> 
-        <span id="spn"></span>
-            <h1>
-           Fakultetlar
-        </h1>
-        <span id="spn"></span>
+            {% endfor %}
+            {% else %}  
+            <div class="box__cont">
+                <div class="box__image">
+                    <div class="img__box__shadow1"><img src="/Image/img__malumot/4bf8b7928ca22ba7d0e94b6678bc70df0801 1.png" alt=""></div>
+                </div>
+                <div class="box__img__logo"><img src="{% static 'Image/part.png' %}" alt=""></div>
+                <div class="box__image__text"><h1>Default</h1> <a href="/html/batavsil/batavsil.html">Batavsil...</a></div>
             </div>
-            <div class="contant__text">
-               {% for fak in fak %}
-                <p>{{fak.name}} - {{fak.summa | intcomma}}</p>
+            <div class="box__cont">
+                <div class="box__image">
+                    <div class="img__box__shadow2"><img src="/Image/img__malumot/4bf8b7928ca22ba7d0e94b6678bc70df0801 1.png" alt=""> </div>
+                </div>
+                <div class="box__img__logo"><img src="{% static 'Image/universyti.png' %}" alt=""></div>
+                <div class="box__image__text"><h1>Default</h1><a href="/html/batavsil/batavsil.html">Batavsil...</a></div>
+            </div>
+            <div class="box__cont">
+                <div class="box__image">
+                <div class="img__box__shadow3"><img src="/Image/img__malumot/4bf8b7928ca22ba7d0e94b6678bc70df0801 1.png" alt=""></div>
+            </div>
+            <div class="box__img__logo"><img src="{% static 'Image/qogoz.png' %}" alt=""></div>
+            <div class="box__image__text"><h1>Default</h1><a href="/html/batavsil/batavsil.html">Batavsil...</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<section id="news">
+    <div class="news__title">
+        <span id="span__news"></span>
+        <h1>SO'NGI YANGILIKLAR</h1>
+        <span id="span__news"></span>
+    </div>
+    <div class="blog-slider_wrapper">    
+        <div class="blog-slider">
+            <div class="blog-slider__wrp swiper-wrapper">
+                <!-- Карточка -->
+                {% for new in news %}
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="{{new.image.url}}" alt="">
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__date">{{new.created_at}}</span>
+                            <div class="blog-slider__title">{{new.title|truncatewords:8}}</div>
+                            <p>{{new.desc | safe | truncatewords:9 }}</p>
+                            <div class="blog-slider__button-wraper">
+                                <a href="{% url 'news:news' %}" class="blog-slider__button">Oqish</a>
+                            </div>
+                        </div>
+                    </div>
                 {% endfor %}
+                {% comment %} <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                        <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                        <span class="blog-slider__date">Дата</span>
+                        <div class="blog-slider__title">Заголовок новости</div>
+                        <p>Текст новости</p>
+                        <div class="blog-slider__button-wrapper">
+                            <a href="/html/news/news.html" class="blog-slider__button">Читать далее</a>
+                        </div>
+                    </div>
+                </div>    
+                <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                        <img src="https://atuin.ru/demo/640k/cd-cover-2.jpg" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                        <span class="blog-slider__date">Дата</span>
+                        <div class="blog-slider__title">Заголовок новости</div>
+                        <p>Текст новости</p>
+                        <div class="blog-slider__button-wrapper">
+                            <a href="/html/news/news.html" class="blog-slider__button">Читать далее</a>
+                        </div>
+                    </div>
+                </div>     {% endcomment %}
+                <!-- Еще карточки -->
             </div>
+            <div class="blog-slider__pagination"></div>
         </div>
-    </section>
-    <section id="contact" class="contact">
-        <div class="contact__container">
-            <div class="contact__box">
-                <h1>RANCH</h1>
-                <p class="cont__tetx">
-                    Urganch RANCH Texnologiya Universiteti
-                </p>
-                <p class="nomer">
-                    <a href="tel:+998 99 218 00 60">+998 99 218 00 60</a>
-                </p>
-                <p class="cont__tetx malumot">
-                    Malumot uchut telefon
-                </p>
-                <p class="pochta">
-                    <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
-                </p>
-                <p class="cont__tetx">
-                  Malumot uchun email qutisi  
-                </p>
-            </div>
-            <div class="contact__box">
-                <h1>Menu</h1>
-                <a class="menu__a" href="#">Universitet</a>
-                <a class="menu__a" href="/html/menu2.html">Faoliyat</a>
-                <a class="menu__a" href="/html/menu3.html">Abiturient</a>
-                <a class="menu__a" href="/html/menu4.html">Talabalar</a>
-                <a class="menu__a" href="/html/menu5.html">Talim Resurslari</a>
-            </div>
-            <div class="contact__box__logo">
-                <h1>Tarmoklar</h1>
-                <div class="logog">
-                <a href="http://www.instagram.com/utu_ranch"><img src="/Image/logo/Instagram_icon-icons.com_66804.png" alt=""></a>
-                <a href="https://t.me/utu_ranch"><img src="/Image/logo/telegram_social_network_communication_chat_interaction_icon_192276.png" alt=""></a>
-                <a href="https://youtube.com/@uturanch"><img src="/Image/logo/youtube_logo_icon_168737.png" alt=""></a>
-                <a href="https://fb.com/uturanch"><img src="/Image/logo/4202107facebookfblogosocialsocialmedia-115710_115591.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </section>
- 
-</body>
-</html>
+    </div>
+</section>
+<section id="counter-stats" class="wow fadeInRight" data-wow-duration="1.4s">
+    <div class="container__schet">
+    <div class="row">
+  
+    <div class="col-lg-3 stats">
+    <i class="fa fa-user" aria-hidden="true"></i>
+    <div class="counting" data-count="75">0</div>
+    <h5>O'qituvchilar</h5>
+    </div>
+  
+    <div class="col-lg-3 stats">
+    <i class="fa fa-list" aria-hidden="true"></i>
+    <div class="counting" data-count="15">0</div>
+    <h5>Faqultetlar</h5>
+    </div>
+  
+    <div class="col-lg-3 stats">
+    <i class="fa fa-user" aria-hidden="true"></i>
+    <div class="counting" data-count="1200">0</div>
+    <h5> Talabalar</h5>
+    </div>
+  
+    <div class="col-lg-3 stats">
+    <i class="fa fa-coffee" aria-hidden="true"></i>
+    <div class="counting" data-count="1">0</div>
+    <h5>Hamqor</h5>
+    </div>
+  </div>
+    </div>
+  </section>
+  <div class="location__title">
+    <span id="loc"></span>
+    <h1>Manzil</h1>
+    <span id="loc"></span>
+</div>
+  <section id="location">
+    <div class="maps__text">
+        <h1>
+            Manzil:
+        </h1>
+        <p>
+            Urganch shahar Xonqa ko'chasi 26 uy.
+        </p>
+    </div>
+    <div class="maps">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac1853db4b78d4e06c7e8dcf61524e6c9d2ac02d52bcef2fd51f26e1155da4ef8&amp;width=675&amp;height=510&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+  </section>
+
+
+
+{% endblock content %}
+

@@ -20,8 +20,8 @@ class Category(models.Model):
     #     related_name = "Kategoriya"
     #     related_plural_name = "Kategoriyalar"
 
-    def __str__(self):                           # __str__ method elaborated later in
-        full_path = [self.name]                  # post.  use __unicode__ in place of
+    def __str__(self):                           
+        full_path = [self.name]                 
         k = self.parent
         while k is not None:
             full_path.append(k.name)
@@ -130,6 +130,16 @@ class Talabalar(models.Model):
     class Meta:
         verbose_name = "Talaba"
         verbose_name_plural = "Talabalar"
+
+
+class Rektorat(models.Model):
+    lavozim = models.CharField(max_length=223, blank=True)
+    desc = RichTextField()
+
+    image = models.ImageField(upload_to='rektors/')
+
+    def __str__(self) -> str:
+        return self.lavozim
 
 
 class Book(models.Model):
