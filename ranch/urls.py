@@ -32,6 +32,7 @@ urlpatterns = [
     path('translation/', include('translation_manager.urls')),
     path('news/', include('news.urls', namespace="news")),
 
+    
     # Tashqi
     
 
