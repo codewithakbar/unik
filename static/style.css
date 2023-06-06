@@ -166,6 +166,7 @@
 }
 
 .header-scroll {
+    z-index:100;
     border-top: none;
     position: fixed;
     top:0;

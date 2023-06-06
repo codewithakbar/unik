@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
 
     'ckeditor',
+    'mptt',
 
 
     "translation_manager",

@@ -36,7 +36,7 @@
                         <div class="img__box__shadow1"><img src="{{mal.image.url}}" alt="bav"></div>
                     </div>
                     <div class="box__img__logo"><img src="{% static 'Image/part.png' %}" alt=""></div>
-                    <div class="box__image__text"><h1>{{mal.title}}</h1> <a href="{% url 'home:malumot_detail' mal.id %}">Batavsil...</a></div>
+                    <div class="box__image__text"><h1>{{mal.title}}</h1> <a href="{% url 'home:malumot_detail' mal.id %}">{% translate "Batavsil..." %}</a></div>
                 </div>
             {% endfor %}
             {% else %}  
@@ -86,7 +86,7 @@
                             <div class="blog-slider__title">{{new.title|truncatewords:8}}</div>
                             <p>{{new.desc | safe | truncatewords:9 }}</p>
                             <div class="blog-slider__button-wraper">
-                                <a href="{% url 'news:news' %}" class="blog-slider__button">Oqish</a>
+                                <a href="{% url 'news:news' %}" class="blog-slider__button">{% translate "Oqish" %}</a>
                             </div>
                         </div>
                     </div>
@@ -130,25 +130,25 @@
     <div class="col-lg-3 stats">
     <i class="fa fa-user" aria-hidden="true"></i>
     <div class="counting" data-count="75">0</div>
-    <h5>O'qituvchilar</h5>
+    <h5>{% translate "O'qituvchilar" %}</h5>
     </div>
   
     <div class="col-lg-3 stats">
     <i class="fa fa-list" aria-hidden="true"></i>
     <div class="counting" data-count="15">0</div>
-    <h5>Faqultetlar</h5>
+    <h5>{% translate "Faqultetlar" %}</h5>
     </div>
   
     <div class="col-lg-3 stats">
     <i class="fa fa-user" aria-hidden="true"></i>
     <div class="counting" data-count="1200">0</div>
-    <h5> Talabalar</h5>
+    <h5> {% translate "Talabalar" %}</h5>
     </div>
   
     <div class="col-lg-3 stats">
     <i class="fa fa-coffee" aria-hidden="true"></i>
     <div class="counting" data-count="1">0</div>
-    <h5>Hamqor</h5>
+    <h5>{% translate "Hamqor" %}</h5>
     </div>
   </div>
     </div>
@@ -161,7 +161,7 @@
   <section id="location">
     <div class="maps__text">
         <h1>
-            Manzil:
+            {% translate "Manzil" %}:
         </h1>
         <p>
             Urganch shahar Xonqa ko'chasi 26 uy.

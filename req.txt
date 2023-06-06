@@ -3,3 +3,4 @@ pillow
 django-translation-manager
 django-ckeditor
 django-modeltranslation
+django-mptt

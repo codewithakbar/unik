@@ -2,6 +2,9 @@ from django.db import models
 
 from ckeditor.fields import RichTextField
 
+from mptt.models import MPTTModel
+from mptt.fields import TreeForeignKey
+
 
 class Banner(models.Model):
     title = models.CharField(max_length=233)
@@ -11,14 +14,18 @@ class Banner(models.Model):
         return self.title
     
     
-class Category(models.Model):
+class Category(MPTTModel):
     name = models.CharField(max_length=211, blank=True)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='children')
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='children')
     slug = models.SlugField(null=False, unique=True)
 
-    # class Meta:
-    #     related_name = "Kategoriya"
-    #     related_plural_name = "Kategoriyalar"
+    class MPTTMeta:
+        order_insertion_by = ['name']
+
+    class Meta:
+        verbose_name = "Kategoriya"
+        verbose_name_plural = "Kategoriyalar"
+
 
     def __str__(self):                           
         full_path = [self.name]                 
@@ -33,14 +40,19 @@ class Content(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=224, blank=True)
     desc = RichTextField()
-    category = models.ForeignKey(to=Category, null=True, blank=True, on_delete=models.CASCADE)
+    category = models.ManyToManyField(to=Category, related_name='contents')
 
     image = models.ImageField(upload_to="content/%Y/%m/%d", height_field=None, width_field=None, max_length=None, blank=True, null=True)
 
     pdf = models.FileField(upload_to='pdfsd/', blank=True, null=True)
 
+    class MPTTMeta:
+        order_insertion_by = ['title']
+
+
     def __str__(self) -> str:
         return self.title
+    
 
 
 class Malumotlar(models.Model):
@@ -54,6 +66,12 @@ class Malumotlar(models.Model):
         return self.title
     
 
+
+
+
+
+
+# Musor 
 class Fakultetlar(models.Model):
     name = models.CharField(max_length=224, blank=True)
     summa = models.DecimalField(max_digits=11,decimal_places=0,default=0)
