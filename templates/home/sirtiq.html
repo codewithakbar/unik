@@ -21,7 +21,7 @@
                      <ul>
                         {% for cat in category %}
                         {% for chill in cat.children.all %}
-                             <li><a class="menu__a" href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a></li>
+                             <li><a class="menu__a" href="{% url 'category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a></li>
                              {% endfor %}
                              {% if cat.name == 'UNIVERSITET' %}
                                  <li><a class="menu__a" href="{% url 'home:rektorlar' %}">Rekrorat</a></li>

@@ -8,7 +8,7 @@ from django.urls.base import resolve, reverse
 from django.views.generic import DetailView
 from django.shortcuts import get_list_or_404
 from django.utils import translation
-
+from urllib.parse import urlparse
 
 from .models import Banner, Book, Category, Images, MalImages, Malumotlar, Content, Fakultetlar, OqishniKochirish, Rektorat
 from news.models import NewsCartegory, Yangiliklar
@@ -107,6 +107,9 @@ def category(request, cat_id=None):
 
 
 def set_language(request, language):
+
+    cat_id = request.GET.get('cat')
+
     for lang, _ in settings.LANGUAGES:
         translation.activate(lang)
         try:
@@ -123,6 +126,8 @@ def set_language(request, language):
     else:
         response = HttpResponseRedirect("/")
     return response
+    
+
 
 
 

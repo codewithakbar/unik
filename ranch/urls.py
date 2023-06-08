@@ -28,9 +28,10 @@ from home import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="homepage"),
-    path("r/", include("home.urls", namespace="home")),
+    # path("r/", include("home.urls", namespace="home")),
     path('translation/', include('translation_manager.urls')),
     path('news/', include('news.urls', namespace="news")),
+    path("category/<int:cat_id>/", views.category, name="category"),
 
     
     # Tashqi

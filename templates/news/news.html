@@ -67,7 +67,7 @@
                     {% if cat.children.all %}
                     
                     {% for chill in cat.children.all %}
-                    <a href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
+                    <a href="{% url 'category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
                     {% endfor %}
                     {% if cat.name == 'UNIVERSITET' %}
                         <a href="{% url 'home:rektorlar' %}">Rekrorat</a>
@@ -161,7 +161,7 @@
                             <ul style="display:none">
                                 {% for chill in ccc.children.all %}
                                 <li>
-                                    <a class="active" href="{% url 'home:category' ccc.id %}?cat={{chill.id}}">{{chill.name}}</a>
+                                    <a class="active" href="{% url 'category' ccc.id %}?cat={{chill.id}}">{{chill.name}}</a>
                                 </li>
                                 {% endfor %}
                                 
