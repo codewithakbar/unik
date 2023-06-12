@@ -5,7 +5,7 @@ from . import views
 app_name = 'home'
 
 urlpatterns = [
-    # path("", views.index, name="homepage"),
+    path("", views.index, name="homepage"),
     path("malumotlar/", views.malumotlar, name="malumotlar"),
     path("malumotlar/<int:cat_id>/", views.malumotlar, name="malumot"),
     path("malumot/<int:cat_id>/", views.malumot_detail, name="malumot_detail"),
