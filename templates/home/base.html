@@ -1,4 +1,5 @@
-{% load static %}
+{% load static i18n%}
+
 
 
 <!DOCTYPE html>
@@ -43,7 +44,7 @@
     <div class="container">
         <div class="box__contact">
             <div class="contact__logo">
-                <a href="{% url 'homepage' %}"><img src="{% static 'Image/Vector.png' %}" alt="contact"></a>
+                <a href="{% url 'home:homepage' %}"><img src="{% static 'Image/Vector.png' %}" alt="contact"></a>
             </div>
             <div class="contact__number">
                 <p class="contact__p">
@@ -58,11 +59,12 @@
             </div>
             <div class="mail__info">
                 <p class="mail__p">
-                    <a href="mailto:ranchuniversity@gmail.com">ranchuniversity@gmail.com</a>
+                    <a href="mailto:university@utu-ranch.uz">university@utu-ranch.uz</a>
                 </p>
             </div>
         </div>
     </div>
+
     <div class="language">
         <div class="user">
             <button><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
@@ -79,13 +81,15 @@
             <a href="{% url 'set-language' 'ru' %}"><button><img src="" alt="Ru-flag"></button></a>
         </div>
     </div>
+
+    
     </div>
 </div>
 <header class="header__glav" id="header__glav">
     <div class="box__container">
     <div class="hedaer__image">
         <a class="img__white" href="#"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></a>
-       <a class="img__orange" href="{% url 'homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
+       <a class="img__orange" href="{% url 'home:homepage' %}"><img src="{% static 'Image/img__malumot/Ranch 3.png' %}" alt="logo"></a> 
     </div>
         <nav class="navbar__glav">
 
@@ -101,7 +105,7 @@
                 {% if cat.children.all %}
                 
                 {% for chill in cat.children.all %}
-                    <a class="a__glav" href="{% url 'home:category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
+                    <a class="a__glav" href="{% url 'category' cat_id=cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
                 {% endfor %}
                     {% if cat.name == 'UNIVERSITET' %}
                         <a href="{% url 'home:rektorlar' %}">Rekrorat</a>
@@ -208,7 +212,7 @@
         <label class="menu__btn" for="menu__toggle">
           <span></span>
         </label>
-        <a href="{% url 'homepage' %}"><div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div></a>
+        <a href="{% url 'home:homepage' %}"><div class="btn__leb"><img src="{% static 'Image/img__malumot/Ranch 4.png' %}" alt=""></div></a>
         <ul class="menu__box">
             <div class="vertmenu">
                 <ul>
@@ -220,7 +224,7 @@
                         <ul style="display:none">
                             {% for chill in ccc.children.all %}
                             <li>
-                                <a class="active" href="{% url 'home:category' ccc.id %}?cat={{chill.id}}">{{chill.name}}</a>
+                                <a class="active" href="{% url 'category' ccc.id %}?cat={{chill.id}}">{{chill.name}}</a>
                             </li>
                             {% endfor %}
                             

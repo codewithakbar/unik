@@ -27,11 +27,13 @@ from home import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.index, name="homepage"),
-    path("r/", include("home.urls", namespace="home")),
+    # path("", views.index, name="homepage"),
+    path("", include("home.urls", namespace="home")),
     path('translation/', include('translation_manager.urls')),
     path('news/', include('news.urls', namespace="news")),
+    path("category/<int:cat_id>/", views.category, name="category"),
 
+    
     # Tashqi
     
 
@@ -44,5 +46,5 @@ urlpatterns += [re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settin
 urlpatterns = [
     *i18n_patterns(*urlpatterns, prefix_default_language=False),
 
-    path("set_language/<str:language>", views.set_language, name="set-language"),
+    path("set_language/<str:language>/", views.set_language, name="set-language"),
     ]

@@ -2,13 +2,13 @@ import django
 from urllib.parse import urlparse
 from django.conf import settings
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls.exceptions import Resolver404
 from django.urls.base import resolve, reverse
 from django.views.generic import DetailView
 from django.shortcuts import get_list_or_404
 from django.utils import translation
-
+from urllib.parse import urlparse
 
 from .models import Banner, Book, Category, Images, MalImages, Malumotlar, Content, Fakultetlar, OqishniKochirish, Rektorat
 from news.models import NewsCartegory, Yangiliklar
@@ -107,10 +107,16 @@ def category(request, cat_id=None):
 
 
 def set_language(request, language):
+
+    cat_ids = request.META.get('HTTP_REFERER')[-1::39]
+
+
     for lang, _ in settings.LANGUAGES:
         translation.activate(lang)
         try:
+            # view = resolve(urlparse(request.META.get("HTTP_REFERER")).path)
             view = resolve(urlparse(request.META.get("HTTP_REFERER")).path)
+            print(view)
         except Resolver404:
             view = None
         if view:
@@ -118,11 +124,16 @@ def set_language(request, language):
     if view:
         translation.activate(language)
         next_url = reverse(view.url_name, args=view.args, kwargs=view.kwargs)
+        if cat_ids:
+            next_url += f"?cat={cat_ids}"
         response = HttpResponseRedirect(next_url)
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
     else:
         response = HttpResponseRedirect("/")
     return response
+    
+
+
 
 
 
