@@ -19,7 +19,7 @@
                         <ul>
                            {% for ca in cat_news %}
                             {% comment %} <li><a class="unik__haq" href="/html/news/news.html">{{ca.title}}</a></li> {% endcomment %}
-                            <li><a class="menu__a" href="{% url 'news:news_cat' ca.id%}">{{ca.name}}</a></li>
+                            <li><a class="menu__a" href="{% url 'news_cat' ca.id%}">{{ca.name}}</a></li>
                            {% endfor %}
                             {% comment %} <li><a class="menu__a" href="">Omaviy tadbir</a></li>
                             <li><a class="menu__a" href="">Xalkaro aloqa</a></li> {% endcomment %}
