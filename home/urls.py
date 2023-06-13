@@ -5,7 +5,7 @@ from . import views
 app_name = 'home'
 
 urlpatterns = [
-    path("", views.index, name="homepage"),
+    # path("", views.index, name="homepage"),
     path("malumotlar/", views.malumotlar, name="malumotlar"),
     path("malumotlar/<int:cat_id>/", views.malumotlar, name="malumot"),
     path("malumot/<int:cat_id>/", views.malumot_detail, name="malumot_detail"),
@@ -15,7 +15,7 @@ urlpatterns = [
 
     path("404/", views.custom_page_not_found),
 
-
+    
 
     # no category for page
     path("category/rektorat/", views.rektorjon, name="rektorlar"),

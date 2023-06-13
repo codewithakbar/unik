@@ -15,7 +15,7 @@
                         <ul>
                             {% comment %} <li><a class="unik__haq" href="">Songi yangiliklar</a></li> {% endcomment %}
                             {% for cat in cat_news %}
-                                <li><a class="menu__a" href="{% url 'news:news_cat' cat.id %}">{{cat.name}}</a></li>
+                                <li><a class="menu__a" href="{% url 'news_cat' cat.id %}">{{cat.name}}</a></li>
                             {% endfor %}
                             {% comment %} <li><a class="menu__a" href="">Xalkaro aloqa</a></li> {% endcomment %}
                         </ul>
@@ -24,10 +24,9 @@
         </aside>
     <div class="header__contant">
         <div class="header__cont__title"> 
-        <h1>
+        {% comment %} <h1>
         {{catw.name}}
-    </h1>
-    <span id="spn"></span>
+    </h1> {% endcomment %}
     </div>
     {% for yan in yangiliklar %}
         <div class="news__cont__box">
@@ -35,7 +34,7 @@
                 <img src="{{yan.image.url}}" alt="">
             </div>
             <div class="news__cont__text">
-               <a href="{% url 'news:new_detail' yan.id %}"><h1>
+               <a href="{% url 'new_detail' yan.id %}"><h1>
                     {{yan.title}}
                 </h1></a> 
                 <p class="time">
@@ -52,11 +51,6 @@
         <div class="btn__cont">
         <div class="btn__div">
         <button class="btn">Yana yuqlsh</button>
-        <div class="btn__blck">
-            <div class="cancel">
-                <a href="{% url 'home:homepage' %}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-             </div>
-            </div>
     </div>
     </div>
         </div>

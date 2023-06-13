@@ -13,7 +13,8 @@
 }
 .contain__wrap {
     z-index: 100;
-    width: 80%;
+    width: 100%;
+    max-width:1400px;
     padding-left: 50px;
     display: flex;
     justify-content: space-between;
@@ -37,7 +38,7 @@
 
 .contact__p a {
     text-decoration: none;
-    color: #fff;
+    color: #FF8B36;
     transition: all .3s ease;
 }
 
@@ -93,7 +94,7 @@
 
 .mail__p a{
     text-decoration: none;
-    color: #fff;
+    color: #FF8B36;
     transition: all .3s ease;
 }
 

@@ -507,7 +507,7 @@
     font-size: 17px;
 }
 .header__contant {
-    padding: 10px 20px;
+    padding: 0px 20px;
     height:  100%;
     width: 100%;
 }
@@ -555,7 +555,6 @@
 .news__cont__box {
     display: flex;
     align-items: center;
-    margin-top: 2em;
     border-radius: 10px;
     padding: 10px;
     display: flex;
@@ -679,16 +678,19 @@
     align-items: center;
 }
 .btn__div {
-    width: 50%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
 }
 
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 10vw;
-    height: 10vh;
+    height: 5vh;
     outline: none;
     background-color: #FF8B36;
     color: #fff;

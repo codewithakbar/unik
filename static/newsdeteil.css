@@ -31,7 +31,7 @@
 
 .contact__p a {
    text-decoration: none;
-   color: #000;
+   color: #FF8B36;
    transition: all .3s ease;
 }
 
@@ -85,7 +85,7 @@
 
 .mail__p a{
    text-decoration: none;
-   color: #000;
+   color: #FF8B36;
    transition: all .3s ease;
 }
 
@@ -517,7 +517,7 @@
    width: 80%;
    height: 100%;
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
 }
 
 .container__news  {

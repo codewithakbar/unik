@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import (
-    Banner, Category, Kunduz, Magistr, MalImages, Malumotlar, Content, 
+    Bannercha,
+    Category, Kunduz, Magistr, MalImages, Malumotlar, Content, 
                      Fakultetlar, Images, OqishniKochirish, Rektorat, Sirtqi, Book)
 
 from modeltranslation.admin import TranslationAdmin
@@ -105,8 +106,15 @@ class CategoryAdmin(DraggableMPTTAdmin, TranslationAdmin):
     related_products_cumulative_count.short_description = 'Related products (in tree)'
 
 
-admin.site.register(Banner)
 
+class BannerAdmin(DraggableMPTTAdmin):
+    fields = ('title', 'image', 'parent')
+    mptt_indent_field = "title"
+    list_display = ('tree_actions', 'indented_title')
+
+
+
+admin.site.register(Bannercha, BannerAdmin)
 admin.site.register(Malumotlar, MalumotlarAdmin)
 admin.site.register(Content, ContentAdmin)
 admin.site.register(Category, CategoryAdmin)

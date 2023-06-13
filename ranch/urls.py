@@ -22,21 +22,33 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
 from home import views
+from news import views as NewsView
 
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # path("", views.index, name="homepage"),
-    path("", include("home.urls", namespace="home")),
-    path('translation/', include('translation_manager.urls')),
-    path('news/', include('news.urls', namespace="news")),
+    # home
+    path("", views.index, name="homepage"),
+    path("malumotlar/", views.malumotlar, name="malumotlar"),
+    path("malumotlar/<int:cat_id>/", views.malumotlar, name="malumot"),
+    path("malumot/<int:cat_id>/", views.malumot_detail, name="malumot_detail"),
+
     path("category/<int:cat_id>/", views.category, name="category"),
 
-    
-    # Tashqi
+
+
+    # path("", include("home.urls", namespace="home")),
+    # path('news/', include('news.urls', namespace="news")),
+
+    #news
+    path("news/", NewsView.news_view, name="news"),
+    path("news/<int:cat_id>/", NewsView.news_view, name="news_cat"),
+    path("detail/<int:cat_id>/", NewsView.new_detail, name="new_detail"),
     
 
+    # Tashqi
+    path('translation/', include('translation_manager.urls')),
 ]
 
 

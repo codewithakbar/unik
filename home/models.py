@@ -5,15 +5,6 @@ from ckeditor.fields import RichTextField
 from mptt.models import MPTTModel
 from mptt.fields import TreeForeignKey
 
-
-class Banner(models.Model):
-    title = models.CharField(max_length=233)
-    image = models.ImageField(upload_to="banners/", null=True, blank=True)
-    
-    def __str__(self) -> str:
-        return self.title
-    
-    
 class Category(MPTTModel):
     name = models.CharField(max_length=211, blank=True)
     parent = TreeForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='children')
@@ -67,8 +58,17 @@ class Malumotlar(models.Model):
     
 
 
+class Bannercha(MPTTModel):
+    title = models.CharField(max_length=232)
+    image = models.ImageField(upload_to='bannercha/', null=True, blank=True)
+    parent = models.ForeignKey('self', null=True, blank=True, related_name='children', on_delete=models.CASCADE)
 
+    class MPTTMeta:
+        order_insertion_by = ['title']
 
+    def __str__(self) -> str:
+        return self.title
+    
 
 
 # Musor 

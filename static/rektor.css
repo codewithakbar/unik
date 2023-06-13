@@ -30,7 +30,7 @@
 
 .contact__p a {
    text-decoration: none;
-   color: black;
+   color: #FF8B36;
    transition: all .3s ease;
 }
 
@@ -86,7 +86,7 @@
 
 .mail__p a{
    text-decoration: none;
-   color: black;
+   color: #FF8B36;
    transition: all .3s ease;
 }
 
@@ -122,6 +122,7 @@
 .box__container {
    padding: 20px 140px;
    width: 100%;
+   max-width: 1950px;
    display: flex;
    align-items: center;
    justify-content: space-around;

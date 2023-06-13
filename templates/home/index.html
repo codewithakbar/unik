@@ -7,13 +7,13 @@
 <section id="home">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-        {% comment %} {% if banner %}
-        {% for band in banner %} {% endcomment %}
-          <div class="swiper-slide"><img src="{% static 'Image/unik.jpg' %}" /></div>
-        {% comment %} {% endfor %}
-        {% else %} {% endcomment %}
+        {% if bannercha %}
+        {% for band in bannercha %}
+          <div class="swiper-slide"><img src="{{band.image.url}}" /></div>
+        {% endfor %}
+        {% else %}
             <div class="swiper-slide"><img src="{% static 'Image/1_5 - Photo 1.jpg' %}" /></div>
-        {% comment %} {% endif %} {% endcomment %}
+        {% endif %}
     </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -36,7 +36,7 @@
                         <div class="img__box__shadow1"><img src="{{mal.image.url}}" alt="bav"></div>
                     </div>
                     <div class="box__img__logo"><img src="{% static 'Image/part.png' %}" alt=""></div>
-                    <div class="box__image__text"><h1>{{mal.title}}</h1> <a href="{% url 'home:malumot_detail' mal.id %}">{% translate "Batavsil..." %}</a></div>
+                    <div class="box__image__text"><h1>{{mal.title}}</h1> <a href="{% url 'malumot_detail' mal.id %}">{% translate "Batavsil..." %}</a></div>
                 </div>
             {% endfor %}
             {% else %}  
@@ -86,7 +86,7 @@
                             <div class="blog-slider__title">{{new.title|truncatewords:8}}</div>
                             <p>{{new.desc | safe | truncatewords:9 }}</p>
                             <div class="blog-slider__button-wraper">
-                                <a href="{% url 'news:news' %}" class="blog-slider__button">{% translate "Oqish" %}</a>
+                                <a href="{% url 'news' %}" class="blog-slider__button">{% translate "Oqish" %}</a>
                             </div>
                         </div>
                     </div>
