@@ -14,7 +14,7 @@
 .contain__wrap {
     z-index: 100;
     width: 100%;
-    max-width:1400px;
+    max-width:1180px;
     padding-left: 50px;
     display: flex;
     justify-content: space-between;
@@ -172,7 +172,7 @@
     position: fixed;
     top:0;
     width: 100%;
-    height: 70px;
+    height: 60px;
     background: #FF8B36;
 }
 .header__glav-scroll .img__orange{
