@@ -1,4 +1,5 @@
 from .models import Category, Content, Malumotlar
+from news.models import NewsCartegory, Yangiliklar
 from modeltranslation.translator import TranslationOptions,register
 
 
@@ -17,5 +18,16 @@ class MalumotlarTranslationOptions(TranslationOptions):
     fields = ('title', 'desc', 'image')
 
 
+@register(NewsCartegory)
+class NewsCartegoryTranslationOptions(TranslationOptions):
+    fields = ('name', 'slug')
 
+
+@register(Yangiliklar)
+class YangiliklarTranslationOptions(TranslationOptions):
+    fields = ('title', 'desc')
+
+    
+
+    
 

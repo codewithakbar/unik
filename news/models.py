@@ -3,6 +3,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 
+
 class NewsCartegory(models.Model):
     name = models.CharField(max_length=211, blank=True)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='children')
