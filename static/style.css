@@ -907,7 +907,7 @@
 
 @media (max-width:1024px) {
     #header__glav {
-        width: 100%;
+       display: none;
     }
     .wrapper {
         padding-top: 20px;
@@ -1197,8 +1197,7 @@
   .header__glav-scroll .dropdown-content__glav {
     display: none;
     position: absolute;
-    color: #fff;
-    background-color: #FF8B36;
+    background-color: transparent;
     backdrop-filter: blur(10px);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -1206,10 +1205,11 @@
   }
 
   .header__glav-scroll .dropdown-content__glav:hover {
-    color: #FF8B36;
-    background-color: #FFF;
+    color: #fff;
   }
-
+  .header__glav-scroll .dropdown__glav .dropbtn__glav {
+    color: #FFF;
+  }
   .dropdown__glav {
     float: left;
     overflow: hidden;
@@ -1220,15 +1220,20 @@
     text-transform: uppercase;
     border: none;
     outline: none;
-    color: #fff;
+    color: #FF8B36;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
   }
-  
-  .navbar__glav a:hover, .dropdown__glav:hover .dropbtn__glav {
+
+  .dropdown__glav:hover .dropbtn__glav:hover {
+    color: #fff;
     background-color: #FF8B36;
+  }
+  
+  .navbar__glav a:hover {
+    color: #fff;
   }
   
   .dropdown-content__glav {
@@ -1245,7 +1250,7 @@
     font-size: 20px;
     font-family: sans-serif;
     float: none;
-    color: #fff;
+    color: #FF8B36;
     padding: 12px 16px;
     text-decoration: none;
     font-family: sans-serif;
@@ -1256,10 +1261,18 @@
   .dropdown-content__glav a:hover {
     background-color: #ff8a3674;
   }
-  
+  .header__glav-scroll  .dropdown-content__glav a {
+    color: #FFF;
+  }
+  .header__glav-scroll  .dropdown-content__glav {
+    background-color: #FF8B36;
+  }
+  .header__glav-scroll .dropdown-content__glav a:hover {
+    background-color: #e3660d;
+  }
   .dropdown__glav:hover .dropdown-content__glav {
     display: block;
-  }
+}
   .vertmenu {
     margin: 0 20px;
     font-family: 'Open Sans', sans-serif;   

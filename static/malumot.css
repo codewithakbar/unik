@@ -161,6 +161,7 @@
 #humburger {
     display: none;
 }
+
 @media (max-width:950px) {
     #home__mal {
         margin: 10% 0 0 2%;
@@ -296,8 +297,6 @@
       }
       
 }
-contact__box a
-
 @media (max-width:1100px) {
     #header {
         width: 100%;
