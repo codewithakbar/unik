@@ -59,18 +59,16 @@
         </h1>
         <span id="spn"></span>
             </div>
-            <!-- Fakultetlar-->
-            {% if cat_parent.id == 25 %}
+            {% if cat_parent.name == "Fakultetlar" %}
             
                 {% for bruh in kontentla %}
-                    <div class="contant__text__fac">
+                    <div class="contant__text">
                         <p>{{bruh.nomi}} - {{bruh.summa | intcomma}} so'm</p>
                     </div>
 
                 {% endfor %}
-            
-            <!--Rekrorat-->
-            {% elif cat_parent.id == 24 %}
+
+            {% elif cat_parent.name == "Rektorat" %}
 
             <div class="rec__box">
                 {% for ccc in kontentla %}
@@ -90,7 +88,7 @@
             {% else %}
             {% for kontent in kontentla %}
             {% comment %} <div> {% endcomment %}
-                <div class="contant__text">
+                <div class="contant__text__unik">
                     <h4>
                         {{kontent.title}}
                     </h4>
