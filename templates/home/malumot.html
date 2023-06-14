@@ -59,7 +59,8 @@
         </h1>
         <span id="spn"></span>
             </div>
-            {% if cat_parent.name == "Fakultetlar" %}
+            <!-- Fakultetlar-->
+            {% if cat_parent.id == 25 %}
             
                 {% for bruh in kontentla %}
                     <div class="contant__text">
@@ -67,8 +68,9 @@
                     </div>
 
                 {% endfor %}
-
-            {% elif cat_parent.name == "Rektorat" %}
+            
+            <!--Rekrorat-->
+            {% elif cat_parent.id == 24 %}
 
             <div class="rec__box">
                 {% for ccc in kontentla %}
