@@ -29,13 +29,22 @@ class Category(MPTTModel):
 
 class Content(models.Model):
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=224, blank=True)
-    desc = RichTextField()
+    title = models.CharField(max_length=224)
+    desc = RichTextField(default="12")
     category = models.ManyToManyField(to=Category, related_name='contents')
 
     image = models.ImageField(upload_to="content/%Y/%m/%d", height_field=None, width_field=None, max_length=None, blank=True, null=True)
 
     pdf = models.FileField(upload_to='pdfsd/', blank=True, null=True)
+
+    # Fakultet
+    nomi = models.CharField(max_length=224, blank=True, null=True, verbose_name="Fakultent Nomi")
+    summa = models.DecimalField(max_digits=11,decimal_places=0, default=0, blank=True, null=True, verbose_name="Summasi")
+
+    # Rektor
+    rektor_image = models.ImageField(upload_to="rektor/%Y/%m/", blank=True, null=True)
+    lavozim = models.CharField(max_length=223, blank=True)
+    desc_rek = models.TextField(blank=True, null=True)
 
     class MPTTMeta:
         order_insertion_by = ['title']
@@ -71,20 +80,22 @@ class Bannercha(MPTTModel):
     
 
 
-# Musor 
 class Fakultetlar(models.Model):
-    name = models.CharField(max_length=224, blank=True)
-    summa = models.DecimalField(max_digits=11,decimal_places=0,default=0)
+    # name = models.CharField(max_length=224, blank=True)
+    # summa = models.DecimalField(max_digits=11,decimal_places=0,default=0)
+
+    content = models.ForeignKey(to=Content, default=None, related_name='content', on_delete=models.CASCADE)
 
 
     def __str__(self):
-        return self.name
+        return self.content.title
     
     class Meta:
         verbose_name = "Fakultet"
         verbose_name_plural = "Fakultetlar"
         
 
+# Musor 
 class Kunduz(models.Model):
     name = models.CharField(max_length=224, blank=True)
     summa = models.DecimalField(max_digits=11,decimal_places=0,default=0)

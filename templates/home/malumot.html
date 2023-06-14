@@ -1,5 +1,5 @@
 {% extends 'home/base.html' %}
-{% load static %}
+{% load static humanize %}
 
 {% block content %}
     <section id="home__mal">
@@ -23,7 +23,7 @@
                                {% for chill in cat.children.all %}
                                     <li><a class="menu__a" href="{% url 'category' cat.id %}?cat={{chill.id}}">{{chill.name}}</a></li>
                                     {% endfor %}
-                                    {% if cat.name == 'UNIVERSITET' %}
+                                    {% comment %} {% if cat.name == 'UNIVERSITET' %}
                                         <li><a class="menu__a" href="{% url 'home:rektorlar' %}">Rekrorat</a></li>
                                     {% endif %}
                                     {% if cat.name == 'UNIVERSITET' %}
@@ -37,7 +37,7 @@
                                     {% endif %}
                                     {% if cat.name == 'Abiturient' %}
                                         <li><a class="menu__a" href="{% url 'home:sirtqi' %}">Sirtqi</a></li>
-                                    {% endif %}
+                                    {% endif %} {% endcomment %}
                                     
                                       {% comment %} <li><a class="menu__a" href="">defoilt</a></li>
                                       <li><a class="menu__a" href="">defoilt</a></li>
@@ -54,10 +54,38 @@
                 <div class="header__cont__title"> 
         <span id="spn"></span>
             <h1>
-            {{cat.name}}
+            {% comment %} {{cat.name}} {% endcomment %}
+            {{cat_parent.name}}
         </h1>
         <span id="spn"></span>
             </div>
+            {% if cat_parent.name == "Fakultetlar" %}
+            
+                {% for bruh in kontentla %}
+                    <div class="contant__text">
+                        <p>{{bruh.nomi}} - {{bruh.summa | intcomma}} so'm</p>
+                    </div>
+
+                {% endfor %}
+
+            {% elif cat_parent.name == "Rektorat" %}
+
+            <div class="rec__box">
+                {% for ccc in kontentla %}
+                    <div class="contant__text__rec">
+                        <div class="rec__img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="rec__text">
+                            <h3>
+                                {{ccc.lavozim}}
+                            </h3>
+                            <p>{{ccc.desc_rek | safe}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% else %}
             {% for kontent in kontentla %}
             {% comment %} <div> {% endcomment %}
                 <div class="contant__text">
@@ -90,6 +118,7 @@
                 </div>
             {% comment %} </div> {% endcomment %}
             {% endfor %}
+            {% endif %}
         </div>
 
     </section>

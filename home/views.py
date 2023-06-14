@@ -49,7 +49,7 @@ def malumotlar(request):
     context = {
         'categories': Category.objects.filter(parent=None)[:6],
         "malumotlar": Malumotlar.objects.all(),
-        "kontentla": kontentla
+        # "kontentla": kontentla
     }
     
     return render(request, "home/malumot.html", context)
@@ -82,8 +82,8 @@ def category(request, cat_id=None):
     else:
         kontentla = Content.objects.all()
 
-    kontentcha = get_object_or_404(Content, category__id=catID)
-    photos = Images.objects.filter(product=kontentcha)
+    # kontentcha = get_object_or_404(Content, category__id=catID)
+    # photos = Images.objects.filter(product=kontentcha)
 
 
     context = {
@@ -91,10 +91,11 @@ def category(request, cat_id=None):
         'categories': Category.objects.filter(parent=None)[:6],
         "category": Category.objects.filter(id=cat_id),
         "cat": Category.objects.get(pk=cat_id),
-        "cat_parent": Category.objects.get(pk=cat_id),
+        "cat_parent": get_object_or_404(Category, pk=catID),
+        "fakultet": Category.objects.filter(parent_id=25),
         "kontentla": kontentla,
-        "photos": photos,
-        "kontentcha": kontentcha,
+        # "photos": photos,
+        # "kontentcha": kontentcha,
     }
     
     return render(request, "home/malumot.html", context)

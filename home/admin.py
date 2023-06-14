@@ -13,8 +13,10 @@ from mptt.admin import DraggableMPTTAdmin
 # class BannerAdmin(admin.ModelAdmin):
 #     pass
 
+
 class ContentImagesInline(admin.StackedInline):
     model = Images
+
 
 class MalumotlarImagesInline(admin.StackedInline):
     model = MalImages
@@ -38,7 +40,7 @@ class MalumotlarAdmin(TranslationAdmin):
 class ContentAdmin(TranslationAdmin):
     inlines = [ContentImagesInline]
     group_fieldsets = True
-    fields = ('title', 'desc', 'category')
+    fields = ('title', 'desc', 'category', ('nomi', 'summa'), ("rektor_image", "lavozim", "desc_rek"))
 
     class Media:
         js = (
@@ -57,7 +59,7 @@ class CategoryAdmin(DraggableMPTTAdmin, TranslationAdmin):
 
     prepopulated_fields = {'slug': ('name',)}
     # list_display = ("name", )
-    
+
     class Media:
         js = (
             'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
