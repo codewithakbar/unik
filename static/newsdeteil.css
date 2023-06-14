@@ -693,7 +693,7 @@
        padding-top: 10px;
    }
    .cont__img {
-       margin-top: 2em;
+      margin-top: 10vh;
        width: 70vw;
        overflow: hidden;
        border-radius: 10px;
