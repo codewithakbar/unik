@@ -96,10 +96,10 @@
                 <div class="text__cont"> 
                     {{kontent.desc | safe }}
                  </div> 
-                {% if kontent.image %}
+                {% comment %} {% if kontent.image %}
                     <div class="cont__img__c">
                         <img src="{{kontent.image.url}}" alt="">
-                    </div>
+                    </div> {% endcomment %}
                     {% if photos %}
                         {% for p in photos %}
                             <div class="cont__img__c">
@@ -107,7 +107,7 @@
                             </div>
                         {% endfor %}
                     {% endif %}
-                {% endif %}
+                {% comment %} {% endif %} {% endcomment %}
                 {% if kontent.pdf %}
                     
                     
