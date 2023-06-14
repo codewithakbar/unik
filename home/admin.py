@@ -57,7 +57,7 @@ class CategoryAdmin(DraggableMPTTAdmin, TranslationAdmin):
 
     prepopulated_fields = {'slug': ('name',)}
     # list_display = ("name", )
-
+    
     class Media:
         js = (
             'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
