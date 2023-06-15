@@ -435,11 +435,13 @@
     box-sizing: border-box;
 }
 .blog-slider_wrapper {
+    width: 100vw;
+    height: 40vh;
     display: flex;
     justify-content: center;
 }
 .blog-slider {
-    width: 70%;
+    width: 80%;
     margin: 20px 0 20px 80px;    
     position: relative;
     background: #fff;
