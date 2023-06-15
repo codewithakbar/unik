@@ -744,7 +744,7 @@
        -moz-box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
        box-shadow: 0px 0px 21px 0px rgba(34, 60, 80, 0.2);
    }
-   .rec__text p {
+   .rec__p {
       width: 40vw;
        color: #fff;
        background-color: #FF8B36;
