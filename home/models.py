@@ -42,7 +42,7 @@ class Content(models.Model):
     summa = models.DecimalField(max_digits=11,decimal_places=0, default=0, blank=True, null=True, verbose_name="Summasi")
 
     # Rektor
-    rektor_image = models.ImageField(upload_to="rektor/%Y/%m/", blank=True, null=True)
+    rektorimage = models.ImageField(upload_to="rektor/%Y/%m/", blank=True, null=True)
     lavozim = models.CharField(max_length=223, blank=True)
     desc_rek = models.TextField(blank=True, null=True)
 
