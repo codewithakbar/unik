@@ -19,28 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Ma’lumotlar"
-msgstr "eng_malumot"
+msgstr "Data"
 
 msgid "SO'NGI YANGILIKLAR"
-msgstr "never news"
+msgstr "Never news"
 
 msgid "Manzil"
-msgstr "eng_manzil"
+msgstr "Location"
 
 msgid "Hamqor"
-msgstr "eng_Hamqor"
+msgstr "Partner"
 
 msgid "Talabalar"
 msgstr "eng_Talabalar"
 
 msgid "Faqultetlar"
-msgstr "eng_Faqultetlar"
+msgstr "Departament"
 
 msgid "O'qituvchilar"
-msgstr "eng_O'qituvchilar"
+msgstr "Teachers"
 
 msgid "Oqish"
-msgstr "eng_Oqish"
+msgstr "Full Read"
 
 msgid "Batavsil..."
 msgstr "eng_Batavsil..."
