@@ -436,7 +436,7 @@
 }
 .blog-slider_wrapper {
     width: 100vw;
-    height: 55vh;
+    height: 50%;
     display: flex;
     justify-content: center;
 }
