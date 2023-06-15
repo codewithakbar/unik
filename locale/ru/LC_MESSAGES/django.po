@@ -23,6 +23,9 @@ msgstr ""
 msgid "Ma’lumotlar"
 msgstr "Данные"
 
+msgid "Yangiliklar"
+msgstr "Новости"
+
 #: .\templates\home\index.html:39
 msgid "Batavsil..."
 msgstr "Подробнее"

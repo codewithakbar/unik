@@ -8,7 +8,7 @@
             <div class="wrapper__menu">
                 <div class="hedaer__title">
                     <h1>
-                        Yangiliklar
+                        {% trans "Yangiliklar" %}
                     </h1>
                 </div>
                     <nav class="nacbar__nav">
@@ -37,13 +37,13 @@
                <a href="{% url 'new_detail' yan.id %}"><h1>
                     {{yan.title}}
                 </h1></a> 
-                <p class="time">
+                {% comment %} <p class="time">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                     {{yan.created_at}} 
-                </p>
-                <div class="new__cont__box__p">
+                </p> {% endcomment %}
+                {% comment %} <div class="new__cont__box__p">
                     {{yan.desc | safe | truncatewords:20}}
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     {% endfor %}

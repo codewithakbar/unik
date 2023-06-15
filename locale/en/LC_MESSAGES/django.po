@@ -21,6 +21,9 @@ msgstr ""
 msgid "Ma’lumotlar"
 msgstr "Data"
 
+msgid "Yangiliklar"
+msgstr "News"
+
 msgid "SO'NGI YANGILIKLAR"
 msgstr "Never news"
 
