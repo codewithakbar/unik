@@ -47,3 +47,24 @@ msgstr "Full Read"
 
 msgid "Batavsil..."
 msgstr "Read more..."
+
+msgid "Universitet"
+msgstr "University"
+
+msgid "Abiturient"
+msgstr "Applicant"
+
+msgid "Talim Resurslari"
+msgstr "Educational Resources"
+
+msgid "Tarmoklar"
+msgstr "Networks"
+
+msgid "Malumot uchut telefon"
+msgstr "Phone for information"
+
+msgid "Malumot uchun email qutisi"
+msgstr "Email box for reference"
+
+msgid "Urganch RANCH Texnologiya Universiteti"
+msgstr "University of Technology RANCH"

@@ -57,3 +57,29 @@ msgstr "Партнер"
 #: .\templates\home\index.html:165
 msgid "Manzil"
 msgstr "Адрес"
+
+
+msgid "Universitet"
+msgstr "Университет"
+
+msgid "Abiturient"
+msgstr "Заявитель"
+
+msgid "Talim Resurslari"
+msgstr "Учебные ресурсы"
+
+msgid "Tarmoklar"
+msgstr "сети"
+
+msgid "Faoliyat"
+msgstr "Деятельность"
+
+msgid "Malumot uchut telefon"
+msgstr "Телефон для информации"
+
+msgid "Malumot uchun email qutisi"
+msgstr "Почтовый ящик для справки"
+
+msgid "Urganch RANCH Texnologiya Universiteti"
+msgstr "Технологический Университет РАНЧ"
+

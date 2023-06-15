@@ -82,7 +82,7 @@
                             <img src="{{new.image.url}}" alt="">
                         </div>
                         <div class="blog-slider__content">
-                            <span class="blog-slider__date">{{new.created_at}}</span>
+                            {% comment %} <span class="blog-slider__date">{{new.created_at}}</span> {% endcomment %}
                             <div class="blog-slider__title">{{new.title}}</div>
                             <p></p>
                             <div class="blog-slider__button-wraper">
@@ -155,7 +155,7 @@
   </section>
   <div class="location__title">
     <span id="loc"></span>
-    <h1>Manzil</h1>
+    <h1>{% trans "Manzil" %}</h1>
     <span id="loc"></span>
 </div>
   <section id="location">

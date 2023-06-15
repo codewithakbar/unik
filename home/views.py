@@ -131,7 +131,7 @@ def set_language(request, language):
         next_url = reverse(view.url_name, args=view.args, kwargs=view.kwargs)
         if cat_ids:
             next_url += f"?cat={cat_ids}"
-            print(cat_ids)
+            # print(cat_ids)
         response = HttpResponseRedirect(next_url)
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
     else:
