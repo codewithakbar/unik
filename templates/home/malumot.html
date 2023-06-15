@@ -76,6 +76,15 @@
                     </div>
 
                 {% endfor %}
+
+            {% elif cat_parent.id == 16%}
+
+            {% for bruh in kontentla %}
+                <div class="contant__text">
+                    <p>{{bruh.nomi}}</p>
+                </div>
+
+            {% endfor %}
             
             <!--Rektor-->
             {% elif cat_parent.id == 24%}
