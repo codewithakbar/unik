@@ -112,7 +112,8 @@ def category(request, cat_id=None):
 
 def set_language(request, language):
 
-    cat_ids = request.META.get('HTTP_REFERER')[-1::39]
+    cat_ids = request.META.get('HTTP_REFERER').split('=')[-1]
+    
 
 
     for lang, _ in settings.LANGUAGES:
@@ -120,7 +121,7 @@ def set_language(request, language):
         try:
             # view = resolve(urlparse(request.META.get("HTTP_REFERER")).path)
             view = resolve(urlparse(request.META.get("HTTP_REFERER")).path)
-            print(view)
+            # print(view)
         except Resolver404:
             view = None
         if view:
@@ -130,6 +131,7 @@ def set_language(request, language):
         next_url = reverse(view.url_name, args=view.args, kwargs=view.kwargs)
         if cat_ids:
             next_url += f"?cat={cat_ids}"
+            print(cat_ids)
         response = HttpResponseRedirect(next_url)
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
     else:
