@@ -68,3 +68,7 @@ msgstr "Email box for reference"
 
 msgid "Urganch RANCH Texnologiya Universiteti"
 msgstr "University of Technology RANCH"
+
+msgid "Yana yuqlash"
+msgstr "Upload more.."
+
