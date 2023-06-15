@@ -68,8 +68,16 @@
 
                 {% endfor %}
 
-            {% elif cat_parent.id == 24%}
+            {% elif cat_parent.id == 13%}
 
+                {% for bruh in kontentla %}
+                    <div class="contant__text">
+                        <p>{{bruh.nomi}}</p>
+                    </div>
+
+                {% endfor %}
+            
+            {% elif cat_parent.id == 24%}
             <div class="rec__box">
                 {% for ccc in kontentla %}
                     <div class="contant__text__rec">
