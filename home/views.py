@@ -82,9 +82,11 @@ def category(request, cat_id=None):
     else:
         kontentla = Content.objects.all()
 
-    kontentcha = get_object_or_404(Content, category__id=catID)
+    # kontentcha = get_object_or_404(Content, category__id=catID)
     # photos = Images.objects.filter(product=kontentcha)
 
+    kontentch = Content.objects.filter(category__id=catID).first()
+    photos = Images.objects.filter(product=kontentch)
 
     context = {
         "get_content": Content.objects.filter(category__id=cat_id) if cat_id else Content.objects.all(),
@@ -94,8 +96,8 @@ def category(request, cat_id=None):
         "cat_parent": get_object_or_404(Category, pk=catID),
         "fakultet": Category.objects.filter(parent_id=25),
         "kontentla": kontentla,
-        "photos": Images.objects.filter(product=kontentcha),
-        # "kontentcha": kontentcha,
+        "photos": photos,
+        "kontentcha": kontentch,
     }
     
     return render(request, "home/malumot.html", context)

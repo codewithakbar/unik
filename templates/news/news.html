@@ -56,5 +56,20 @@
         </div>
     </div>
     </section>
+    <script>
+        const btn = document.querySelector('.btn');
+        const news__cont__boxs = document.querySelectorAll('.news__cont__box');
+
+
+        btn.addEventListener('click', function() {
+
+
+            for(let news__cont__box of news__cont__boxs) {
+                news__cont__box.style.display = 'flex'
+            }
+
+            btn.style.display = 'none';
+        });
+    </script>
     
 {% endblock %}

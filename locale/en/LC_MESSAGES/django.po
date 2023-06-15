@@ -31,7 +31,7 @@ msgid "Hamqor"
 msgstr "Partner"
 
 msgid "Talabalar"
-msgstr "eng_Talabalar"
+msgstr "Students"
 
 msgid "Faqultetlar"
 msgstr "Departament"
@@ -43,4 +43,4 @@ msgid "Oqish"
 msgstr "Full Read"
 
 msgid "Batavsil..."
-msgstr "eng_Batavsil..."
+msgstr "Read more..."

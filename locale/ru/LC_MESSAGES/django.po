@@ -21,36 +21,36 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 #: .\templates\home\index.html:26
 msgid "Ma’lumotlar"
-msgstr ""
+msgstr "Данные"
 
 #: .\templates\home\index.html:39
 msgid "Batavsil..."
-msgstr ""
+msgstr "Подробнее"
 
 #: .\templates\home\index.html:72
 msgid "SO'NGI YANGILIKLAR"
-msgstr ""
+msgstr "ПОСЛЕДНИЕ НОВОСТИ"
 
 #: .\templates\home\index.html:89
 msgid "Oqish"
-msgstr ""
+msgstr "Чтение"
 
 #: .\templates\home\index.html:134
 msgid "O'qituvchilar"
-msgstr ""
+msgstr "Преподаватели"
 
 #: .\templates\home\index.html:140
 msgid "Faqultetlar"
-msgstr ""
+msgstr "Факультеты"
 
 #: .\templates\home\index.html:146
 msgid "Talabalar"
-msgstr ""
+msgstr "Студенты"
 
 #: .\templates\home\index.html:152
 msgid "Hamqor"
-msgstr ""
+msgstr "Партнер"
 
 #: .\templates\home\index.html:165
 msgid "Manzil"
-msgstr ""
+msgstr "Адрес"
