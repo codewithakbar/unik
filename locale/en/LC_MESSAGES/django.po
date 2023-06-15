@@ -25,9 +25,6 @@ msgstr "eng_malumot"
 msgid "SO'NGI YANGILIKLAR"
 msgstr "never news"
 
-msgid "Oqish"
-msgstr "never news"
-
 msgid "Manzil"
 msgstr "eng_manzil"
 
@@ -41,7 +38,7 @@ msgid "Faqultetlar"
 msgstr "eng_Faqultetlar"
 
 msgid "O'qituvchilar"
-msgstr "eng_O'qituvchilar"
+msgstr "eng_O'qituvchilar"unpack requires a buffer of 4 bytes
 
 msgid "Oqish"
 msgstr "eng_Oqish"

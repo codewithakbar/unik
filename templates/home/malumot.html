@@ -59,7 +59,7 @@
         </h1>
         <span id="spn"></span>
             </div>
-            {% if cat_parent.name == "Fakultetlar" %}
+            {% if cat_parent.id == 25 %}
             
                 {% for bruh in kontentla %}
                     <div class="contant__text">
@@ -68,7 +68,7 @@
 
                 {% endfor %}
 
-            {% elif cat_parent.name == "Rektorat" %}
+            {% elif cat_parent.id == 24%}
 
             <div class="rec__box">
                 {% for ccc in kontentla %}
@@ -82,7 +82,6 @@
                             </h3>
                             <p>{{ccc.desc_rek | safe}}</p>
                         </div>
-                    </div>
                 {% endfor %}
             </div>
             {% else %}
@@ -96,10 +95,10 @@
                 <div class="text__cont"> 
                     {{kontent.desc | safe }}
                  </div> 
-                {% if kontent.image %}
+                {% comment %} {% if kontent.image %}
                     <div class="cont__img__c">
                         <img src="{{kontent.image.url}}" alt="">
-                    </div>
+                    </div> {% endcomment %}
                     {% if photos %}
                         {% for p in photos %}
                             <div class="cont__img__c">
@@ -107,7 +106,7 @@
                             </div>
                         {% endfor %}
                     {% endif %}
-                {% endif %}
+                {% comment %} {% endif %} {% endcomment %}
                 {% if kontent.pdf %}
                     
                     

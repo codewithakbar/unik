@@ -82,7 +82,7 @@ def category(request, cat_id=None):
     else:
         kontentla = Content.objects.all()
 
-    # kontentcha = get_object_or_404(Content, category__id=catID)
+    kontentcha = get_object_or_404(Content, category__id=catID)
     # photos = Images.objects.filter(product=kontentcha)
 
 
@@ -94,7 +94,7 @@ def category(request, cat_id=None):
         "cat_parent": get_object_or_404(Category, pk=catID),
         "fakultet": Category.objects.filter(parent_id=25),
         "kontentla": kontentla,
-        # "photos": photos,
+        "photos": Images.objects.filter(product=kontentcha),
         # "kontentcha": kontentcha,
     }
     
