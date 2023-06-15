@@ -10,7 +10,7 @@ class CategoryTranslationOptions(TranslationOptions):
 
 @register(Content)
 class ContentTranslationOptions(TranslationOptions):
-    fields = ('title', 'desc', 'nomi')
+    fields = ('title', 'desc', 'nomi', 'lavozim', 'desc_rek')
 
 
 @register(Malumotlar)

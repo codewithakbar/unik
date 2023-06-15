@@ -44,7 +44,7 @@ class Content(models.Model):
     # Rektor
     rektorimage = models.ImageField(upload_to="rektor/%Y/%m/", blank=True, null=True)
     lavozim = models.CharField(max_length=223, blank=True)
-    desc_rek = models.TextField(blank=True, null=True)
+    desc_rek = RichTextField(blank=True, null=True, verbose_name="Rektorlar Descriptioni")
 
     class MPTTMeta:
         order_insertion_by = ['title']

@@ -77,12 +77,13 @@
 
                 {% endfor %}
             
+            <!--Rektor-->
             {% elif cat_parent.id == 24%}
+            {% for ccc in kontentla %}
             <div class="rec__box">
-                {% for ccc in kontentla %}
                     <div class="contant__text__rec">
                         <div class="rec__img">
-                            <img src="" alt="">
+                            <img src="{{ccc.rektorimage.url}}" alt="">
                         </div>
                         <div class="rec__text">
                             <h3>
@@ -90,8 +91,8 @@
                             </h3>
                             <p>{{ccc.desc_rek | safe}}</p>
                         </div>
+                    </div>
                 {% endfor %}
-            </div>
             {% else %}
             {% for kontent in kontentla %}
             {% comment %} <div> {% endcomment %}

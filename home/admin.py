@@ -40,7 +40,7 @@ class MalumotlarAdmin(TranslationAdmin):
 class ContentAdmin(TranslationAdmin):
     inlines = [ContentImagesInline]
     group_fieldsets = True
-    fields = ('title', 'desc', 'category', ('nomi', 'summa'), ("rektorimage", "lavozim", "desc_rek"))
+    fields = ('title', 'desc', 'category', ('nomi', 'summa'), ("rektorimage", "lavozim", "desc_rek"), 'image')
 
     class Media:
         js = (
