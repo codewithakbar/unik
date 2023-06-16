@@ -76,9 +76,6 @@ msgid "Faoliyat"
 msgstr "Activity"
 
 
-msgid "Talabalar"
-msgstr "Students"
-
 msgid "Ta'lim Resurslari"
 msgstr "EDU. COURSES"
 
