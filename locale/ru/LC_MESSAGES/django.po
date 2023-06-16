@@ -51,7 +51,7 @@ msgid "Talabalar"
 msgstr "Студенты"
 
 #: .\templates\home\index.html:152
-msgid "Hamqor"
+msgid "Hamkor"
 msgstr "Партнер"
 
 #: .\templates\home\index.html:165
