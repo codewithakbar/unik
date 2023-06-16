@@ -120,14 +120,14 @@
         
         {% endfor %}
         <div class="dropdown__glav">
-            <button class="dropbtn__glav"> Talabalar
+            <button class="dropbtn__glav"> {% trans "Talabalar" %}
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content__glav">
 
-                    <a class="a__glav" href="">Meyoriy huquqiy hujjat</a>
-                    <a class="a__glav" href="">O'quv jarayoni grafigi</a>
-                    <a class="a__glav" href="">Oliy talim davlat talim standarti</a>
+                    <a class="a__glav" href="">{% trans "Meyoriy huquqiy hujjat" %}</a>
+                    <a class="a__glav" href="">{% trans "O'quv jarayoni grafigi" %}</a>
+                    <a class="a__glav" href="">{% trans "Oliy talim davlat talim standarti" %}</a>
                     
                     {% comment %} {% else %}
                     <a href="#">Adminda qoshing</a> {% endcomment %}
@@ -136,12 +136,12 @@
                 
         </div>
         <div class="dropdown__glav">
-            <button class="dropbtn__glav"> Ta'lim Resurslari
+            <button class="dropbtn__glav"> {% trans "Ta'lim Resurslari" %}
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content__glav">
 
-                    <a class="a__glav" href="">Eleqtron adabiyot</a>
+                    <a class="a__glav" href="">{% trans "Eleqtron adabiyot" %}</a>
 
                     
                     {% comment %} {% else %}
