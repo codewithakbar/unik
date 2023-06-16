@@ -760,7 +760,7 @@
       color: #FF8B36;
    }
    .user button {
-      height: 5vh;
+      height: 38px;
        outline: none;
        border: none;
        text-decoration: none;
@@ -888,7 +888,7 @@
       margin-left: 5px;
       margin-right: 5px;
       width: 30vw;
-      height: 10%;
+      height: 38px;
        outline: none;
        border: none;
        text-decoration: none;

@@ -5,14 +5,14 @@
 
 <!---->
 <section id="home">
-    <div class="swiper mySwiper">
+    <div class="swiper glav__swiper mySwiper">
         <div class="swiper-wrapper">
         {% if bannercha %}
         {% for band in bannercha %}
-          <div class="swiper-slide"><img src="{{band.image.url}}" /></div>
+          <div class="swiper-slide glav__slide"><img src="{{band.image.url}}" /></div>
         {% endfor %}
         {% else %}
-            <div class="swiper-slide"><img src="{% static 'Image/1_5 - Photo 1.jpg' %}" /></div>
+            <div class="swiper-slide glav__slide"><img src="{% static 'Image/1_5 - Photo 1.jpg' %}" /></div>
         {% endif %}
     </div>
         <div class="swiper-pagination"></div>
@@ -153,6 +153,19 @@
   </div>
     </div>
   </section>
+  <section id="hamkor">
+    <div #swiperRef="" class="swiper hamkor__swiper meSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide hamkor__slide">Slide 1</div>
+          <div class="swiper-slide hamkor__slide">Slide 2</div>
+          <div class="swiper-slide hamkor__slide">Slide 3</div>
+          <div class="swiper-slide hamkor__slide">Slide 4</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+</section>
   <div class="location__title">
     <span id="loc"></span>
     <h1>{% trans "Manzil" %}</h1>
