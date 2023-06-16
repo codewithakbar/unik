@@ -107,31 +107,7 @@
                 {% for chill in cat.children.all %}
                     <a class="a__glav" href="{% url 'category' cat_id=cat.id %}?cat={{chill.id}}">{{chill.name}}</a>
                 {% endfor %}
-                    {% if cat.name == 'UNIVERSITET' %}
-                        <a href="{% url 'home:rektorlar' %}">Rekrorat</a>
-                    {% endif %}
-                    {% if cat.name == 'UNIVERSITET' %}
-                    <a href="{% url 'home:fakultet' %}">Fakultetlar</a>
-                    {% endif %}
-                    {% if cat.name == 'Abituriyent' %}
-                    <a href="{% url 'home:oqishkochir' %}">Oqishkochir</a>
-                    {% endif %}
-
-                    {% if cat.name == 'Abituriyent' %}
-                    <a href="{% url 'home:magistr' %}">Magistratura yonalishlari va qabul kvotasi</a>
-                    {% endif %}
-
-                    {% if cat.name == 'Abituriyent' %}
-                    <a href="{% url 'home:sirtqi' %}">Sirtqi talim yonalishlari</a>
-                    {% endif %}
-
-                    {% if cat.name == 'Abituriyent' %}
-                    <a href="{% url 'home:oqishkochir' %}">Kunduzgi talim yonalishlari</a>
-                    {% endif %}
-
-                    {% if cat.name == 'Abituriyent' %}
-                    <a href="{% url 'home:oqishkochir' %}">Sirtqi talim yonalishlari</a>
-                    {% endif %}
+                    
                     
                     {% comment %} {% else %}
                     <a href="#">Adminda qoshing</a> {% endcomment %}
@@ -143,6 +119,37 @@
         
         
         {% endfor %}
+        <div class="dropdown__glav">
+            <button class="dropbtn__glav"> Talabalar
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content__glav">
+
+                    <a class="a__glav" href="">Meyoriy huquqiy hujjat</a>
+                    <a class="a__glav" href="">O'quv jarayoni grafigi</a>
+                    <a class="a__glav" href="">Oliy talim davlat talim standarti</a>
+                    
+                    {% comment %} {% else %}
+                    <a href="#">Adminda qoshing</a> {% endcomment %}
+
+                </div>
+                
+        </div>
+        <div class="dropdown__glav">
+            <button class="dropbtn__glav"> Ta'lim Resurslari
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content__glav">
+
+                    <a class="a__glav" href="">Eleqtron adabiyot</a>
+
+                    
+                    {% comment %} {% else %}
+                    <a href="#">Adminda qoshing</a> {% endcomment %}
+
+                </div>
+                
+        </div>
 
         {% else %}
         <div class="dropdown">

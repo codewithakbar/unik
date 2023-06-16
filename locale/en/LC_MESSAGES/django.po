@@ -75,3 +75,23 @@ msgstr "Upload more.."
 msgid "Faoliyat"
 msgstr "Activity"
 
+
+msgid "Talabalar"
+msgstr "Students"
+
+msgid "Ta'lim Resurslari"
+msgstr "EDU. COURSES"
+
+msgid "Meyoriy huquqiy hujjat"
+msgstr "REGULATORY AND LEGAL DOCUMENTS"
+
+msgid "O'quv jarayoni grafigi"
+msgstr "SCHEDULE OF THE EDU. PROCESS"
+
+msgid "Oliy talim davlat talim standarti"
+msgstr "STATE EDUCATIONAL STANDARD OF HIGHER EDUCATION"
+
+msgid "Eleqtron adabiyot"
+msgstr "ELECTRONIC LIBRARY"
+
+

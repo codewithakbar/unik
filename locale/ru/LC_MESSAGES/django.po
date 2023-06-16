@@ -86,3 +86,20 @@ msgstr "Технологический Университет РАНЧ"
 msgid "Yana yuqlash"
 msgstr "Загрузить еще"
 
+
+
+msgid "Ta'lim Resurslari"
+msgstr "ОБ. КУРСЫ"
+
+msgid "Meyoriy huquqiy hujjat"
+msgstr "НОРМАТИВНО-ПРАВОВЫЕ ДОКУМЕНТЫ"
+
+msgid "O'quv jarayoni grafigi"
+msgstr "ГРАФИК УЧЕБНОГО ПРОЦЕССА"
+
+msgid "Oliy talim davlat talim standarti"
+msgstr "ГОСУДАРСТВЕННЫЙ ОБРАЗОВАТЕЛЬНЫЙ СТАНДАРТ ВЫСШЕГО ОБРАЗОВАНИЯ"
+
+msgid "Eleqtron adabiyot"
+msgstr "ЭЛЕКТРОННАЯ БИБЛИОТЕКА"
+
