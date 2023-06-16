@@ -125,9 +125,9 @@
               </button>
               <div class="dropdown-content__glav">
 
-                    <a class="a__glav" href="">{% trans "Meyoriy huquqiy hujjat" %}</a>
-                    <a class="a__glav" href="">{% trans "O'quv jarayoni grafigi" %}</a>
-                    <a class="a__glav" href="">{% trans "Oliy talim davlat talim standarti" %}</a>
+                    <a class="a__glav" href="{% static 'pdf/nizom.pdf' %}">{% trans "Meyoriy huquqiy hujjat" %}</a>
+                    <a class="a__glav" href="{% static 'pdf/reja.pdf' %}">{% trans "O'quv jarayoni grafigi" %}</a>
+                    <a class="a__glav" href="{% static 'pdf/huffat.pdf' %}">{% trans "Oliy talim davlat talim standarti" %}</a>
                     
                     {% comment %} {% else %}
                     <a href="#">Adminda qoshing</a> {% endcomment %}
@@ -167,49 +167,6 @@
               </div>
         </div>
         {% endif %}
-        {% comment %} <div class="dropdown">
-            <button class="dropbtn"> Faoliyat 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#">Xalqoro hamqor tashkilotlar</a>
-                <a href="#">Moliyaviy Faoliyat</a>
-                <a href="#">Yoshlar bilan ishlash va ma'naviy-ma'rifiy Faoliyat</a>
-              </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn"> Abiturient 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#">Kunduzgi talim yonalishlari</a>
-                <a href="#">Sirtqi talim yonalishlari</a>
-                <a href="#">Oqishni qochirish</a>
-                <a href="#">Magistratura yonalishlari va qabul kvotasi</a>
-              </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn"> Talabalar 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#">Oliy talim davlat talim standarti</a>
-                <a href="#">Meyoriy huquqiy hujjat</a>
-                <a href="#">Oquv jarayoni grafigi</a>
-              </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn"> Talim Resurslari 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#">Eleqtron adabiyot</a>
-                <a href="#">ZOOM</a>
-                <a href="#">Talim Resurslari</a>
-                <a href="#">Dars jadvali</a>
-                <a href="#">Masofaviy talim Tizimi</a>
-              </div>
-        </div> {% endcomment %}
     </nav>
 </div>
 </header>
@@ -238,79 +195,38 @@
                         </ul>
                     </li>
                     {% endfor %}
-                    {% comment %} <li>
-                        <a href="#">Faoliyat </a>
-                        <input type="checkbox" class="subCat" id="2" />
-                        <label class="chka" for="2"></label>
-                        <ul style="display:none">
-                            <li>
-                                <a href="#">Xalqoro hamqor tashkilotlar</a>
-                            </li>
-                            <li>
-                                <a href="#">Moliyaviy Faoliyat</a>
-                            </li>
-                            <li>
-                                <a href="#">Yoshlar bilan ishlash va ma'naviy-ma'rifiy Faoliyat</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li>
-                        <a href="#">Abiturient</a>
-                        <input type="checkbox" class="subCat" id="3" />
-                        <label class="chka" for="3"></label>
-                        <ul style="display:none">
-                            <li>
-                                <a href="#">Kunduzgi talim yonalishlari</a>
-                            </li>
-                            <li>
-                                <a href="#">Sirtqi talim yonalishlari</a>
-                            </li>
-                            <li>
-                                <a href="#">Oqishni qochirish</a>
-                            </li>
-                            <li>
-                                <a href="#">Magistratura yonalishlari va qabul kvotasi</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Talabalar</a>
-                        <input type="checkbox" class="subCat" id="4" />
-                        <label class="chka" for="4"></label>
-                        <ul style="display:none">
-                            <li>
-                                <a href="#">Oliy talim davlat talim standarti</a>
-                            </li>
-                            <li>
-                                <a href="#">Meyoriy huquqiy hujjat</a>
-                            </li>
-                            <li>
-                                <a href="#">Oquv jarayoni grafigi</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Talim Resurslari </a>
-                        <input type="checkbox" class="subCat" id="5" />
+                        <a class="active" href="#">{% trans "Talabalar" %} </a>
+                        <input type="checkbox" class="subCat" id="5"/>
                         <label class="chka" for="5"></label>
                         <ul style="display:none">
+
                             <li>
-                                <a href="#">Eleqtron adabiyot</a>
+                                <a class="active" href="{% static 'pdf/nizom.pdf' %}">{% trans "Meyoriy huquqiy hujjat" %}</a>
                             </li>
                             <li>
-                                <a href="#">ZOOM</a>
+                                <a class="active" href="{% static 'pdf/reja.pdf' %}">{% trans "O'quv jarayoni grafigi" %}</a>
                             </li>
                             <li>
-                                <a href="#">Talim Resurslari</a>
+                                <a class="active" href="{% static 'pdf/huffat.pdf' %}">{% trans "Oliy talim davlat talim standarti" %}</a>
                             </li>
-                            <li>
-                                <a href="#">Dars jadvali</a>
-                            </li>
-                            <li>
-                                <a href="#">Masofaviy talim Tizimi</a>
-                            </li>
+
+                            
                         </ul>
-                    </li> {% endcomment %}
+                    </li>
+                    <li>
+                        <a class="active" href="#">{% trans "Ta'lim Resurslari" %} </a>
+                        <input type="checkbox" class="subCat" id="6"/>
+                        <label class="chka" for="6"></label>
+                        <ul style="display:none">
+
+                            <li>
+                                <a class="active" href="">{% trans "Eleqtron adabiyot" %}</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    
                 </ul>
                 <div class="user">
                     <button class="hemis"><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
