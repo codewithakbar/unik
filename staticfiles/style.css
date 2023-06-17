@@ -238,17 +238,17 @@
     justify-content: center;
 }
 
-.swiper {
+.glav__swiper {
     width: 100%;
     height: 100%;
   }
 
-.swiper-slide {
+.glav__slide {
     background-position: center;
     background-size: cover;
 }
 
-.swiper-slide img{
+.glav__slide img{
     display: block;
     width: 100%;
     height: 100%;
@@ -366,6 +366,8 @@
     justify-content: space-between;
 }
 .box__image__text h1 {
+    text-align: center;
+    width: 250px;
     background-color: white;
     color: #FF8B36;
     font-size: 15px;
@@ -396,7 +398,6 @@
     z-index: 1;
     position: relative;
     width: 100%;
-    height: 80vh;
 }
 
 .news__title {
@@ -433,11 +434,12 @@
     box-sizing: border-box;
 }
 .blog-slider_wrapper {
+    width: 100vw;
     display: flex;
     justify-content: center;
 }
 .blog-slider {
-    width: 70%;
+    width: 80%;
     margin: 20px 0 20px 80px;    
     position: relative;
     background: #fff;
@@ -634,7 +636,12 @@
     box-shadow: 0px 0px 20px rgba(252, 56, 56, 0.3);
 }
 @media (max-width: 768px) {
-
+    .blog-slider_wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
     .blog-slider {
         width: 100%;
         margin: 180px auto 20px auto;
@@ -699,7 +706,6 @@
     position: relative;
     margin: 100px 0 0 0;
     background-color:rgba(255, 228, 196, 0.336);
-    height: 80vh;
     padding: 200px 0;
     display: flex;
     z-index: 0;
@@ -767,7 +773,6 @@
     border: 2px solid #FF8B36;
     padding: 0 0 0 50px;
     width: 100%;
-    height: 50vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1390,3 +1395,39 @@
         color: #fff;
         font-size: 20px;
     }
+    #hamkor {
+        display: flex;
+        justify-content: center;
+    }
+    .hamkor__swiper {
+        width: 100%;
+        height: 100%;
+      }
+  
+      .hamkor__slide {
+        width: 100%;
+        height: 300px;
+        margin: 20px auto;
+      }
+  
+      .hamkor__slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hamkor__slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+  
+      .hamkor__swiper {
+        width: 80%;
+        height: 300px;
+        margin: 20px auto;
+      }

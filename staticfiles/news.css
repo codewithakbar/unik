@@ -554,7 +554,7 @@
 
 .news__cont__box {
     display: flex;
-    align-items: center;
+    align-items: start;
     border-radius: 10px;
     padding: 10px;
     display: flex;

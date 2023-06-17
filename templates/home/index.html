@@ -154,15 +154,23 @@
     </div>
   </section>
   <section id="hamkor">
+    <div class="news__title">
+        <span id="span__news"></span>
+        <h1>{% translate "Hamkorlar" %}</h1>
+        <span id="span__news"></span>
+    </div>
     <div #swiperRef="" class="swiper hamkor__swiper meSwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide hamkor__slide">Slide 1</div>
-          <div class="swiper-slide hamkor__slide">Slide 2</div>
-          <div class="swiper-slide hamkor__slide">Slide 3</div>
-          <div class="swiper-slide hamkor__slide">Slide 4</div>
+        <div class="swiper-wrapper hamkor__wrapper">
+          <div class="swiper-slide hamkor__slide">
+            <img src="{% static 'Image/part.png' %}" alt="">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-slide hamkor__slide">
+            <img src="{% static 'Image/part.png' %}" alt="">
+        </div>
+        <div class="swiper-slide hamkor__slide">
+            <img src="{% static 'Image/part.png' %}" alt="">
+        </div>
+        </div>
         <div class="swiper-pagination"></div>
       </div>
 </section>

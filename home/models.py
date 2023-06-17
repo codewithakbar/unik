@@ -189,3 +189,14 @@ class Images(models.Model):
 class MalImages(models.Model):
     mal = models.ForeignKey(Malumotlar, default=None, related_name='images', on_delete=models.CASCADE, blank=True, null=True)
     image = models.ImageField(upload_to='malconte/%Y/%m/%d', blank=True, null=True)
+
+
+class HomeSlider(models.Model):
+    title = models.CharField(max_length=234)
+    image = models.ImageField(upload_to="sliders/%Y/%m", height_field=None, width_field=None, max_length=None)
+
+
+    def __str__(self) -> str:
+        return self.title
+    
+    
