@@ -195,7 +195,8 @@ class HomeSlider(models.Model):
     title = models.CharField(max_length=234)
     image = models.ImageField(upload_to="sliders/%Y/%m", height_field=None, width_field=None, max_length=None)
 
-
+    url_link = models.CharField(max_length=233, blank=True, null=True, default="https://u-ukm.uz/web/en")
+    
     def __str__(self) -> str:
         return self.title
     

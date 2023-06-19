@@ -10,7 +10,7 @@ from django.shortcuts import get_list_or_404
 from django.utils import translation
 from urllib.parse import urlparse
 
-from .models import Bannercha, Book, Category, Images, MalImages, Malumotlar, Content, Fakultetlar, OqishniKochirish, Rektorat
+from .models import Bannercha, Book, Category, Images, MalImages, Malumotlar, Content, Fakultetlar, OqishniKochirish, Rektorat, HomeSlider
 from news.models import NewsCartegory, Yangiliklar
 
 
@@ -27,7 +27,8 @@ def index(request):
         'categories': Category.objects.filter(parent=None)[:5],
         "news": Yangiliklar.objects.all().order_by("?")[:3],
         "malumotlar": Malumotlar.objects.all().order_by("-id")[:3],
-        "bannercha": Bannercha.objects.all()[:8]
+        "bannercha": Bannercha.objects.all()[:8],
+        "sliders": HomeSlider.objects.all().order_by("-id")[:7]
     }
     
     return render(request, "home/index.html", context)

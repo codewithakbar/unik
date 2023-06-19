@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (
-    Bannercha,
+    Bannercha, HomeSlider,
     Category, Kunduz, Magistr, MalImages, Malumotlar, Content, 
                      Fakultetlar, Images, OqishniKochirish, Rektorat, Sirtqi, Book)
 
@@ -120,7 +120,7 @@ admin.site.register(Bannercha, BannerAdmin)
 admin.site.register(Malumotlar, MalumotlarAdmin)
 admin.site.register(Content, ContentAdmin)
 admin.site.register(Category, CategoryAdmin)
-# admin.site.register(Fakultetlar)
+admin.site.register(HomeSlider)
 # admin.site.register(Kunduz)
 # admin.site.register(Sirtqi)
 # admin.site.register(OqishniKochirish)
