@@ -92,14 +92,14 @@ msgid "Ta'lim Resurslari"
 msgstr "ОБ. КУРСЫ"
 
 msgid "Meyoriy huquqiy hujjat"
-msgstr "НОРМАТИВНО-ПРАВОВЫЕ ДОКУМЕНТЫ"
+msgstr "Нормативно-правовые Документы"
 
 msgid "O'quv jarayoni grafigi"
-msgstr "ГРАФИК УЧЕБНОГО ПРОЦЕССА"
+msgstr "График Учебного Процесса"
 
 msgid "Oliy talim davlat talim standarti"
-msgstr "ГОСУДАРСТВЕННЫЙ ОБРАЗОВАТЕЛЬНЫЙ СТАНДАРТ ВЫСШЕГО ОБРАЗОВАНИЯ"
+msgstr "Государственный Образовательный Стандарт Высшего Образования"
 
 msgid "Eleqtron adabiyot"
-msgstr "ЭЛЕКТРОННАЯ БИБЛИОТЕКА"
+msgstr "Электронная Библиотека"
 

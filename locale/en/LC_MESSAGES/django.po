@@ -77,18 +77,18 @@ msgstr "Activity"
 
 
 msgid "Ta'lim Resurslari"
-msgstr "EDU. COURSES"
+msgstr "Edu. Courses"
 
 msgid "Meyoriy huquqiy hujjat"
-msgstr "REGULATORY AND LEGAL DOCUMENTS"
+msgstr "Regulatory And Legal Documents"
 
 msgid "O'quv jarayoni grafigi"
-msgstr "SCHEDULE OF THE EDU. PROCESS"
+msgstr "Schedule Of The Edu. Process"
 
 msgid "Oliy talim davlat talim standarti"
-msgstr "STATE EDUCATIONAL STANDARD OF HIGHER EDUCATION"
+msgstr "State Educational Standard Of Higher Education"
 
 msgid "Eleqtron adabiyot"
-msgstr "ELECTRONIC LIBRARY"
+msgstr "Electronic Library"
 
 
