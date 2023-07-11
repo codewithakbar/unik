@@ -34,6 +34,16 @@ def index(request):
     return render(request, "home/index.html", context)
 
 
+def gallery(request):
+    context = {
+        'categories': Category.objects.filter(parent=None)[:5],
+        "news": Yangiliklar.objects.all().order_by("?")[:3],
+        "malumotlar": Malumotlar.objects.all().order_by("-id")[:3],
+        "bannercha": Bannercha.objects.all()[:8],
+        "sliders": HomeSlider.objects.all().order_by("-id")[:7]
+    }
+
+    return render(request, "gallery/glavnaya.html", context)
 
 
 def malumotlar(request):

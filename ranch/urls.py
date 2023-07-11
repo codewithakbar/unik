@@ -36,6 +36,7 @@ urlpatterns = [
 
     path("category/<int:cat_id>/", views.category, name="category"),
 
+    path("gal/", views.gallery),
 
 
     # path("", include("home.urls", namespace="home")),
@@ -60,3 +61,5 @@ urlpatterns = [
 
     path("set_language/<str:language>/", views.set_language, name="set-language"),
     ]
+
+

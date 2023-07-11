@@ -14,6 +14,7 @@ urlpatterns = [
     # 404
 
     path("404/", views.custom_page_not_found),
+    path("gal/", views.gallery),
 
     
 
