@@ -18,11 +18,11 @@ class GalleryImages(models.Model):
         return self.name
 
 
+
 class VideoGallery(models.Model):
     name = models.CharField(max_length=33)
-    video = models.FileField(upload_to="gallery/video/%Y/%m%/%d")
-    thumnail = models.ImageField(upload_to="thumnail/")
-
+    video = models.FileField(upload_to="gallery/video/%Y/%m/%d")
+    thumbnail = models.ImageField(upload_to="thumbnail/")
 
     def __str__(self) -> str:
         return self.name

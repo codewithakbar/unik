@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+  <link rel="stylesheet" href="{% static 'foto.css' %}"> 
+  <body>
+    <div class="gallery__home__title">
+        <span></span>
+        <h1>
+            Фото галерея
+        </h1>
+        <span></span>
+    </div>
+    <main>
+      <div class="gallery__container">
+        <div class="flex">
+              {% for gal in gal_image %}
+                <div class="gallery__content"><div class="gallery__cont__div"><div class="gallery__cont__img"><img src="{{gal.image.url}}" alt=""></div><div class="gallery__cont__text"><p>Ranch Media</p></div></div></div>
+                {% endfor %}
+              </div>
+              
+              {% for gal in gal_image %}
+              <div class="pop-up">
+                <span>&times;</span>
+                <img src="{{gal.image.url}}" alt="img">
+                
+              </div>
+              {% endfor %}
+              
+              <a href="#" id="loadMore">Load More</a>
+            </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+{% endblock content %}

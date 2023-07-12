@@ -23,6 +23,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 from home import views
 from news import views as NewsView
+from gallery import views as GalleryView
 
 
 
@@ -36,7 +37,8 @@ urlpatterns = [
 
     path("category/<int:cat_id>/", views.category, name="category"),
 
-    path("gal/", views.gallery),
+    path("gal/", GalleryView.gallery, name="gal"),
+    path("foto/", GalleryView.foto, name="foto"),
 
 
     # path("", include("home.urls", namespace="home")),

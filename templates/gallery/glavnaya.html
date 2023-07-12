@@ -13,13 +13,14 @@
       <div class="swiper galSwiper">
         <div class="swiper-wrapper gallery__swiper__wrapper">
 
-
-          <div class="swiper-slide gallery__nav__swiper__slider">
-            <img src="{% static 'Image/wallpaperbetter.jpg' %}" alt="img" />
-            <h1 class="nav__slider__h1">
-              Urganch Ranch Texnologiya Universiteti
-            </h1>
-          </div>
+          {% for img in topbanner %}
+            <div class="swiper-slide gallery__nav__swiper__slider">
+              <img src="{{ img.image.url }}" alt="img" />
+              <h1 class="nav__slider__h1">
+                Urganch Ranch Texnologiya Universiteti
+              </h1>
+            </div>
+          {% endfor %}
           
         </div>
         <div class="swiper-pagination"></div>
@@ -33,15 +34,17 @@
     <div class="gallery__nav__foto__content"> 
       <div class="swiper FotSwiper">
         <div class="swiper-wrapper">
+          {% for gal in gal_image %}
+            <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="{% url 'foto' %}"><img src="{{gal.image.url}}" alt="img"></a></div></div>
+          {% endfor %}
+          {% comment %} <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
           <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
           <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
           <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
           <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
           <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
           <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
-          <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
-          <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
-          <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div>
+          <div class="swiper-slide gallery__nav__foto__slide"> <div class="nav__foto__img"><a href="./../gallery-foto/foto.html"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"></a></div></div> {% endcomment %}
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -54,72 +57,19 @@
     <div class="gallery__nav__video__content"> 
       <div class="swiper VidSwiper">
         <div class="swiper-wrapper">
+          {% for vid in videos %}
+            <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="{{vid.thumbnail.url}}" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
+          {% endfor %}
+          {% comment %} <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
           <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
           <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
           <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
           <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
           <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
           <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
-          <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
-          <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
-          <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
+          <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div> {% endcomment %}
         </div>
         <div class="swiper-pagination"></div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".galSwiper", {
-        direction: "vertical",
-        autoplay: {
-          delay: 10000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-
-      var swiper = new Swiper(".FotSwiper", {
-      slidesPerView: 1,
-      grid: {
-        rows: 2,
-      },
-      breakpoints:{
-        767: {
-          slidesPerView: 2,
-      grid: {
-        rows: 2,
-      },
-        }
-      },
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-    var swiper = new Swiper(".VidSwiper", {
-      slidesPerView: 1,
-      grid: {
-        rows: 1,
-      },
-      breakpoints:{
-        767: {
-          slidesPerView: 2,
-      grid: {
-        rows: 1,
-      },
-        }
-      },
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-    </script>
 {% endblock content %}

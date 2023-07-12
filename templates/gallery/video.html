@@ -1,0 +1,50 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'video.css' %}">
+    <main>
+        <div class="video__title">
+            <span></span>
+            <h1>
+                Видео голерея
+            </h1>
+            <span></span>
+        </div>
+        <div class="gallery__video__container">
+            <div class="video__container"><video width="320" height="240" controls><source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">Your browser does not support the video tag.</video><h1>Ranch Media</h1></div>
+            <div class="video__container"><video width="320" height="240" controls><source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">Your browser does not support the video tag.</video><h1>Ranch Media</h1></div>
+            <div class="video__container"><video width="320" height="240" controls><source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">Your browser does not support the video tag.</video><h1>Ranch Media</h1></div>
+            <div class="video__container"><video width="320" height="240" controls><source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">Your browser does not support the video tag.</video><h1>Ranch Media</h1></div>
+            <div class="video__container"><video width="320" height="240" controls><source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">Your browser does not support the video tag.</video><h1>Ranch Media</h1></div>
+            <div class="video__container"><video width="320" height="240" controls><source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">Your browser does not support the video tag.</video><h1>Ranch Media</h1></div>
+            <div class="video__container"><video width="320" height="240" controls><source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">Your browser does not support the video tag.</video><h1>Ranch Media</h1></div>
+            <div class="video__container"><video width="320" height="240" controls><source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">Your browser does not support the video tag.</video><h1>Ranch Media</h1></div>
+            <div class="video__container"><video width="320" height="240" controls><source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">Your browser does not support the video tag.</video><h1>Ranch Media</h1></div>
+
+            <div class="pop-up">
+                <span>&times;</span>
+                <video width="320" height="240" controls>
+                    <source src="./../video/YouTube 2-Qism.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+              </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}
+    <script>
+        document.querySelectorAll('.video__container img').forEach(img => {
+  img.onclick = () => {
+    document.querySelector('.pop-up').style.display = 'block';
+    document.querySelector('pop-up img').src = img.getAttribute('src');
+  }
+});
+
+document.querySelector('.pop-up span').onclick = () => {
+  document.querySelector('.pop-up').style.display = 'none';
+  document.querySelector('pop-up video').attr('play', null);
+}
+    </script>
