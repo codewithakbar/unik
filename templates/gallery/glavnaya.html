@@ -58,7 +58,7 @@
       <div class="swiper VidSwiper">
         <div class="swiper-wrapper">
           {% for vid in videos %}
-            <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="{{vid.thumbnail.url}}" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
+            <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="{{vid.thumbnail.url}}" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="{% url 'video' %}">Смотреть</a></div></div></div>
           {% endfor %}
           {% comment %} <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
           <div class="swiper-slide gallery__nav__video__slide"><div class="gallery__nav__video__img"><img src="./../gallery-video/wallpaperbetter.jpg" alt="img"> <div class="koroche__text"><p>Ranch Media</p><a href="./../gallery-video/video.html">Смотреть</a></div></div></div>
