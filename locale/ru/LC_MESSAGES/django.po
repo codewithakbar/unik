@@ -90,7 +90,7 @@ msgstr "Загрузить еще"
 msgid "Galereya"
 msgstr "Галерея"
 
-msgid "Rasmlar"
+msgid "Asosiy"
 msgstr "Картинки"
 
 msgid "Fotogalereya"

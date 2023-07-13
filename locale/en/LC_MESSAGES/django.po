@@ -94,3 +94,6 @@ msgstr "Electronic Library"
 
 msgid "Galereya"
 msgstr "Gallery"
+
+msgid "Asosiy"
+msgstr "Main"
