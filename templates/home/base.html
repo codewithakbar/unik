@@ -165,6 +165,7 @@
 
                 <a class="a__glav" href="{% url 'gal' %}">{% trans "Asosiy" %}</a>
                 <a class="a__glav" href="{% url 'foto' %}">{% trans "Fotogalereya" %}</a>
+                <a class="a__glav" href="{% url 'video' %}">{% trans "Video" %}</a>
 
                     
                     {% comment %} {% else %}
@@ -255,14 +256,14 @@
                       <label class="chka" for="7"></label>
                       <ul style="display:none">
 
+                        <li>
+                            <a class="active" href="{% url 'gal' %}">{% trans "Asosiy" %}</a>
+                        </li>
+                        <li>
+                            <a class="active" href="{% url 'foto' %}">{% trans "Fotogalereya" %}</a>
+                        </li>
                           <li>
-                              <a class="active" href="{% static 'pdf/nizom.pdf' %}">{% trans "Meyoriy huquqiy hujjat" %}</a>
-                          </li>
-                          <li>
-                              <a class="active" href="{% static 'pdf/reja.pdf' %}">{% trans "O'quv jarayoni grafigi" %}</a>
-                          </li>
-                          <li>
-                              <a class="active" href="{% static 'pdf/huffat.pdf' %}">{% trans "Oliy talim davlat talim standarti" %}</a>
+                              <a class="active" href="{% url 'video' %}">{% trans "Video" %}</a>
                           </li>
 
                           

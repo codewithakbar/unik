@@ -93,6 +93,9 @@ msgstr "Галерея"
 msgid "Asosiy"
 msgstr "Картинки"
 
+msgid "Video"
+msgstr "Видео"
+
 msgid "Fotogalereya"
 msgstr "Галерея фотографий"
 

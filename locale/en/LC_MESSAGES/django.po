@@ -97,3 +97,6 @@ msgstr "Gallery"
 
 msgid "Asosiy"
 msgstr "Main"
+
+msgid "Video"
+msgstr "Videos"

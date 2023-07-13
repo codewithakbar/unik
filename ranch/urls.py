@@ -39,6 +39,7 @@ urlpatterns = [
 
     path("gal/", GalleryView.gallery, name="gal"),
     path("foto/", GalleryView.foto, name="foto"),
+    path("video/", GalleryView.video, name="video"),
 
 
     # path("", include("home.urls", namespace="home")),
