@@ -428,15 +428,19 @@ document.querySelectorAll('.flex img').forEach(img => {
 img.onclick = () => {
   document.querySelector('.pop-up').style.display = 'block';
   document.querySelector('.pop-up img').src = img.getAttribute('src');
+  document.querySelector('body').style.overflow = 'hidden';
   document.querySelector('.wrapper').style.display = 'none';
-  document.querySelector('.header__glav').style.display = 'none'
+  document.querySelector('.header__glav').style.display = 'none';
+  document.querySelector('.contact__container').style.display = 'none'
 }
 });
 
 document.querySelector('.pop-up span').onclick = () => {
 document.querySelector('.pop-up').style.display = 'none';
+document.querySelector('body').style.overflow = 'auto';
 document.querySelector('.wrapper').style.display = 'flex';
-document.querySelector('.header__glav').style.display = 'flex'
+document.querySelector('.header__glav').style.display = 'flex';
+document.querySelector('.contact__container').style.display = 'flex'
 }
 </script>
  <noscript><div><img src="https://mc.yandex.ru/watch/94181947" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
