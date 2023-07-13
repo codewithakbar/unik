@@ -83,10 +83,18 @@ msgstr "Почтовый ящик для справки"
 msgid "Urganch RANCH Texnologiya Universiteti"
 msgstr "Технологический Университет РАНЧ"
 
+
 msgid "Yana yuqlash"
 msgstr "Загрузить еще"
 
+msgid "Galereya"
+msgstr "Галерея"
 
+msgid "Rasmlar"
+msgstr "Картинки"
+
+msgid "Fotogalereya"
+msgstr "Галерея фотографий"
 
 msgid "Ta'lim Resurslari"
 msgstr "ОБ. КУРСЫ"

@@ -92,3 +92,5 @@ msgid "Eleqtron adabiyot"
 msgstr "Electronic Library"
 
 
+msgid "Galereya"
+msgstr "Gallery"

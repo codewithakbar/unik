@@ -157,6 +157,22 @@
                 </div>
                 
         </div>
+        <div class="dropdown__glav">
+            <button class="dropbtn__glav"> {% trans "Galereya" %}
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content__glav">
+
+                <a class="a__glav" href="{% url 'gal' %}">{% trans "Rasmlar" %}</a>
+                <a class="a__glav" href="{% url 'foto' %}">{% trans "Fotogalereya" %}</a>
+
+                    
+                    {% comment %} {% else %}
+                    <a href="#">Adminda qoshing</a> {% endcomment %}
+
+                </div>
+                
+        </div>
 
         {% else %}
         <div class="dropdown">
@@ -233,7 +249,25 @@
 
                         </ul>
                     </li>
-                    
+                    <li>
+                      <a class="active" href="#">{% trans "Galereya" %} </a>
+                      <input type="checkbox" class="subCat" id="7"/>
+                      <label class="chka" for="7"></label>
+                      <ul style="display:none">
+
+                          <li>
+                              <a class="active" href="{% static 'pdf/nizom.pdf' %}">{% trans "Meyoriy huquqiy hujjat" %}</a>
+                          </li>
+                          <li>
+                              <a class="active" href="{% static 'pdf/reja.pdf' %}">{% trans "O'quv jarayoni grafigi" %}</a>
+                          </li>
+                          <li>
+                              <a class="active" href="{% static 'pdf/huffat.pdf' %}">{% trans "Oliy talim davlat talim standarti" %}</a>
+                          </li>
+
+                          
+                      </ul>
+                  </li>
                 </ul>
                 <div class="user">
                     <button class="hemis"><a class="" href="https://student.hemis.uz/dashboard/login">Hemis</a></button>  
